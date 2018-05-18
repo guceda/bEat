@@ -12,6 +12,7 @@ import { IntroComponent } from './intro/intro.component';
 import { ListaExperienciasComponent } from './lista-experiencias/lista-experiencias.component';
 import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { DetalleExperienciaComponent } from './detalle-experiencia/detalle-experiencia.component';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { DetalleExperienciaComponent } from './detalle-experiencia/detalle-exper
     DetalleExperienciaComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

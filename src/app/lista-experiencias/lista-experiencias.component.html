@@ -1,9 +1,3 @@
 <div class="row articles">
-    <app-experiencia class="col-sm-6 col-md-4"></app-experiencia>
-    <app-experiencia class="col-sm-6 col-md-4"></app-experiencia>
-    <app-experiencia class="col-sm-6 col-md-4"></app-experiencia>
-    <app-experiencia class="col-sm-6 col-md-4"></app-experiencia>
-    <app-experiencia class="col-sm-6 col-md-4"></app-experiencia>
-    <app-experiencia class="col-sm-6 col-md-4"></app-experiencia>
-    
+    <app-experiencia [experiencia] = "experiencia" *ngFor="let experiencia of experiencias" class="col-sm-6 col-md-4"></app-experiencia>
 </div>

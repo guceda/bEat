@@ -18,7 +18,7 @@
             "ubicacion": "Madrid",
             "tipo": "española",
             "precio": 10,
-            "chef": "Juanan",
+            "chef": "Luis",
             "fecha": "fin de semanas",
             "ingredientes": "huevos, patatas, sal, aceite"
         },
@@ -29,7 +29,7 @@
             "ubicacion": "Madrid",
             "tipo": "española",
             "precio": 10,
-            "chef": "Juanan",
+            "chef": "Mario",
             "fecha": "fin de semanas",
             "ingredientes": "huevos, patatas, sal, aceite"
         },
@@ -40,7 +40,7 @@
             "ubicacion": "Madrid",
             "tipo": "española",
             "precio": 10,
-            "chef": "Juanan",
+            "chef": "Tomás",
             "fecha": "fin de semanas",
             "ingredientes": "huevos, patatas, sal, aceite"
         },
@@ -51,7 +51,7 @@
             "ubicacion": "Madrid",
             "tipo": "española",
             "precio": 10,
-            "chef": "Juanan",
+            "chef": "Adriana",
             "fecha": "fin de semanas",
             "ingredientes": "huevos, patatas, sal, aceite"
         },
@@ -62,7 +62,7 @@
             "ubicacion": "Madrid",
             "tipo": "española",
             "precio": 10,
-            "chef": "Juanan",
+            "chef": "María",
             "fecha": "fin de semanas",
             "ingredientes": "huevos, patatas, sal, aceite"
         }
