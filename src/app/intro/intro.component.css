@@ -7,6 +7,7 @@
     background-size: cover;
     background-position-y: -240px;
     background-repeat: no-repeat;
+    margin-top:75px;
   }
 
   
@@ -26,6 +27,8 @@
  
   .highlight-phone p {
     color:whitesmoke;
+    font-weight: 500;
+    width: 380px;
   }
   
 
@@ -84,6 +87,7 @@
     font-style:normal;
     width:300px;
   }
+
 
   
 

@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  user:string
+
+  constructor() {
+    this.user = "chef";
+  }
 
   ngOnInit() {
+  }
+
+  handleClickSalir() {
+    this.user = "none"
   }
 
 }

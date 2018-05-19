@@ -20,7 +20,14 @@
 
   .chef {
     color:grey !important;
+    margin-right: 40px;
   }
+
+  .exp {
+    color:#4ec5c1 !important;
+    margin-right: 40px;
+  }
+
   
   .navigation-clean-button .navbar-brand {
     font-weight:bold;
@@ -115,3 +122,18 @@
   }
   
   
+  .navbar{
+    border-bottom: 1px solid lightgrey;
+  }
+
+
+  #marcador{
+
+    height: 45px;
+    position: absolute;
+    left:0;
+    top:0;
+    background-color: white;
+    opacity: 0.3;
+    border-bottom: 5px solid black;
+}

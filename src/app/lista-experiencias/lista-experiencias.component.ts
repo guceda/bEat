@@ -19,7 +19,6 @@ export class ListaExperienciasComponent implements OnInit {
   ngOnInit() {
     this.experienciasService.getAllExperiencias().then((arrExperiencias)=>{
       this.experiencias = arrExperiencias.json()
-      console.log(this.experiencias); 
     })
   }
 

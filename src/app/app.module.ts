@@ -13,6 +13,11 @@ import { ListaExperienciasComponent } from './lista-experiencias/lista-experienc
 import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { DetalleExperienciaComponent } from './detalle-experiencia/detalle-experiencia.component';
 import { HttpModule } from '@angular/http';
+import { ListaEquipoComponent } from './lista-equipo/lista-equipo.component';
+import { MiembroEquipoComponent } from './miembro-equipo/miembro-equipo.component';
+import { LoginComponent } from './login/login.component';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './app.routing';
 
 
 @NgModule({
@@ -26,10 +31,13 @@ import { HttpModule } from '@angular/http';
     IntroComponent,
     ListaExperienciasComponent,
     ExperienciaComponent,
-    DetalleExperienciaComponent
+    DetalleExperienciaComponent,
+    ListaEquipoComponent,
+    MiembroEquipoComponent,
+    LoginComponent
   ],
   imports: [
-    BrowserModule, HttpModule
+    BrowserModule, HttpModule, RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent]

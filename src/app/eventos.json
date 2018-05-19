@@ -3,7 +3,7 @@
         {
             "titulo": "Tortilla de patata",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
-            "imagen": "https://es.rc-cdn.community.thermomix.com/recipeimage/flz0tm0r-a2069-162740-cfcd2-zlr8kinc/733f35bb-e440-4c4f-9b87-949a0e20e384/main/tortilla-de-patatas-con-cebolla.jpg",
+            "imagen": "assets/img/bowl.jpg",
             "ubicacion": "Madrid",
             "tipo": "española",
             "precio": 10,
@@ -14,7 +14,7 @@
         {
             "titulo": "Gyozas de Pollo",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
-            "imagen": "https://es.rc-cdn.community.thermomix.com/recipeimage/flz0tm0r-a2069-162740-cfcd2-zlr8kinc/733f35bb-e440-4c4f-9b87-949a0e20e384/main/tortilla-de-patatas-con-cebolla.jpg",
+            "imagen": "assets/img/chinese.jpg",
             "ubicacion": "Madrid",
             "tipo": "española",
             "precio": 10,
@@ -25,7 +25,7 @@
         {
             "titulo": "Judias",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
-            "imagen": "https://es.rc-cdn.community.thermomix.com/recipeimage/flz0tm0r-a2069-162740-cfcd2-zlr8kinc/733f35bb-e440-4c4f-9b87-949a0e20e384/main/tortilla-de-patatas-con-cebolla.jpg",
+            "imagen": "assets/img/dumplins.jpg",
             "ubicacion": "Madrid",
             "tipo": "española",
             "precio": 10,
@@ -36,7 +36,7 @@
         {
             "titulo": "Chorizo",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
-            "imagen": "https://es.rc-cdn.community.thermomix.com/recipeimage/flz0tm0r-a2069-162740-cfcd2-zlr8kinc/733f35bb-e440-4c4f-9b87-949a0e20e384/main/tortilla-de-patatas-con-cebolla.jpg",
+            "imagen": "assets/img/chinese.jpg",
             "ubicacion": "Madrid",
             "tipo": "española",
             "precio": 10,
@@ -47,7 +47,7 @@
         {
             "titulo": "Perro",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
-            "imagen": "https://es.rc-cdn.community.thermomix.com/recipeimage/flz0tm0r-a2069-162740-cfcd2-zlr8kinc/733f35bb-e440-4c4f-9b87-949a0e20e384/main/tortilla-de-patatas-con-cebolla.jpg",
+            "imagen": "assets/img/dumplins.jpg",
             "ubicacion": "Madrid",
             "tipo": "española",
             "precio": 10,
@@ -58,7 +58,40 @@
         {
             "titulo": "Aceitunas",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
-            "imagen": "https://es.rc-cdn.community.thermomix.com/recipeimage/flz0tm0r-a2069-162740-cfcd2-zlr8kinc/733f35bb-e440-4c4f-9b87-949a0e20e384/main/tortilla-de-patatas-con-cebolla.jpg",
+            "imagen": "assets/img/bowl.jpg",
+            "ubicacion": "Madrid",
+            "tipo": "española",
+            "precio": 10,
+            "chef": "María",
+            "fecha": "fin de semanas",
+            "ingredientes": "huevos, patatas, sal, aceite"
+        },
+        {
+            "titulo": "Chorizo",
+            "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
+            "imagen": "assets/img/chinese.jpg",
+            "ubicacion": "Madrid",
+            "tipo": "española",
+            "precio": 10,
+            "chef": "Tomás",
+            "fecha": "fin de semanas",
+            "ingredientes": "huevos, patatas, sal, aceite"
+        },
+        {
+            "titulo": "Perro",
+            "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
+            "imagen": "assets/img/dumplins.jpg",
+            "ubicacion": "Madrid",
+            "tipo": "española",
+            "precio": 10,
+            "chef": "Adriana",
+            "fecha": "fin de semanas",
+            "ingredientes": "huevos, patatas, sal, aceite"
+        },
+        {
+            "titulo": "Aceitunas",
+            "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
+            "imagen": "assets/img/bowl.jpg",
             "ubicacion": "Madrid",
             "tipo": "española",
             "precio": 10,
@@ -72,5 +105,34 @@
     ],
     "chefs": [
         {}
+    ],
+    "equipo": [
+        {
+            "nombre": "Araceli Fdez.",
+            "cargo": "Diseñadora",
+            "imagen": "./assets/img/1.jpg",
+            "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa.",
+            "facebook": "",
+            "twitter": "",
+            "instagram": ""
+        },
+        {
+            "nombre": "Gonzalo Uceda",
+            "cargo": "Desarrollador",
+            "imagen": "./assets/img/2.jpg",
+            "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa.",
+            "facebook": "",
+            "twitter": "",
+            "instagram": ""
+        },
+        {
+            "nombre": "Mario Girón",
+            "cargo": "Mentor",
+            "imagen": "./assets/img/3.jpg",
+            "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa.",
+            "facebook": "",
+            "twitter": "",
+            "instagram": ""
+        }
     ]
 }

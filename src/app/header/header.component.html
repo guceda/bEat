@@ -1,9 +1,41 @@
 <div class="table-fixed">
-  <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
-      <div class="container"><a class="navbar-brand" href="#"><img src="assets/img/logo_rosa.png" style="width:50px;"></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-          <div
-              class="collapse navbar-collapse" id="navcol-1">
-              <ul class="nav navbar-nav mr-auto"></ul><span class="navbar-text actions"> <a href="#" class="login chef" style="margin-right:50px;">Conviértete en Chef</a><a href="#" class="login">Log In</a><a href="#" class="login">Regístrate</a></span></div>
-</div>
-</nav>
+    <nav class="navbar navbar-light navbar-expand-md  fixed-top navigation-clean-button">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logo_rosa.png" style="width:50px;">
+            </a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <div class="nav navbar-nav mr-auto "></div>
+
+                <div [ngSwitch] = "user">
+                    <div *ngSwitchCase="'chef'">
+                            <span class="navbar-text actions">
+                                    <a href="#" class="login exp" style="margin-right:50px;">Nueva Experiencia</a>
+                                    <a href="#" class="login">Mi cuenta</a>
+                                    <a (click) = "handleClickSalir()" href="#" class="login">Salir</a>
+                                </span>
+                    </div>
+                    <div *ngSwitchCase="'invitado'">
+                            <span class="navbar-text actions">
+                                    <a href="#" class="login chef" style="margin-right:50px;">Explora por ciudad</a>
+                                    <a href="#" class="login">Mi cuenta</a>
+                                    <a (click) = "handleClickSalir()" href="#" class="login">Salir</a>
+                                </span>
+                    </div>
+                    <div *ngSwitchCase="'none'">
+                            <span class="navbar-text actions">
+                                    <a href="#" class="login chef" style="margin-right:50px;">Conviértete en Chef</a>
+                                    <a href="#" class="login">Log In</a>
+                                    <a (click) = "handleClickSalir()" href="#" class="login">Regístrate</a>
+                                </span>
+                    </div>
+                    
+                </div>               
+            </div>
+        </div>
+    </nav>
 </div>
