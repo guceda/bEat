@@ -137,3 +137,16 @@
     opacity: 0.3;
     border-bottom: 5px solid black;
 }
+
+.navbar-toggler{
+  border: 0px solid rgba(0,0,0,.0)!important;
+}
+
+.usuario{
+  padding: 0;
+}
+
+.separador{
+  padding-left: 5px;
+  border-left: 1px solid lightgrey;
+}

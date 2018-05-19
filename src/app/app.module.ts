@@ -18,6 +18,7 @@ import { MiembroEquipoComponent } from './miembro-equipo/miembro-equipo.componen
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routing';
+import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { appRoutes } from './app.routing';
     DetalleExperienciaComponent,
     ListaEquipoComponent,
     MiembroEquipoComponent,
-    LoginComponent
+    LoginComponent,
+    QuienesSomosComponent
   ],
   imports: [
     BrowserModule, HttpModule, RouterModule.forRoot(appRoutes),

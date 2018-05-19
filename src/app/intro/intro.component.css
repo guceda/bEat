@@ -1,12 +1,12 @@
 .highlight-phone {
     color:#313437;
-    background-color:#eef4f7;
+    /* background-color:#eef4f7; */
     padding:50px 0 55px;
     overflow:hidden;
-    background-image: url(../../assets/img/bakery-dessert-food-8279.jpg);
-    background-size: cover;
+    /* background-image: url(../../assets/img/bakery-dessert-food-8279.jpg); */
+    /* background-size: cover;
     background-position-y: -240px;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;  */
     margin-top:75px;
   }
 
@@ -20,13 +20,15 @@
 
 
   .titulo {
+    /* text-shadow: 1px 1px 3px white; */
     font-size:2rem;
     color: rgba(0,0,0,0.7) !important;
-    font-weight:600;
+    font-weight:700 !important;
+    width: 450px !important;
   }
  
   .highlight-phone p {
-    color:whitesmoke;
+    color: rgba(0,0,0,0.7);
     font-weight: 500;
     width: 380px;
   }
@@ -80,17 +82,39 @@
   }
   
   .btn-primary {
-    background-color:rgba(255,255,255,0.5);
+    background-color:#ec576b!important;
     color:white;
-    border:2px solid white !important;
+    border:1px solid white !important;
     border-radius:30px;
     font-style:normal;
     width:300px;
   }
 
+/* paralax */
 
+
+.imagen {
+  height:500px;
+
+  background-image:url(../../assets/img/intro.jpg);
   
+  background-position:center;
+  background-size:cover;
+  margin-top:80px;
+}
 
+@media (max-width: 575px) {
+  .imagen {
+    height:150px !important;
+
+  }
+}
+
+@media (max-width: 767px) {
+  .imagen {
+    height:300px;
+  }
+}
 
   
   
