@@ -11,7 +11,8 @@ export class Experiencia {
     chef: Chef
     fecha: string
     ingredientes: string
-    constructor(titulo, descripcion, imagen, ubicacion, tipo, precio, chef, fecha, ingredientes, invitados){
+    id:number
+    constructor(titulo, descripcion, imagen, ubicacion, tipo, precio, chef, fecha, ingredientes, invitados, id){
         this.titulo = titulo
         this.descripcion = descripcion
         this.imagen = imagen
@@ -22,5 +23,6 @@ export class Experiencia {
         this.fecha = fecha
         this.ingredientes = ingredientes
         this.invitados = invitados
+        this.id = id
     }
 }

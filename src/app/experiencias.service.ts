@@ -10,11 +10,11 @@ export class ExperienciasService {
   constructor(private http: Http) { }
 
   getAllExperiencias() {
-    return this.http.get('https://appneo-2ae6a.firebaseio.com/experiencias.json').toPromise()
+    return this.http.get('https://neolandbeat.firebaseio.com/experiencias.json').toPromise()
   }
 
   getExperienciasbyCategoria(pCat){
-    return this.http.get('https://appneo-2ae6a.firebaseio.com/experiencias.json')
+    return this.http.get('https://neolandbeat.firebaseio.com/experiencias.json')
     .map( (res) => {
       console.log('res');  
       return res.json()
