@@ -1,13 +1,13 @@
 .item {
-    padding-top:50px;
-    min-height:425px;
+    padding-top:30px;
+    min-height:325px;
     text-align:center;
   }
   
  .item .name {
     font-weight:bold;
     font-size:16px;
-    margin-top:20px;
+    margin-top:0px;
     color:inherit;
   }
   
@@ -48,24 +48,52 @@
   }
 
 .nombre {
+  text-transform: initial;
   text-align: left;
-  text-transform: uppercase;
+  margin-bottom: 0px;
   /* font-size: 130% !important; */
 }
 
 .chef {
-  text-align: right;
+  text-align: left;
   text-transform: capitalize;
+  padding:0 0 10px 0;
+  color: grey;
+  font-size: 90%;
 }
+
 
 .chef:hover{
   text-decoration: none;
   opacity: 0.7;
 }
 
-
 .datos{
   font-size: 90%;
   text-align: left;
   margin-top: -10px;
+}
+
+.cocina{
+  font-size: 75%;
+  text-align: left;
+  text-transform: uppercase;
+  color:#4ec5c1;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.chef i{
+  color: #ec576b
+}
+
+
+h3 span{
+  font-weight: normal;
+  text-transform: initial;
+  color: grey;
+}
+
+.num{
+  margin-left: 10px;
 }

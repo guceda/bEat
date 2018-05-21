@@ -7,10 +7,11 @@ export class Experiencia {
     ubicacion:string
     tipo: string
     precio: number
+    invitados: number
     chef: Chef
     fecha: string
     ingredientes: string
-    constructor(titulo, descripcion, imagen, ubicacion, tipo, precio, chef, fecha, ingredientes){
+    constructor(titulo, descripcion, imagen, ubicacion, tipo, precio, chef, fecha, ingredientes, invitados){
         this.titulo = titulo
         this.descripcion = descripcion
         this.imagen = imagen
@@ -20,5 +21,6 @@ export class Experiencia {
         this.chef = chef
         this.fecha = fecha
         this.ingredientes = ingredientes
+        this.invitados = invitados
     }
 }

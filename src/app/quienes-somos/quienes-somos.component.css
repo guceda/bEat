@@ -18,7 +18,7 @@
     font-weight:bold;
     margin-bottom:40px;
     font-size: 2.5em;
-    padding-top:40px;
+    padding-top:60px;
     color:inherit;
     width: 700px;
   }
@@ -79,5 +79,5 @@
   
   .quienes{
       background-color: rgba(78,197,193, 0.3); 
-    padding: 30px;
+    padding: 60px 30px 30px 30px;
   }

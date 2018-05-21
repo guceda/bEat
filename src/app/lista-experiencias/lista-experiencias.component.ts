@@ -23,6 +23,13 @@ export class ListaExperienciasComponent implements OnInit {
       this.experiencias = arrExperiencias.json()
     })
     console.log(this.ciudad);
+  this.experienciasService.getExperienciasbyCategoria('japonesa').then((res)=>{
+    console.log(res);
+    
+  })
+  
+    
+
   }
 
 }

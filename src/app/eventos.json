@@ -1,84 +1,91 @@
 {
     "experiencias": [
         {
-            "titulo": "Tortilla de patata",
+            "titulo": "Pasta de boletus con Aceitunas",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
             "imagen": "assets/img/bowl.jpg",
             "ubicacion": "madrid",
-            "tipo": "española",
-            "precio": 10,
-            "chef": "Juanan",
-            "fecha": "fin de semanas",
-            "ingredientes": "huevos, patatas, sal, aceite"
+            "tipo": "italiana",
+            "precio": 7,
+            "chef": "Luis",
+            "fecha": "sábados",
+            "ingredientes": "pasta, boletus, aceitunas, queso, tomate, pimientos, cebolla",
+            "invitados": 3
         },
         {
-            "titulo": "Gyozas de Pollo",
+            "titulo": "Gyozas de Pollo y Bambú",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
             "imagen": "assets/img/chinese.jpg",
             "ubicacion": "barcelona",
-            "tipo": "española",
-            "precio": 10,
-            "chef": "Luis",
-            "fecha": "fin de semanas",
-            "ingredientes": "huevos, patatas, sal, aceite"
+            "tipo": "japonesa",
+            "precio": 13,
+            "chef": "Adrián",
+            "fecha": "fin de semana",
+            "ingredientes": "harina, pollo, sal, aceite, pimientos, bambú, salsa de pescado, carne",
+            "invitados": 5
         },
         {
-            "titulo": "Judias",
+            "titulo": "Judias pintas con callos",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
             "imagen": "assets/img/dumplins.jpg",
             "ubicacion": "barcelona",
             "tipo": "española",
             "precio": 10,
             "chef": "Mario",
-            "fecha": "fin de semanas",
-            "ingredientes": "huevos, patatas, sal, aceite"
+            "fecha": "sabado noche",
+            "ingredientes": "judías, callos, aceite, sal, chorizo, chistorra, beicon",
+            "invitados": 1
         },
         {
-            "titulo": "Chorizo",
+            "titulo": "Sushi de salmón y pepino",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
             "imagen": "assets/img/chinese.jpg",
             "ubicacion": "barcelona",
-            "tipo": "española",
+            "tipo": "japonesa",
             "precio": 10,
             "chef": "Tomás",
             "fecha": "fin de semanas",
-            "ingredientes": "huevos, patatas, sal, aceite"
+            "ingredientes": "algas, salmón, arroz, pepino",
+            "invitados": 3
         },
         {
-            "titulo": "Perro",
+            "titulo": "Cangrejos de río en salsa",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
             "imagen": "assets/img/dumplins.jpg",
             "ubicacion": "Madrid",
-            "tipo": "española",
+            "tipo": "china",
             "precio": 10,
             "chef": "Adriana",
             "fecha": "fin de semanas",
-            "ingredientes": "huevos, patatas, sal, aceite"
+            "ingredientes": "cangrejos, tomate, guindilla, cebolla, ajo",
+            "invitados": 6
         },
         {
-            "titulo": "Aceitunas",
+            "titulo": "Tepanyaki de pollo a la pimienta",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
             "imagen": "assets/img/bowl.jpg",
             "ubicacion": "Madrid",
-            "tipo": "española",
+            "tipo": "japonesa",
             "precio": 10,
             "chef": "María",
-            "fecha": "fin de semanas",
-            "ingredientes": "huevos, patatas, sal, aceite"
+            "fecha": "tardes domingo",
+            "ingredientes": "pollo, salsa carne",
+            "invitados": 2
         },
         {
-            "titulo": "Chorizo",
+            "titulo": "Paella de conejo y garrofón",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
             "imagen": "assets/img/chinese.jpg",
             "ubicacion": "Madrid",
             "tipo": "española",
             "precio": 10,
             "chef": "Tomás",
-            "fecha": "fin de semanas",
-            "ingredientes": "huevos, patatas, sal, aceite"
+            "fecha": "cualquier día",
+            "ingredientes": "arroz, conejos, azafrán, pimiento rojo, garrofón, cebolla, ajo, perejil",
+            "invitados": 1
         },
         {
-            "titulo": "Perro",
+            "titulo": "Lacón con grelos ",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
             "imagen": "assets/img/dumplins.jpg",
             "ubicacion": "Madrid",
@@ -86,18 +93,20 @@
             "precio": 10,
             "chef": "Adriana",
             "fecha": "fin de semanas",
-            "ingredientes": "huevos, patatas, sal, aceite"
+            "ingredientes": "lacón, grelos, patata",
+            "invitados": 4
         },
         {
-            "titulo": "Aceitunas",
+            "titulo": "Pollo al curri masala",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
             "imagen": "assets/img/bowl.jpg",
             "ubicacion": "Madrid",
             "tipo": "española",
             "precio": 10,
             "chef": "María",
-            "fecha": "fin de semanas",
-            "ingredientes": "huevos, patatas, sal, aceite"
+            "fecha": "sábados y domingos",
+            "ingredientes": "pollo, curri, calabacín",
+            "invitados": 6
         }
     ],
     "invitados": [
