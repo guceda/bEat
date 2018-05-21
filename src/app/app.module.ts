@@ -20,6 +20,11 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routing';
 import { QuienesSomosComponent } from './main/quienes-somos/quienes-somos.component';
 import { MainComponent } from './main/main.component';
+import { CabeceraComponent } from './detalle-experiencia/cabecera/cabecera.component';
+import { DescripcionExperienciaComponent } from './detalle-experiencia/descripcion-experiencia/descripcion-experiencia.component';
+import { ChefComponent } from './detalle-experiencia/chef/chef.component';
+import { MapaComponent } from './mapa/mapa.component';
+import { OtrasExperienciasComponent } from './otras-experiencias/otras-experiencias.component';
 
 
 @NgModule({
@@ -38,7 +43,12 @@ import { MainComponent } from './main/main.component';
     MiembroEquipoComponent,
     LoginComponent,
     QuienesSomosComponent,
-    MainComponent
+    MainComponent,
+    CabeceraComponent,
+    DescripcionExperienciaComponent,
+    ChefComponent,
+    MapaComponent,
+    OtrasExperienciasComponent
   ],
   imports: [
     BrowserModule, HttpModule, RouterModule.forRoot(appRoutes),

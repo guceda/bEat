@@ -3,16 +3,15 @@ import { Routes, RouterModule } from '@angular/router'
 import { AppComponent } from "./app.component";
 import { DetalleExperienciaComponent } from "./detalle-experiencia/detalle-experiencia.component";
 import { ListaExperienciasComponent } from "./main/experiencias/lista-experiencias/lista-experiencias.component";
+import { MainComponent } from "./main/main.component";
 
 
 
 export const appRoutes:Routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full'  },
-    { path:'home', component: AppComponent },
-    { path:'login', component: LoginComponent },
-    { path:'detalle', component: DetalleExperienciaComponent },
-    { path: 'experiencias', component: ListaExperienciasComponent },
-    { path:'detalle', component: DetalleExperienciaComponent },
-
+    // { path: '', redirectTo: 'home', pathMatch: 'full'  },
+    { path:'', component: MainComponent },
+    { path:'experiencia', component: DetalleExperienciaComponent },
+    { path:'experiencia', component: DetalleExperienciaComponent },
+    { path: '**', component: ListaExperienciasComponent },
 ]
 
