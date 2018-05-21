@@ -2,7 +2,7 @@ import { LoginComponent } from "./login/login.component";
 import { Routes, RouterModule } from '@angular/router'
 import { AppComponent } from "./app.component";
 import { DetalleExperienciaComponent } from "./detalle-experiencia/detalle-experiencia.component";
-import { ListaExperienciasComponent } from "./lista-experiencias/lista-experiencias.component";
+import { ListaExperienciasComponent } from "./main/experiencias/lista-experiencias/lista-experiencias.component";
 
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ExperienciasService } from '../experiencias.service';
-import { Experiencia } from '../models/experiencia.model';
+import { ExperienciasService } from '../../../experiencias.service';
+import { Experiencia } from '../../../models/experiencia.model';
 
 @Component({
   selector: 'app-lista-experiencias',

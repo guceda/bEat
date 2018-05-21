@@ -96,7 +96,7 @@
 .imagen {
   height:500px;
 
-  background-image:url(../../assets/img/intro.jpg);
+  background-image:url(../../../assets/img/intro.jpg);
   
   background-position:center;
   background-size:cover;
