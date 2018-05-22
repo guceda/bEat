@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-detalle-experiencia',
@@ -10,6 +11,7 @@ export class DetalleExperienciaComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

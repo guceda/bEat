@@ -6,30 +6,30 @@ import { Experiencia } from '../../../models/experiencia.model';
   selector: 'app-lista-experiencias',
   templateUrl: './lista-experiencias.component.html',
   styleUrls: ['./lista-experiencias.component.css'],
-  providers: [ ExperienciasService ]
+  providers: [ExperienciasService]
 })
 export class ListaExperienciasComponent implements OnInit {
 
-  experiencias: Array<Experiencia>
-  @Input()ciudad:any
+  experiencias: any
+  @Input() ciudad: any
 
-  constructor(private experienciasService:ExperienciasService) { 
+  constructor(private experienciasService: ExperienciasService) {
     this.experiencias = []
-    
+
   }
 
   ngOnInit() {
-    this.experienciasService.getAllExperiencias().then((arrExperiencias)=>{
-      this.experiencias = arrExperiencias.json()
+    // this.experienciasService.getAllExperiencias().then((arrExperiencias) => {
+    //   this.experiencias = arrExperiencias.json()
+    //   console.log(this.experiencias);
+    // })
+    this.experienciasService.getExperienciasByLocalizacion(this.ciudad.toLowerCase()).then((arrExperiencias)=>{
+      this.experiencias = arrExperiencias
+      console.log(this.experiencias);
     })
-    console.log(this.ciudad);
-  this.experienciasService.getExperienciasbyCategoria('japonesa').then((res)=>{
-    console.log(res);
     
-  })
-  
     
-
   }
-
 }
+
+

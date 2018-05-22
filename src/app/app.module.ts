@@ -23,8 +23,8 @@ import { MainComponent } from './main/main.component';
 import { CabeceraComponent } from './detalle-experiencia/cabecera/cabecera.component';
 import { DescripcionExperienciaComponent } from './detalle-experiencia/descripcion-experiencia/descripcion-experiencia.component';
 import { ChefComponent } from './detalle-experiencia/chef/chef.component';
-import { MapaComponent } from './mapa/mapa.component';
-import { OtrasExperienciasComponent } from './otras-experiencias/otras-experiencias.component';
+import { MapaComponent } from './detalle-experiencia/mapa/mapa.component';
+import { OtrasExperienciasComponent } from './detalle-experiencia/otras-experiencias/otras-experiencias.component';
 
 
 @NgModule({

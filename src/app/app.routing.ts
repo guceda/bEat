@@ -10,7 +10,7 @@ import { MainComponent } from "./main/main.component";
 export const appRoutes:Routes = [
     // { path: '', redirectTo: 'home', pathMatch: 'full'  },
     { path:'', component: MainComponent },
-    { path:'main', component: MainComponent },
+    { path:'home', component: MainComponent },
     { path:'experiencia', component: DetalleExperienciaComponent },
     { path:'experiencia/:id', component: DetalleExperienciaComponent },
     { path: '**', redirectTo:'main', pathMatch: 'full' },

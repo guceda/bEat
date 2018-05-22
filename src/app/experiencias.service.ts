@@ -13,11 +13,13 @@ export class ExperienciasService {
     return this.http.get('https://neolandbeat.firebaseio.com/experiencias.json').toPromise()
   }
 
-  getExperienciasbyCategoria(pCat){
+  getExperienciasByLocalizacion(pLoc){
     return this.http.get('https://neolandbeat.firebaseio.com/experiencias.json')
-    .map( (res) => {
-      console.log('res');  
-      return res.json()
+    .map((exp)=>{
+      let arrTemp = exp.json().filter(exp => exp.ubicacion ===pLoc)
+      console.log(arrTemp);
+      return arrTemp
     }).toPromise()
   }
+
 }
