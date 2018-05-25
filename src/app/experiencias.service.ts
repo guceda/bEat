@@ -16,7 +16,25 @@ export class ExperienciasService {
   getExperienciasByLocalizacion(pLoc){
     return this.http.get('https://neolandbeat.firebaseio.com/experiencias.json')
     .map((exp)=>{
-      let arrTemp = exp.json().filter(exp => exp.ubicacion ===pLoc)
+      let arrTemp = exp.json().filter(exp => exp.ubicacion.ciudad ===pLoc)
+      //console.log(arrTemp);
+      return arrTemp
+    }).toPromise()
+  }
+
+  getExperienciaById(pId){
+    return this.http.get('https://neolandbeat.firebaseio.com/experiencias.json')
+    .map((exp)=>{
+      let arrTemp = exp.json().filter(exp => exp.id ===pId)
+      console.log(arrTemp);
+      return arrTemp
+    }).toPromise()
+  }
+
+  getExperienciasByTipo(pTipo){
+    return this.http.get('https://neolandbeat.firebaseio.com/experiencias.json')
+    .map((exp)=>{
+      let arrTemp = exp.json().filter(exp => exp.tipo ===pTipo)
       console.log(arrTemp);
       return arrTemp
     }).toPromise()

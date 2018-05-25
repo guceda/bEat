@@ -12,6 +12,7 @@ export class DetalleExperienciaComponent implements OnInit {
 
   ngOnInit() {
     
+    
   }
 
 }

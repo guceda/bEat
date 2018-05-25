@@ -8,8 +8,11 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class AppComponent {
   title = 'app';
+
   constructor(private router:Router){}
+
   ngOnInit(){
+    //hacer que las paginas suban arriba
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
           return;

@@ -10,8 +10,8 @@
                 <div [ngSwitch] = "user" class="derecha ">
                         <div *ngSwitchCase="'chef'">
                                 <ul class="nav navbar-nav mr-auto">
-                                        <li class="nav-item text-center " role="presentation"><a class="nav-link active" href="#">Nueva experiencia</a></li>
-                                        <li class="nav-item text-center" role="presentation"><a class="nav-link active" href="#">Mis experiencias</a></li>
+                                        <li class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Nueva experiencia</a></li>
+                                        <li class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Mis experiencias</a></li>
                                         <!-- <li class="dropdown text-center">
                                             <a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Ciudades</a>
                                             <div class="dropdown-menu" role="menu">
@@ -34,8 +34,8 @@
                         </div>
                         <div *ngSwitchCase="'invitado'">
                                 <ul class="nav navbar-nav mr-auto">
-                                        <li class="nav-item text-center" role="presentation"><a class="nav-link active" href="#">Conviértete en Chef</a></li>
-                                        <li class="nav-item text-center" role="presentation"><a class="nav-link active" href="#">Proximas Experiencias</a></li>
+                                        <li class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Conviértete en Chef</a></li>
+                                        <li class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Proximas Experiencias</a></li>
                                         <!-- <li class="dropdown text-center">
                                             <a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Ciudades</a>
                                             <div class="dropdown-menu" role="menu">
@@ -69,8 +69,8 @@
                                             </div>
                                         </li> -->
                                         
-                                        <li class="nav-item text-center" role="presentation"><a class="nav-link active" href="#">Regístrate</a></li>
-                                        <li class="nav-item text-center" role="presentation"><a class="nav-link active" href="#">Inicia Sesión</a></li>
+                                        <li (click)="mostrarModal('registro')" class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Regístrate</a></li>
+                                        <li (click)="mostrarModal('login')" class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Inicia Sesión</a></li>
                                     </ul>
                         </div>
                         

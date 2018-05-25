@@ -1,16 +1,43 @@
-   <div class="login-clean">
-        <form method="post">
-            <button class="close float-left"><span aria-hidden="true">×</span></button>
-            <h2 class="sr-only">Login Form</h2>
-            <!-- <div class="illustration"><img src="../../assets/img/logo_rosa.png" alt=""></div> -->
-            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Contraseña"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div>
-            <div class="form-group"><button  id="facebook" class="btn btn-primary btn-block" type="button">Inicia sesión con Facebook</button></div>
-            <div class="form-group"><button  id="registro" class="btn btn-primary btn-block" type="button">Regístrate</button></div>
-            <a href="#" class="forgot">¿Has olvidado tu contraseña?</a></form>
-    </div>
+<div [ngSwitch]="estadoLogin" class="login-clean">
 
+    <form *ngSwitchCase="'inicio'">
+        <button type="button" class="close" (click)="close()" class="close float-left">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h2 class="tit">Log In</h2>
+        <button (click)="handleClickTipoUsuario('invitado')" class="btn btn-primary btn-block inv">Entra como Invitado</button>
+        <button (click)="handleClickTipoUsuario('chef')" class="btn btn-primary btn-block">Entra como Chef</button>
+    </form>
 
+    <form *ngSwitchCase="'invitado'">
+        <button type="button" class="close" (click)="close()" class="close float-left">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h2 class="tit">Log In Invitado</h2>
+        <input class="form-control" type="email" name="email" placeholder="Email">
+        <input class="form-control" type="password" name="password" placeholder="Contraseña">
+        <button (click)="handleClickLoginInv()" class="btn btn-primary btn-block" type="submit">Log In</button>
+        <button id="facebook" class="btn btn-primary btn-block" type="button">Inicia sesión con Facebook</button>
+        <a href="#" class="forgot">¿Has olvidado tu contraseña?</a>
+    </form>
 
+    <form *ngSwitchCase="'chef'">
+        <button type="button" class="close" (click)="close()" class="close float-left">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h2 class="tit">Log In Chef</h2>
+        <input class="form-control" type="email" name="email" placeholder="Email">
+        <input class="form-control" type="password" name="password" placeholder="Contraseña">
+        <button class="btn btn-primary btn-block" type="submit">Log In</button>
+        <button id="facebook" class="btn btn-primary btn-block" type="button">Inicia sesión con Facebook</button>
+        <a href="#" class="forgot">¿Has olvidado tu contraseña?</a>
+    </form>
+    
+    <form *ngSwitchCase="'fin'">
+        <button type="button" class="close" (click)="close()" class="close float-left">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h1 class="tit">¡Bienvenido!</h1>
 
+    </form>
+</div>

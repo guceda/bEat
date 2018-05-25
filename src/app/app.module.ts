@@ -1,12 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AgmCoreModule } from '@agm/core';
+import { BootstrapModalModule } from 'ng2-bootstrap-modal'
+
 
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { MapaGeoComponent } from './main/mapa-geo/mapa-geo.component';
 import { FooterComponent } from './footer/footer.component';
 import { ExperienciasComponent } from './main/experiencias/experiencias.component';
 import { EquipoComponent } from './main/equipo/equipo.component';
+import { RegistroComponent } from './registro/registro.component'
 import { ComentariosComponent } from './main/comentarios/comentarios.component';
 import { IntroComponent } from './main/intro/intro.component';
 import { ListaExperienciasComponent } from './main/experiencias/lista-experiencias/lista-experiencias.component';
@@ -25,6 +30,10 @@ import { DescripcionExperienciaComponent } from './detalle-experiencia/descripci
 import { ChefComponent } from './detalle-experiencia/chef/chef.component';
 import { MapaComponent } from './detalle-experiencia/mapa/mapa.component';
 import { OtrasExperienciasComponent } from './detalle-experiencia/otras-experiencias/otras-experiencias.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { Login } from './login.guard';
+
+
 
 
 @NgModule({
@@ -48,12 +57,20 @@ import { OtrasExperienciasComponent } from './detalle-experiencia/otras-experien
     DescripcionExperienciaComponent,
     ChefComponent,
     MapaComponent,
-    OtrasExperienciasComponent
+    MapaGeoComponent,
+    OtrasExperienciasComponent,
+    RegistroComponent
+  
   ],
   imports: [
-    BrowserModule, HttpModule, RouterModule.forRoot(appRoutes),
+    BrowserModule, HttpModule, RouterModule.forRoot(appRoutes), AgmCoreModule.forRoot({ apiKey: 'AIzaSyCJljbW6TMtwO4Q75_thCUTCl4bNAvBl5Y'}), BootstrapModalModule.forRoot({container:document.body}),FormsModule, ReactiveFormsModule
+
   ],
-  providers: [],
+  entryComponents:[
+    LoginComponent,
+    RegistroComponent
+  ],
+  providers: [Login],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

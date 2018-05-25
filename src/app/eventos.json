@@ -1,23 +1,10 @@
 {
     "experiencias": [
         {
-            "titulo": "Pasta de boletus con Aceitunas",
-            "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
-            "imagen": "assets/img/bowl.jpg",
-            "ubicacion": "madrid",
-            "tipo": "italiana",
-            "precio": 7,
-            "chef": "Luis",
-            "fecha": "sábados",
-            "ingredientes": "pasta, boletus, aceitunas, queso, tomate, pimientos, cebolla",
-            "invitados": 3,
-            "id":0
-        },
-        {
             "titulo": "Gyozas de Pollo y Bambú",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
-            "imagen": "assets/img/chinese.jpg",
-            "ubicacion": "barcelona",
+            "imagenes": ["assets/img/chinese.jpg"],
+            "ubicacion": {"latitud":40.859699, "longitud":-3.6967702,"ciudad":"madrid"},
             "tipo": "japonesa",
             "precio": 13,
             "chef": "Adrián",
@@ -29,8 +16,8 @@
         {
             "titulo": "Judias pintas con callos",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
-            "imagen": "assets/img/dumplins.jpg",
-            "ubicacion": "barcelona",
+            "imagenes": ["assets/img/dumplins.jpg"],
+            "ubicacion": {"latitud":41.3850391, "longitud":2.17334359,"ciudad":"barcelona"},
             "tipo": "española",
             "precio": 10,
             "chef": "Mario",
@@ -42,8 +29,8 @@
         {
             "titulo": "Sushi de salmón y pepino",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
-            "imagen": "assets/img/chinese.jpg",
-            "ubicacion": "barcelona",
+            "imagenes": ["assets/img/chinese.jpg"],
+            "ubicacion": {"latitud":41.1850391, "longitud":2.17334359,"ciudad":"barcelona"},
             "tipo": "japonesa",
             "precio": 10,
             "chef": "Tomás",
@@ -55,8 +42,8 @@
         {
             "titulo": "Cangrejos de río en salsa",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
-            "imagen": "assets/img/dumplins.jpg",
-            "ubicacion": "madrid",
+            "imagenes": ["assets/img/dumplins.jpg"],
+            "ubicacion": {"latitud":40.459699, "longitud":-3.2967702,"ciudad":"madrid"},
             "tipo": "china",
             "precio": 10,
             "chef": "Adriana",
@@ -68,8 +55,8 @@
         {
             "titulo": "Tepanyaki de pollo a la pimienta",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
-            "imagen": "assets/img/bowl.jpg",
-            "ubicacion": "madrid",
+            "imagenes": ["assets/img/bowl.jpg"],
+            "ubicacion": {"latitud":41.459699, "longitud":-3.6967702,"ciudad":"madrid"},
             "tipo": "japonesa",
             "precio": 10,
             "chef": "María",
@@ -81,8 +68,8 @@
         {
             "titulo": "Paella de conejo y garrofón",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
-            "imagen": "assets/img/chinese.jpg",
-            "ubicacion": "madrid",
+            "imagenes": ["assets/img/chinese.jpg"],
+            "ubicacion": {"latitud":41.3850391, "longitud":2.87334359,"ciudad":"barcelona"},
             "tipo": "española",
             "precio": 10,
             "chef": "Tomás",
@@ -94,8 +81,8 @@
         {
             "titulo": "Lacón con grelos ",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
-            "imagen": "assets/img/dumplins.jpg",
-            "ubicacion": "madrid",
+            "imagenes": ["assets/img/dumplins.jpg"],
+            "ubicacion": {"latitud":41.459699, "longitud":-3.1967702,"ciudad":"madrid"},
             "tipo": "española",
             "precio": 10,
             "chef": "Adriana",
@@ -107,8 +94,8 @@
         {
             "titulo": "Pollo al curri masala",
             "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
-            "imagen": "assets/img/bowl.jpg",
-            "ubicacion": "madrid",
+            "imagenes": ["assets/img/bowl.jpg"],
+            "ubicacion": {"latitud":40.451699, "longitud":-3.6967702,"ciudad":"madrid"},
             "tipo": "española",
             "precio": 10,
             "chef": "María",
@@ -116,13 +103,34 @@
             "ingredientes": "pollo, curri, calabacín",
             "invitados": 6,
             "id":8
+        },        {
+            "titulo": "Pasta de boletus con Aceitunas",
+            "descripcion": "Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.",
+            "imagenes": ["assets/img/bowl.jpg", "assets/img/chinese.jpg"],
+            "ubicacion": {"latitud":40.459699, "longitud":-3.6967702,"ciudad":"madrid"},
+            "tipo": "italiana",
+            "precio": 7,
+            "chef": "Luis",
+            "fecha": "sábados",
+            "ingredientes": "pasta, boletus, aceitunas, queso, tomate, pimientos, cebolla",
+            "invitados": 3,
+            "id":9
+            
         }
     ],
-    "invitados": [
-        {}
-    ],
-    "chefs": [
-        {}
+    "usuarios": [
+        {
+            "id":1,
+            "username": "gonzalo",
+            "password": "12345",
+            "tipo": "chef"
+        },
+        {
+            "id":2,
+            "username": "luis",
+            "password": "12345",
+            "tipo": "invitado"
+        }
     ],
     "equipo": [
         {

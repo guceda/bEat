@@ -1,0 +1,46 @@
+<div [ngSwitch]="estadoRegistro" class="login-clean">
+  <!-- seleccion del tipo de registro -->
+  <form *ngSwitchCase="'inicio'">
+    <button type="button" class="close" (click)="close()" class="close float-left">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h2 class="tit">Registro</h2>
+    <button (click)="handleClickInv()" class="btn btn-primary btn-block inv">Regístrate como Invitado</button>
+    <button (click)="handleClickChef()" class="btn btn-primary btn-block">Regístrate como Chef</button>
+    <button id="facebook" class="btn btn-primary btn-block" type="button">Inicia sesión con Facebook</button>
+  </form>
+  <!-- formulario de registro para invitados -->
+  <form novalidate [formGroup]="formInvitado" (ngSubmit)="handleSubmitInvitado(formInvitado.value)" *ngSwitchCase="'invitado'">
+    <button type="button" class="close" (click)="close()" class="close float-left">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h2 class="tit">Registro Invitado</h2>
+    <input class="form-control" type="text" name="nombre" placeholder="Nombre" formControlName="nombre">
+    <input class="form-control" type="text" name="apellidos" placeholder="Apellidos" formControlName="apellidos">
+    <input class="form-control" type="number" name="edad" placeholder="Edad" formControlName="edad">
+    <input class="form-control" type="email" name="email" placeholder="Email" formControlName="email">
+    <input class="form-control" type="password" name="password" placeholder="Contraseña" formControlName="password">
+    <button class="btn btn-primary btn-block" type="submit">Regístrate</button>
+  </form>
+  <!-- formulario de registro para chef -->
+  <form [formGroup]="formChef" (ngSubmit)="handleSubmitChef(formChef.value)" *ngSwitchCase="'chef'">
+    <button type="button" class="close" (click)="close()" class="close float-left">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h2 class="tit">Registro Chef</h2>
+    <input class="form-control" type="text" name="nombre" placeholder="Nombre" formControlName="nombre">
+    <input class="form-control" type="text" name="apellidos" placeholder="Apellidos" formControlName="apellidos">
+    <input class="form-control" type="number" name="edad" placeholder="Edad" formControlName="edad">
+    <input class="form-control" type="email" name="email" placeholder="Email" formControlName="email">
+    <input class="form-control" type="password" name="password" placeholder="Contraseña" formControlName="password">
+    <button class="btn btn-primary btn-block" type="submit">Regístrate</button>
+  </form>
+  <form *ngSwitchCase="'fin'">
+    <button type="button" class="close" (click)="close()" class="close float-left">
+      <!-- <span aria-hidden="true">&times;</span> -->
+    </button>
+    <h1 class="tit">¡Bienvenido!</h1>
+    
+  </form>
+
+</div>

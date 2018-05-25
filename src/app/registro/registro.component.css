@@ -39,11 +39,11 @@
   
   .login-clean form .btn-primary {
     background:#ec576b;
-    border: 2px solid #ec576b;
+    border: 2px solid #ec576b!important;
     border-radius:4px;
     padding:11px;
     box-shadow:none;
-    margin-top:26px;
+    margin-top:15px;
     text-shadow:none;
     border-radius: 30px;
     outline:none !important;
@@ -51,7 +51,6 @@
   
   .login-clean form .btn-primary:hover, .login-clean form .btn-primary:active {
     background:#eb3b60;
-    border: 2px solid #ec576b;
   }
   
   .login-clean form .btn-primary:active {
@@ -75,9 +74,7 @@
 
   #facebook{
       background-color:#3b5998;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      border: 2px solid #3b5998 !important;
+      margin-top: -10px;
   }
 
   #registro{
@@ -91,9 +88,11 @@
   }
 
 
+
   .tit{
     text-align: center;
   }
+
 
   input{
     margin: 20px auto;
@@ -108,6 +107,15 @@
     opacity: 0.7;
   }
 
-  .facebook{
-    margin-top: 60px;
-  }
+
+
+  #facebook{
+    background-color:#3b5998;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border: 2px solid #3b5998 !important;
+}
+
+#facebook:hover{
+  opacity: 0.7;
+}
