@@ -16,16 +16,19 @@ export class HeaderComponent implements OnInit {
   user: string
 
   constructor(private dialogService: DialogService, private modalService: ModalService) {
-   this.user = 'chef'
+   this.user = ''
   }
 
   ngOnInit() {
-    if(localStorage.getItem('invitados') || localStorage.getItem('chefs')){
-      this.user = "chef";
+    if(localStorage.getItem('invitado')){
+      this.user = "invitado";
       
+    }else if(localStorage.getItem('chef')){
+      this.user = 'chef'
     }else{
       this.user = 'none'
     }
+  
   }
 
   handleClickSalir() {

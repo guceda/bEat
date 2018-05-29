@@ -20,7 +20,7 @@
     font-size: 2.5em;
     padding-top:60px;
     color:inherit;
-    width: 700px;
+    /* width: 700px; */
   }
   
   @media (max-width:767px) {

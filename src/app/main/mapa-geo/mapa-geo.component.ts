@@ -32,7 +32,7 @@ export class MapaGeoComponent implements OnInit {
     let self = this
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function (position) {
-        console.log(`LAT: ${position.coords.latitude} LGN: ${position.coords.longitude}`)
+        //console.log(`LAT: ${position.coords.latitude} LGN: ${position.coords.longitude}`)
         self.latitud = position.coords.latitude
         self.longitud = position.coords.longitude
         self.zoom = 15

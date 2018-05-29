@@ -19,32 +19,28 @@ export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> im
   message: string
   estadoRegistro: string
   formInvitado: FormGroup
-  formChef:FormGroup
-  invitados: Array<object>
-  chefs: Array<object>
+  formChef: FormGroup
   constructor(dialogService: DialogService) {
     super(dialogService);
     this.estadoRegistro = 'inicio'
-    this.invitados = []
-    this.chefs = []
   }
 
   ngOnInit() {
     //generamos formulario angular
     this.formInvitado = new FormGroup({
-      nombre: new FormControl(''),
-      apellidos: new FormControl('', ),
-      edad: new FormControl('', Validators.min(18)),
-      email: new FormControl(''),
-      password: new FormControl('')
+      nombre: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      apellidos: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      edad: new FormControl('', [Validators.required, this.validateEdad]),
+      email: new FormControl('', [Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/), Validators.required]),
+      password: new FormControl('', [Validators.pattern(/^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{8,})/), Validators.required])
     })
 
     this.formChef = new FormGroup({
-      nombre: new FormControl(''),
-      apellidos: new FormControl('', ),
-      edad: new FormControl(''),
-      email: new FormControl(''),
-      password: new FormControl('')
+      nombre: new FormControl('', Validators.required),
+      apellidos: new FormControl('', Validators.required),
+      edad: new FormControl('', [Validators.required, this.validateEdad]),
+      email: new FormControl('', [Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/), Validators.required]),
+      password: new FormControl('', [Validators.pattern(/^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{8,})/), Validators.required])
     })
   }
 
@@ -58,37 +54,46 @@ export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> im
   handleClickChef() {
     //arrancamos el modal de registro para chef
     this.estadoRegistro = 'chef'
-    console.log(this.estadoRegistro);
   }
 
   handleClickInv() {
     //arrancamos el modal de registro para Invitado
     this.estadoRegistro = 'invitado'
-    console.log(this.estadoRegistro);
+
   }
-  
+
   handleSubmitInvitado(pInvitado) {
     //alamacenamos los datos del formulario de invitados
-    console.log(this.formInvitado.value);
-    this.invitados.push(this.formInvitado.value)
     this.estadoRegistro = 'fin'
+    localStorage.setItem('invitado', JSON.stringify(pInvitado))
     //refescamos la pagina
-    setTimeout(()=>{
+    setTimeout(() => {
       window.location.href = 'home';
-    },1000)
-    localStorage.setItem('invitados', JSON.stringify(this.invitados))
+    }, 1000)
   }
 
   handleSubmitChef(pChef) {
     //alamacenamos los datos del formulario de invitados
-    console.log(this.formChef.value);
-    this.chefs.push(this.formChef.value)
+    localStorage.setItem('chef', JSON.stringify(pChef))
     this.estadoRegistro = 'fin'
-        //refescamos la pagina
-        setTimeout(()=>{
-          window.location.href = 'home';
-        },1000)
-    localStorage.setItem('chefs', JSON.stringify(this.chefs))
+    //refescamos la pagina
+    setTimeout(() => {
+      window.location.href = 'home';
+    }, 1000)
+  }
+  validateEdad(control) {
+    let minEdad = 14
+    let maxEdad = 100
+    let edadInt = parseInt(control.value)
+    if (edadInt >= minEdad && edadInt <= maxEdad) {
+      return null
+    } else {
+      return {
+        edadMinima: minEdad,
+        edadMaxima: maxEdad,
+        message: `El campo edad debe estar entre ${minEdad} y ${maxEdad}`
+      }
+    }
   }
 }
 
