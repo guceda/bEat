@@ -10,7 +10,7 @@ export class ExperienciasService {
   constructor(private http: Http) { }
 
   getAllExperiencias() {
-    return this.http.get('https://neolandbeat.firebaseio.com/experiencias.json').toPromise()
+    return this.http.get('http://localhost:3000/api/experiencias/index').toPromise()
   }
 
   getExperienciasByLocalizacion(pLoc){
