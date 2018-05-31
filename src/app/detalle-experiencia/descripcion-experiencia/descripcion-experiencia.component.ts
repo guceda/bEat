@@ -11,23 +11,28 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DescripcionExperienciaComponent implements OnInit {
 
-  experiencia:Experiencia
+  res: any;
+  experience:Experiencia
   idExperiencia:number
+  imagenes:Array<any>
 
   constructor(private experienciasService:ExperienciasService, private activatedRoute:ActivatedRoute) {
     this.activatedRoute.params.subscribe(((params)=>{
-      this.idExperiencia = Number(params.id)
-      console.log(this.idExperiencia);
-      
+      this.idExperiencia = Number(params.id)  
+      this.imagenes = []  
     }))
    }
 
   ngOnInit() {
     this.experienciasService.getExperienciaById(this.idExperiencia).then((res)=>{
-     this.experiencia = res[0]
-      console.log(this.experiencia.tipo);
-
-      
+     this.res = res.json();
+     this.experience = this.res.experiencia
+     this.imagenes = this.res.imagenes
+    console.log(this.experience);
+    console.log(this.imagenes);
+    
+    
+        
     })
   }
 

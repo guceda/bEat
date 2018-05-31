@@ -1,6 +1,8 @@
 import { Chef } from "./chef.model";
 
 export class Experiencia {
+  imagenes: any[];
+  experiencia: Experiencia;
     titulo:string
     descripcion:string
     imagen:string

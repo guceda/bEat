@@ -18,17 +18,12 @@ export class ChefComponent implements OnInit {
   constructor(private experienciasService:ExperienciasService, private activatedRoute:ActivatedRoute) {
     this.activatedRoute.params.subscribe(((params)=>{
       this.idExperiencia = Number(params.id)
-      console.log(this.idExperiencia);
-      
     }))
    }
 
   ngOnInit() {
     this.experienciasService.getExperienciaById(this.idExperiencia).then((res)=>{
-     this.experiencia = res[0]
-      console.log(this.experiencia.tipo);
-
-      
+     this.experiencia = res[0]     
     })
   }
 

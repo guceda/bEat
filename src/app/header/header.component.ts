@@ -28,9 +28,7 @@ export class HeaderComponent implements OnInit {
     }else{
       this.user = 'none'
     }
-  
   }
-
   handleClickSalir() {
     this.user = "none"
   }
@@ -39,5 +37,8 @@ export class HeaderComponent implements OnInit {
     this.modalService.showConfirm(pComponente)
   }
 
+  handleOnClickHome(){
+    window.location.href = "home"
+  }
 
 }

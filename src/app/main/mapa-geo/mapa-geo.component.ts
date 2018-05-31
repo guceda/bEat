@@ -15,6 +15,7 @@ export class MapaGeoComponent implements OnInit {
   longitud: number
   zoom: number = 12;
   idExperiencia: number
+  ubicaciones:Array<any>
 
 
 
@@ -41,6 +42,10 @@ export class MapaGeoComponent implements OnInit {
     } else {
       console.log('tu navegador no te puede localizar, bitch')
     }
+//recuperamos todas las ubicaciones de la base de datos para mostrarlas en el mapa
+    this.experienciasService.getAllUbicaciones().then((res)=>{
+      this.ubicaciones =  res.json() 
+    })
   }
   handleMouseOut() {
     this.habilitarMap = 'none'

@@ -5,8 +5,7 @@
 <div class="container">
   <agm-map (mouseout)="handleMouseOut()" (click)='handleClick()' [latitude]="latitud" [longitude]="longitud" [zoom]="zoom" [gestureHandling]="habilitarMap">
     <agm-marker class="casa" [latitude]="latitud" [longitude]="longitud"></agm-marker>
-
-    <!-- <agm-marker [latitude]="latitud" [longitude]="longitud"></agm-marker> -->
+    <agm-marker *ngFor="let ubicacion of ubicaciones" [latitude]="ubicacion.latitude" [longitude]="ubicacion.longitude"></agm-marker> -->
 
   </agm-map>
 </div>

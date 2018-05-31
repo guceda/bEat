@@ -1,13 +1,13 @@
-<p class="tipo">cocina {{experiencia?.tipo}} </p>
-<p id="title">{{experiencia?.titulo}}</p>
-<p>{{experiencia?.descripcion}}</p>
+<p class="tipo">cocina {{experience?.food_type}} </p>
+<p id="title">{{experience?.title}}</p>
+<p>{{experience?.description}}</p>
 <p class="ingredientes">Ingredientes:
     <span>&nbsp;{{experiencia?.ingredientes}}</span>
 </p>
 <div class="carousel slide" data-ride="carousel" id="carousel-1">
     <div class="carousel-inner" role="listbox" style="height:300px;">
-        <div *ngFor="let imagen of experiencia?.imagenes; let first=first" class="carousel-item" [ngClass]="{active:first}" style="height:100%;">
-            <img class="img-fluid w-100 d-block d-none" [src]="imagen" alt="Slide Image" style="background-size:cover;">
+        <div *ngFor="let imagen of imagenes; let first=first" class="carousel-item" [ngClass]="{active:first}" style="height:100%;">
+            <img class="img-fluid w-100 d-block d-none" [src]="imagen.imagen" alt="Slide Image" style="background-size:cover;">
         </div>
 
     </div>
@@ -22,6 +22,6 @@
         </a>
     </div>
     <ol class="carousel-indicators">
-        <li *ngFor="let imagen of experiencia?.imagenes; let i=index" data-target="#carousel-1" [attr.data-slide-to]="i"></li>
+        <li *ngFor="let imagen of imagenes; let i=index" data-target="#carousel-1" [attr.data-slide-to]="i"></li>
     </ol>
 </div>

@@ -15,9 +15,7 @@ export class OtrasExperienciasComponent implements OnInit {
 
   ngOnInit() {
     this.experienciasService.getExperienciasByTipo('japonesa').then((arrExperiencias)=>{
-      this.experiencias = arrExperiencias
-      console.log(this.experiencias);
-      
+      this.experiencias = arrExperiencias     
     })
 
   }
