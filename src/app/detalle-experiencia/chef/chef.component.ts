@@ -22,8 +22,8 @@ export class ChefComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.experienciasService.getExperienciaById(this.idExperiencia).then((res)=>{
-     this.experiencia = res[0]     
+    this.experienciasService.getExperienciaById(this.idExperiencia).then((res)=>{     
+     this.experiencia = res.json()      
     })
   }
 

@@ -97,3 +97,35 @@ h3 span{
 .num{
   margin-left: 10px;
 }
+
+
+@media(min-width:576px){
+  .img{
+    height: 160px;
+    width: 240px;
+  }
+}
+
+
+@media(min-width:768px){
+  .img{
+    height: 140px;
+    width: 210px;
+  }
+}
+
+
+@media(min-width:992px){
+  .img{
+    height: 193px;
+    width: 290px;
+  }
+}
+
+@media(min-width:1200px){
+  .img{
+    height: 233px;
+    width: 350px;
+  }
+}
+

@@ -1,9 +1,9 @@
 <div class="item">
-  <a routerLink = '/experiencia/{{experiencia.id_experiencia}}'><img class="img-fluid img" src="{{experiencia.main_image}}"></a>
+  <a  class="imagen" (click) = "handleClick()" routerLink = '/experiencia/{{experiencia.id_experiencia}}'><img class="img-fluid img" src="{{experiencia.main_image}}"></a>
     <h3 class="cocina">Cocina {{experiencia.food_type}}  <span class="num">  {{experiencia.number_invitados}} <i class="fa fa-user"></i></span></h3>
     <h3 class="name nombre">{{experiencia.title}}</h3>
     <div class="name chef">
-          <a  href="#" class="chef"><i class="fa fa-cutlery"></i> <a>{{experiencia.chef}}</a></a>
+          <a  href="#" class="chef"><i class="fa fa-cutlery"></i> <a>{{experiencia.name}}</a></a>
   </div>
       <h3 class="datos">{{experiencia.price}}€ por Invitado · <span>{{experiencia.availability}}</span></h3>
 

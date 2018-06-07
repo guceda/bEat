@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ExperienciasService } from '../../experiencias.service';
 import { Experiencia } from '../../models/experiencia.model';
 import { ActivatedRoute } from '@angular/router';
@@ -11,28 +11,28 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DescripcionExperienciaComponent implements OnInit {
 
-  res: any;
-  experience:Experiencia
-  idExperiencia:number
-  imagenes:Array<any>
+  experience: Experiencia
+  idExperiencia: number
+  @Output() onSendType: EventEmitter<object>
 
-  constructor(private experienciasService:ExperienciasService, private activatedRoute:ActivatedRoute) {
-    this.activatedRoute.params.subscribe(((params)=>{
-      this.idExperiencia = Number(params.id)  
-      this.imagenes = []  
+  constructor(private experienciasService: ExperienciasService, private activatedRoute: ActivatedRoute) {
+
+    this.onSendType = new EventEmitter()
+
+    this.activatedRoute.params.subscribe(((params) => {
+      this.idExperiencia = Number(params.id)
+
     }))
-   }
+  }
 
   ngOnInit() {
-    this.experienciasService.getExperienciaById(this.idExperiencia).then((res)=>{
-     this.res = res.json();
-     this.experience = this.res.experiencia
-     this.imagenes = this.res.imagenes
-    console.log(this.experience);
-    console.log(this.imagenes);
-    
-    
-        
+    this.experienciasService.getExperienciaById(this.idExperiencia).then((res) => {
+      this.experience = res.json()
+
+      this.onSendType.emit({
+        food_type:this.experience.food_type,
+        id_experiencia: this.experience.id_experiencia
+      })
     })
   }
 

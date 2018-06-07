@@ -23,4 +23,8 @@ export class MainComponent implements OnInit {
     }
   }
 
+  handleClick(){
+    this.mostrarError = false
+  }
+
 }

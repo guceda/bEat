@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ExperienciasService } from '../../experiencias.service';
 
 @Component({
@@ -10,14 +10,18 @@ import { ExperienciasService } from '../../experiencias.service';
 export class OtrasExperienciasComponent implements OnInit {
 
   experiencias: any
+  @Input()datosExp:any
 
-  constructor(private experienciasService:ExperienciasService) { }
+  constructor(private experienciasService:ExperienciasService) {
+    
+   }
 
   ngOnInit() {
     this.experienciasService.getExperienciasByTipo('japonesa').then((arrExperiencias)=>{
       this.experiencias = arrExperiencias     
-    })
-
+    })  
+    console.log(this.datosExp);
+     
   }
 
 }

@@ -27,8 +27,8 @@ export class MapaComponent implements OnInit {
   ngOnInit() {
     this.idWatch = this.experienciasService.getExperienciaById(this.idExperiencia).then((res) => {
       let exp = res.json()
-      this.latitud = exp.experiencia.latitude
-      this.longitud = exp.experiencia.longitude         
+      this.latitud = exp.latitude
+      this.longitud = exp.longitude         
     })
    }
 

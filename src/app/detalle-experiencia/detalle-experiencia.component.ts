@@ -8,11 +8,20 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class DetalleExperienciaComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() {
-    
-    
+  experiencia:any
+
+  constructor() {  
+    this.experiencia = {} 
+   }
+
+  ngOnInit() {}
+
+  //recuperamos el tipo y id experiencia mediante output
+  handleOnSendType($event){
+    this.experiencia = $event  
+    console.log(this.experiencia);   
   }
-
+  
+  
 }

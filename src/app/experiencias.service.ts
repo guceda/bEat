@@ -29,4 +29,6 @@ export class ExperienciasService {
     return this.http.get('http://localhost:3000/api/experiencias/ubicaciones').toPromise()
   }
 
+  
+
 }

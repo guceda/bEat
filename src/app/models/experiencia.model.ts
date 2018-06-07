@@ -3,28 +3,28 @@ import { Chef } from "./chef.model";
 export class Experiencia {
   imagenes: any[];
   experiencia: Experiencia;
-    titulo:string
-    descripcion:string
-    imagen:string
-    ubicacion:string
-    tipo: string
-    precio: number
-    invitados: number
-    chef: Chef
-    fecha: string
-    ingredientes: string
-    id:number
-    constructor(titulo, descripcion, imagen, ubicacion, tipo, precio, chef, fecha, ingredientes, invitados, id){
-        this.titulo = titulo
-        this.descripcion = descripcion
-        this.imagen = imagen
-        this.ubicacion = ubicacion
-        this.tipo = tipo
-        this.precio = precio
-        this.chef = chef
-        this.fecha = fecha
-        this.ingredientes = ingredientes
-        this.invitados = invitados
-        this.id = id
+    title:string
+    description:string
+    main_image:string
+    city:string
+    food_type: string
+    price: number
+    number_invitados: number
+    latitude: number
+    longitude: number
+    availability: string
+    id_experiencia:number
+    constructor(title, description, city, main_image, food_type, price, latitude, longitude, availability, number_invitados, id_experiencia){
+        this.title = title
+        this.description = description
+        this.main_image = main_image
+        this.city = city
+        this.food_type = food_type
+        this.price = price
+        this.latitude = latitude
+        this.longitude = longitude
+        this.availability = availability
+        this.number_invitados = number_invitados
+        this.id_experiencia = id_experiencia
     }
 }

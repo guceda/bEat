@@ -36,6 +36,7 @@ import { Login } from './login.guard';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,14 +60,14 @@ import { Login } from './login.guard';
     MapaComponent,
     MapaGeoComponent,
     OtrasExperienciasComponent,
-    RegistroComponent
-  
-  ],
-  imports: [
-    BrowserModule, HttpModule, RouterModule.forRoot(appRoutes), AgmCoreModule.forRoot({ apiKey: 'AIzaSyCJljbW6TMtwO4Q75_thCUTCl4bNAvBl5Y'}), BootstrapModalModule.forRoot({container:document.body}),FormsModule, ReactiveFormsModule
+    RegistroComponent,
 
   ],
-  entryComponents:[
+  imports: [
+    BrowserModule, HttpModule, RouterModule.forRoot(appRoutes), AgmCoreModule.forRoot({ apiKey: 'AIzaSyCJljbW6TMtwO4Q75_thCUTCl4bNAvBl5Y' }), BootstrapModalModule.forRoot({ container: document.body }), FormsModule, ReactiveFormsModule
+
+  ],
+  entryComponents: [
     LoginComponent,
     RegistroComponent
   ],
