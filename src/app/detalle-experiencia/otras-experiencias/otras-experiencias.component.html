@@ -1,41 +1,34 @@
 <div class="article-list">
-  <div class="container">
-      <div class="intro">
-          <h2 class="text-center">Y más experiencias italianas</h2>
-      </div>
-      <div class="row articles">
-          <div class="col-sm-6 col-md-4 item"><a href="#"><img class="img-fluid" src="../../../assets/img/dumplins.jpg"></a>
-              <h3 class="name">Article Title</h3>
-              <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a href="#" class="action"><i class="fa fa-arrow-circle-right"></i></a></div>
-          <div
-              class="col-sm-6 col-md-4 item"><a href="#"><img class="img-fluid" src="../../../assets/img/chinese.jpg"></a>
-              <h3 class="name">Article Title</h3>
-              <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a href="#" class="action"><i class="fa fa-arrow-circle-right"></i></a></div>
-      <div
-          class="col-sm-6 col-md-4 item"><a href="#"><img class="img-fluid" src="../../../assets/img/bowl.jpg"></a>
-          <h3 class="name">Article Title</h3>
-          <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a href="#" class="action"><i class="fa fa-arrow-circle-right"></i></a></div>
-</div>
-</div>
-</div>
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center ciudad">Más experiencias {{experience?.food_type}}s</h2>
+        </div>
+        <div class="row articles">
+            <ng-container *ngFor="let experiencia of experiencias">
+                <div class="col-sm-6 col-md-4" *ngIf="experiencia.id_experiencia !== experience.id_experiencia">
+                    <div class="col-sm-6 col-md-4" class="item">
+                        <a class="imagen" (click)="handleClick()" routerLink='/experiencia/{{experiencia?.id_experiencia}}'>
+                            <img class="img-fluid img" src="{{experiencia?.main_image}}">
+                        </a>
+                        <h3 class="cocina">Cocina {{experiencia?.food_type}}
+                            <span class="num"> {{experiencia?.number_invitados}}
+                                <i class="fa fa-user"></i>
+                            </span>
+                        </h3>
+                        <h3 class="name nombre">{{experiencia?.title}}</h3>
+                        <div class="name chef">
+                            <a href="#" class="chef">
+                                <i class="fa fa-cutlery"></i>
+                                <a>{{experiencia?.name}}</a>
+                            </a>
+                        </div>
+                        <h3 class="datos">{{experiencia?.price}}€ por Invitado ·
+                            <span>{{experiencia?.availability}}</span>
+                        </h3>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
 
-
-
-<!-- Hay que implementarlo -->
-
-<!-- <div class="intro">
-    <h2 class="text-center ciudad">Experiencias en {{ciudad}}</h2>
-</div>
-<div class="row articles">
-<div class="item" *ngFor="let experiencia of experiencias" class="col-sm-6 col-md-4">
-    <a routerLink = '/experiencia/{{experiencia.id}}'><img class="img-fluid img" src="{{experiencia.imagenes[0]}}"></a>
-      <h3 class="cocina">Cocina {{experiencia.tipo}}  <span class="num">  {{experiencia.invitados}} <i class="fa fa-user"></i></span></h3>
-      <h3 class="name nombre">{{experiencia.titulo}}</h3>
-      <div class="name chef">
-            <a  href="#" class="chef"><i class="fa fa-cutlery"></i> <a>{{experiencia.chef}}</a></a>
     </div>
-        <h3 class="datos">{{experiencia.precio}}€ por Invitado · <span>{{experiencia.fecha}}</span></h3>
-  
-  </div>
-
-  </div> -->
+</div>

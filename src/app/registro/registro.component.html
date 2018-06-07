@@ -10,22 +10,22 @@
     <button id="facebook" class="btn btn-primary btn-block" type="button">Inicia sesión con Facebook</button>
   </form>
   <!-- formulario de registro para invitados -->
-  <form novalidate [formGroup]="formInvitado" (ngSubmit)="handleSubmitInvitado(formInvitado.value)" *ngSwitchCase="'invitado'">
+  <form   novalidate  [formGroup]="formInvitado" (ngSubmit)="handleSubmitInvitado(formInvitado.value)" *ngSwitchCase="'invitado'">
     <button type="button" class="close" (click)="close()" class="close float-left">
       <span aria-hidden="true">&times;</span>
     </button>
     <h2 class="tit">Registro Invitado</h2>
-    <input class="form-control" type="text" name="nombre" placeholder="Nombre" formControlName="nombre">
-    <div *ngIf="formInvitado.controls.nombre.errors?.required && formInvitado.controls.nombre.touched && formInvitado.controls.nombre.dirty ">Campo obligatorio</div>
-    <div *ngIf="formInvitado.controls.nombre.errors?.minlength && formInvitado.controls.nombre.touched && formInvitado.controls.nombre.dirty ">Debe contener mínimo 3 caracteres</div>
-    <input class="form-control" type="text" name="apellidos" placeholder="Apellidos" formControlName="apellidos">
-    <div *ngIf="formInvitado.controls.apellidos.errors?.required && formInvitado.controls.apellidos.touched && formInvitado.controls.apellidos.dirty ">Campo obligatorio</div>
-    <div *ngIf="formInvitado.controls.apellidos.errors?.minlength && formInvitado.controls.apellidos.touched && formInvitado.controls.apellidos.dirty ">Debe contener mínimo 3 caracteres</div>
-    <input class="form-control" type="number" name="edad" placeholder="Edad" formControlName="edad">
-    <div *ngIf="formInvitado.controls.edad.errors && formInvitado.controls.edad.touched && formInvitado.controls.edad.dirty">La edad debe estar entre {{formInvitado.controls.edad.errors?.edadMinima}} y {{formInvitado.controls.edad.errors?.edadMaxima}}</div>
-    <div *ngIf="formInvitado.controls.edad.errors?.required && formInvitado.controls.edad.touched && formInvitado.controls.edad.dirty ">Campo obligatorio</div>
+    <input class="form-control" type="text" name="nombre" placeholder="Nombre" formControlName="name">
+    <div *ngIf="formInvitado.controls.name.errors?.required && formInvitado.controls.name.touched && formInvitado.controls.name.dirty ">Campo obligatorio</div>
+    <div *ngIf="formInvitado.controls.name.errors?.minlength && formInvitado.controls.name.touched && formInvitado.controls.name.dirty ">Debe contener mínimo 3 caracteres</div>
+    <input class="form-control" type="text" name="apellidos" placeholder="Apellidos" formControlName="surname">
+    <div *ngIf="formInvitado.controls.surname.errors?.required && formInvitado.controls.surname.touched && formInvitado.controls.surname.dirty ">Campo obligatorio</div>
+    <div *ngIf="formInvitado.controls.surname.errors?.minlength && formInvitado.controls.surname.touched && formInvitado.controls.surname.dirty ">Debe contener mínimo 3 caracteres</div>
+    <input class="form-control" type="number" name="edad" placeholder="Edad" formControlName="age">
+    <div *ngIf="formInvitado.controls.age.errors && formInvitado.controls.age.touched && formInvitado.controls.age.dirty">La edad debe estar entre {{formInvitado.controls.edad.errors?.edadMinima}} y {{formInvitado.controls.edad.errors?.edadMaxima}}</div>
+    <div *ngIf="formInvitado.controls.age.errors?.required && formInvitado.controls.age.touched && formInvitado.controls.age.dirty ">Campo obligatorio</div>
     <input class="form-control" type="email" name="email" placeholder="Email" formControlName="email">
-    <div *ngIf="formInvitado.controls.email.errors?.pattern && form.controls.email.touched">Introduce un email válido</div>
+    <div *ngIf="formInvitado.controls.email.errors?.pattern && formInvitado.controls.email.touched">Introduce un email válido</div>
     <div *ngIf="formInvitado.controls.email.errors?.required && formInvitado.controls.email.touched && formInvitado.controls.email.dirty">Campo obligatorio</div>
     <input class="form-control" type="password" name="password" placeholder="Contraseña" formControlName="password">
     <div *ngIf="formInvitado.controls.password.errors?.required && formInvitado.controls.password.touched && formInvitado.controls.password.dirty">Campo obligatorio</div>
@@ -38,15 +38,15 @@
       <span aria-hidden="true">&times;</span>
     </button>
     <h2 class="tit">Registro Chef</h2>
-    <input class="form-control" type="text" name="nombre" placeholder="Nombre" formControlName="nombre">
-    <div *ngIf="formInvitado.controls.nombre.errors?.required && formInvitado.controls.nombre.touched && formInvitado.controls.nombre.dirty ">Campo obligatorio</div>
-    <div *ngIf="formInvitado.controls.nombre.errors?.minlength && formInvitado.controls.nombre.touched && formInvitado.controls.nombre.dirty ">Debe contener mínimo 3 caracteres</div>
-    <input class="form-control" type="text" name="apellidos" placeholder="Apellidos" formControlName="apellidos">
-    <div *ngIf="formInvitado.controls.apellidos.errors?.required && formInvitado.controls.apellidos.touched && formInvitado.controls.apellidos.dirty ">Campo obligatorio</div>
-    <div *ngIf="formInvitado.controls.apellidos.errors?.minlength && formInvitado.controls.apellidos.touched && formInvitado.controls.apellidos.dirty ">Debe contener mínimo 3 caracteres</div>
-    <input class="form-control" type="number" name="edad" placeholder="Edad" formControlName="edad">
-    <div *ngIf="formChef.controls.edad.errors && formChef.controls.edad.touched && formChef.controls.edad.dirty">La edad debe estar entre {{formInvitado.controls.edad.errors?.edadMinima}} y {{formInvitado.controls.edad.errors?.edadMaxima}}</div>
-    <div *ngIf="formChef.controls.edad.errors?.required && formChef.controls.edad.touched && formChef.controls.edad.dirty ">Campo obligatorio</div>
+    <input class="form-control" type="text" name="nombre" placeholder="Nombre" formControlName="name">
+    <div *ngIf="formInvitado.controls.name.errors?.required && formInvitado.controls.name.touched && formInvitado.controls.name.dirty ">Campo obligatorio</div>
+    <div *ngIf="formInvitado.controls.name.errors?.minlength && formInvitado.controls.name.touched && formInvitado.controls.name.dirty ">Debe contener mínimo 3 caracteres</div>
+    <input class="form-control" type="text" name="apellidos" placeholder="Apellidos" formControlName="surname">
+    <div *ngIf="formInvitado.controls.surname.errors?.required && formInvitado.controls.surname.touched && formInvitado.controls.surname.dirty ">Campo obligatorio</div>
+    <div *ngIf="formInvitado.controls.surname.errors?.minlength && formInvitado.controls.surname.touched && formInvitado.controls.surname.dirty ">Debe contener mínimo 3 caracteres</div>
+    <input class="form-control" type="number" name="edad" placeholder="Edad" formControlName="age">
+    <div *ngIf="formChef.controls.age.errors && formChef.controls.age.touched && formChef.controls.age.dirty">La edad debe estar entre {{formInvitado.controls.edad.errors?.edadMinima}} y {{formInvitado.controls.edad.errors?.edadMaxima}}</div>
+    <div *ngIf="formChef.controls.age.errors?.required && formChef.controls.age.touched && formChef.controls.age.dirty ">Campo obligatorio</div>
     <input class="form-control" type="email" name="email" placeholder="Email" formControlName="email">
     <div *ngIf="formChef.controls.email.errors?.pattern && formChef.controls.email.touched">Introduce un email válido</div>
     <div *ngIf="formChef.controls.email.errors?.required && formChef.controls.email.touched && formChef.controls.email.dirty">Campo obligatorio</div>
@@ -57,7 +57,6 @@
   </form>
   <form *ngSwitchCase="'fin'">
     <button type="button" class="close" (click)="close()" class="close float-left">
-      <!-- <span aria-hidden="true">&times;</span> -->
     </button>
     <h1 class="tit">¡Bienvenido!</h1>
 

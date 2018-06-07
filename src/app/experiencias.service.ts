@@ -29,6 +29,11 @@ export class ExperienciasService {
     return this.http.get('http://localhost:3000/api/experiencias/ubicaciones').toPromise()
   }
 
+  sendNewInvitado() {
+    return this.http.post('http://localhost:3000/api/invitados/new', {param1: 'value1', param2: 'value2'}).toPromise()
+      }
+       
+  
   
 
 }

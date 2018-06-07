@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-cabecera',
@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CabeceraComponent implements OnInit {
 
-  constructor() { }
+  @Input()experience
+
+  backgroundStyle: Object
+
+  constructor() { 
+
+
+  }
+
 
   ngOnInit() {
+     setTimeout(()=>{
+      this.backgroundStyle = {
+        'background-image':`url(${this.experience.main_image})`
+      }
+    },500)
+   
   }
 
 }

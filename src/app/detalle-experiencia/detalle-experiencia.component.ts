@@ -1,27 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { Experiencia } from '../models/experiencia.model';
+import { ExperienciasService } from '../experiencias.service';
 
 @Component({
   selector: 'app-detalle-experiencia',
   templateUrl: './detalle-experiencia.component.html',
-  styleUrls: ['./detalle-experiencia.component.css']
+  styleUrls: ['./detalle-experiencia.component.css'],
+  providers: [ExperienciasService]
 })
 export class DetalleExperienciaComponent implements OnInit {
 
+  experience: Experiencia
+  idExperiencia: number
 
-  experiencia:any
+  constructor(private experienciasService: ExperienciasService, private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.params.subscribe(((params) => {
+      this.idExperiencia = Number(params.id)
+      this.experienciasService.getExperienciaById(this.idExperiencia).then((res) => {
+        this.experience = res.json()
+      })
+    }))
 
-  constructor() {  
-    this.experiencia = {} 
-   }
-
-  ngOnInit() {}
-
-  //recuperamos el tipo y id experiencia mediante output
-  handleOnSendType($event){
-    this.experiencia = $event  
-    console.log(this.experiencia);   
+  }
+  ngOnInit() {
   }
   
-  
+
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ExperienciasService } from '../../experiencias.service';
+import { ActivatedRoute } from '@angular/router';
+import { Experiencia } from '../../models/experiencia.model';
 
 @Component({
   selector: 'app-otras-experiencias',
@@ -9,19 +11,25 @@ import { ExperienciasService } from '../../experiencias.service';
 })
 export class OtrasExperienciasComponent implements OnInit {
 
+  @Input()experience
   experiencias: any
-  @Input()datosExp:any
 
-  constructor(private experienciasService:ExperienciasService) {
-    
-   }
+  constructor(private experienciasService: ExperienciasService) {
+   
+  }
 
   ngOnInit() {
-    this.experienciasService.getExperienciasByTipo('japonesa').then((arrExperiencias)=>{
-      this.experiencias = arrExperiencias     
-    })  
-    console.log(this.datosExp);
-     
+    setTimeout(()=>{
+      this.experienciasService.getExperienciasByTipo(this.experience.food_type).then((res)=>{
+        this.experiencias = res.json()
+        console.log(this.experiencias);
+        
+      })
+    }, 1000)
+   
   }
+  
+
+
 
 }

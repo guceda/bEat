@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogComponent, DialogService } from "ng2-bootstrap-modal";
 import { FormsModule, ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms'
+import { InvitadosService } from '../invitados.service';
+import { ChefsService } from '../chefs.service';
 
 
 export interface ConfirmModel {
@@ -11,7 +13,8 @@ export interface ConfirmModel {
 @Component({
   selector: 'confirm',
   templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+  styleUrls: ['./registro.component.css'],
+  providers: [InvitadosService, ChefsService]
 
 })
 export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> implements ConfirmModel {
@@ -20,7 +23,7 @@ export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> im
   estadoRegistro: string
   formInvitado: FormGroup
   formChef: FormGroup
-  constructor(dialogService: DialogService) {
+  constructor(dialogService: DialogService, private invitadosService:InvitadosService, private chefsService:ChefsService) {
     super(dialogService);
     this.estadoRegistro = 'inicio'
   }
@@ -28,17 +31,17 @@ export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> im
   ngOnInit() {
     //generamos formulario angular
     this.formInvitado = new FormGroup({
-      nombre: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      apellidos: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      edad: new FormControl('', [Validators.required, this.validateEdad]),
+      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      surname: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      age: new FormControl('', [Validators.required, this.validateEdad]),
       email: new FormControl('', [Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/), Validators.required]),
       password: new FormControl('', [Validators.pattern(/^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{8,})/), Validators.required])
     })
 
     this.formChef = new FormGroup({
-      nombre: new FormControl('', Validators.required),
-      apellidos: new FormControl('', Validators.required),
-      edad: new FormControl('', [Validators.required, this.validateEdad]),
+      name: new FormControl('', Validators.required),
+      surname: new FormControl('', Validators.required),
+      age: new FormControl('', [Validators.required, this.validateEdad]),
       email: new FormControl('', [Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/), Validators.required]),
       password: new FormControl('', [Validators.pattern(/^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{8,})/), Validators.required])
     })
@@ -59,10 +62,12 @@ export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> im
   handleClickInv() {
     //arrancamos el modal de registro para Invitado
     this.estadoRegistro = 'invitado'
-
   }
 
   handleSubmitInvitado(pInvitado) {
+    //enviamos los datos a node
+  this.invitadosService.sendNewInvitado(pInvitado)
+
     //alamacenamos los datos del formulario de invitados
     this.estadoRegistro = 'fin'
     localStorage.setItem('invitado', JSON.stringify(pInvitado))
@@ -73,6 +78,8 @@ export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> im
   }
 
   handleSubmitChef(pChef) {
+    //enviamos los datos a node
+  this.chefsService.sendNewChef(pChef)
     //alamacenamos los datos del formulario de invitados
     localStorage.setItem('chef', JSON.stringify(pChef))
     this.estadoRegistro = 'fin'

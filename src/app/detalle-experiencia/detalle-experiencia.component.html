@@ -1,17 +1,17 @@
-<app-cabecera></app-cabecera>
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8" style="padding-right:60px;">
-                    <app-descripcion-experiencia (onSendType) = "handleOnSendType($event)"></app-descripcion-experiencia>
-                </div>
-                <div class="col-md-4 align-right sider" style="text-align:center;">
-                    <app-chef></app-chef>
-                </div>
-               
+<app-cabecera [experience] = experience></app-cabecera>
+
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8" style="padding-right:60px;">
+                <app-descripcion-experiencia (onSendType)="handleOnSendType($event)"></app-descripcion-experiencia>
+            </div>
+            <div class="col-md-4 align-right sider" style="text-align:center;">
+                <app-chef></app-chef>
             </div>
         </div>
     </div>
-    <app-mapa>(mouseon)="handleMouseOn()"</app-mapa>
-    <app-comentarios></app-comentarios>
-    <app-otras-experiencias [datosExp] = "'El input no funciona'" ></app-otras-experiencias>
+</div>
+<app-mapa>(mouseon)="handleMouseOn()"</app-mapa>
+<app-comentarios></app-comentarios>
+<app-otras-experiencias [experience] = experience></app-otras-experiencias>

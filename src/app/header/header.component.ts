@@ -41,4 +41,8 @@ export class HeaderComponent implements OnInit {
     window.location.href = "home"
   }
 
+  mostrarReg(){
+    this.modalService.showConfirm('registro')
+  }
+
 }
