@@ -12,11 +12,19 @@ export class InvitadosService {
 
   sendNewInvitado(pInvitado) {
     return this.http.post('http://localhost:3000/api/invitados/new', {
-      name: pInvitado.name, 
-      surname: pInvitado.surname, 
-      age: pInvitado.age, 
-      email: pInvitado.email, 
+      name: pInvitado.name,
+      surname: pInvitado.surname,
+      age: pInvitado.age,
+      email: pInvitado.email,
       password: pInvitado.password
     }).toPromise()
-      }
+  }
+
+  
+
+
+
+
+
 }
+

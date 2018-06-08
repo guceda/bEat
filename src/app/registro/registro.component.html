@@ -30,6 +30,9 @@
     <input class="form-control" type="password" name="password" placeholder="Contraseña" formControlName="password">
     <div *ngIf="formInvitado.controls.password.errors?.required && formInvitado.controls.password.touched && formInvitado.controls.password.dirty">Campo obligatorio</div>
     <div *ngIf="formInvitado.controls.password.errors?.pattern ">Minimo 8 caracteres y al menos una mayúscula o un número</div>
+    <input type="password" class="form-control" name="password_repeat" placeholder="Repetir Password" formControlName= 'password_repeat'>
+    <div *ngIf="formInvitado.controls.password.value !== formInvitado.controls.password_repeat.value && formInvitado.controls.password_repeat.dirty">La contraseña tiene que ser igual</div>
+    <div *ngIf="formInvitado.controls.password_repeat.errors?.required && formInvitado.controls.password_repeat.touched">Campo obligatorio</div>
     <button class="btn btn-primary btn-block" type="submit" [disabled]="!formInvitado.valid">Regístrate</button>
   </form>
   <!-- formulario de registro para chef -->
@@ -53,6 +56,9 @@
     <input class="form-control" type="password" name="password" placeholder="Contraseña" formControlName="password">
     <div *ngIf="formChef.controls.password.errors?.required && formChef.controls.password.touched && formChef.controls.password.dirty">Campo obligatorio</div>
     <div *ngIf="formChef.controls.password.errors?.pattern ">Minimo 8 caracteres y al menos una mayúscula o un número</div>
+    <input type="password" class="form-control" name="password_repeat" placeholder="Repetir Password" formControlName= 'password_repeat'>
+    <div *ngIf="formChef.controls.password.value !== formChef.controls.password_repeat.value && formChef.controls.password_repeat.dirty">La contraseña tiene que ser igual</div>
+    <div *ngIf="formChef.controls.password_repeat.errors?.required && formChef.controls.password_repeat.touched">Campo obligatorio</div>
     <button class="btn btn-primary btn-block" type="submit" [disabled]="!formChef.valid">Regístrate</button>
   </form>
   <form *ngSwitchCase="'fin'">

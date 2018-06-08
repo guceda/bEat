@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogComponent, DialogService } from "ng2-bootstrap-modal";
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ChefsService } from '../chefs.service';
 export interface ConfirmModel {
   title: string;
   message: string;
@@ -18,7 +19,7 @@ export class LoginComponent extends DialogComponent<ConfirmModel, boolean> imple
   estadoLogin: string
   existeUsuario: boolean
   form: FormGroup
-  constructor(dialogService: DialogService) {
+  constructor(dialogService: DialogService,  private ChefsService:ChefsService) {
     super(dialogService);
     this.estadoLogin = 'inicio'
     this.existeUsuario = true

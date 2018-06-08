@@ -23,7 +23,7 @@ export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> im
   estadoRegistro: string
   formInvitado: FormGroup
   formChef: FormGroup
-  constructor(dialogService: DialogService, private invitadosService:InvitadosService, private chefsService:ChefsService) {
+  constructor(dialogService: DialogService, private invitadosService: InvitadosService, private chefsService: ChefsService) {
     super(dialogService);
     this.estadoRegistro = 'inicio'
   }
@@ -35,7 +35,8 @@ export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> im
       surname: new FormControl('', [Validators.required, Validators.minLength(3)]),
       age: new FormControl('', [Validators.required, this.validateEdad]),
       email: new FormControl('', [Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/), Validators.required]),
-      password: new FormControl('', [Validators.pattern(/^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{8,})/), Validators.required])
+      password: new FormControl('', [Validators.pattern(/^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{8,})/), Validators.required]),
+      password_repeat: new FormControl('', [Validators.required])
     })
 
     this.formChef = new FormGroup({
@@ -43,7 +44,8 @@ export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> im
       surname: new FormControl('', Validators.required),
       age: new FormControl('', [Validators.required, this.validateEdad]),
       email: new FormControl('', [Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/), Validators.required]),
-      password: new FormControl('', [Validators.pattern(/^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{8,})/), Validators.required])
+      password: new FormControl('', [Validators.pattern(/^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{8,})/), Validators.required]),
+      password_repeat: new FormControl('', [Validators.required])
     })
   }
 
@@ -66,9 +68,9 @@ export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> im
 
   handleSubmitInvitado(pInvitado) {
     //enviamos los datos a node
-  this.invitadosService.sendNewInvitado(pInvitado)
+    this.invitadosService.sendNewInvitado(pInvitado)
 
-    //alamacenamos los datos del formulario de invitados
+    //alamacenamos los datos del formulario de invitados en localStorage
     this.estadoRegistro = 'fin'
     localStorage.setItem('invitado', JSON.stringify(pInvitado))
     //refescamos la pagina
@@ -79,8 +81,8 @@ export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> im
 
   handleSubmitChef(pChef) {
     //enviamos los datos a node
-  this.chefsService.sendNewChef(pChef)
-    //alamacenamos los datos del formulario de invitados
+    this.chefsService.sendNewChef(pChef)
+    //almacenamos los datos del formulario de invitados en local Storage
     localStorage.setItem('chef', JSON.stringify(pChef))
     this.estadoRegistro = 'fin'
     //refescamos la pagina
@@ -88,6 +90,8 @@ export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> im
       window.location.href = 'home';
     }, 1000)
   }
+
+  //validator edad
   validateEdad(control) {
     let minEdad = 14
     let maxEdad = 100
@@ -102,5 +106,11 @@ export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> im
       }
     }
   }
+  //validator para comprobar si el correo ya existe en la bbdd
+  // validateEmailChefExists(control) {
+  //   this.chefsService.
+  // }
+
 }
+
 
