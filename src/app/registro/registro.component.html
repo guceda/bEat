@@ -22,9 +22,10 @@
     <div *ngIf="formInvitado.controls.surname.errors?.required && formInvitado.controls.surname.touched && formInvitado.controls.surname.dirty ">Campo obligatorio</div>
     <div *ngIf="formInvitado.controls.surname.errors?.minlength && formInvitado.controls.surname.touched && formInvitado.controls.surname.dirty ">Debe contener mínimo 3 caracteres</div>
     <input class="form-control" type="number" name="edad" placeholder="Edad" formControlName="age">
-    <div *ngIf="formInvitado.controls.age.errors && formInvitado.controls.age.touched && formInvitado.controls.age.dirty">La edad debe estar entre {{formInvitado.controls.edad.errors?.edadMinima}} y {{formInvitado.controls.edad.errors?.edadMaxima}}</div>
+    <div *ngIf="formInvitado.controls.age.errors && formInvitado.controls.age.touched && formInvitado.controls.age.dirty">La edad debe estar entre {{formInvitado.controls.age.errors?.edadMinima}} y {{formInvitado.controls.age.errors?.edadMaxima}}</div>
     <div *ngIf="formInvitado.controls.age.errors?.required && formInvitado.controls.age.touched && formInvitado.controls.age.dirty ">Campo obligatorio</div>
     <input class="form-control" type="email" name="email" placeholder="Email" formControlName="email">
+    <!-- <div *ngIf="formInvitado.controls.email.errors?.pattern && formInvitado.controls.email.touched">EL email ya existe</div> -->
     <div *ngIf="formInvitado.controls.email.errors?.pattern && formInvitado.controls.email.touched">Introduce un email válido</div>
     <div *ngIf="formInvitado.controls.email.errors?.required && formInvitado.controls.email.touched && formInvitado.controls.email.dirty">Campo obligatorio</div>
     <input class="form-control" type="password" name="password" placeholder="Contraseña" formControlName="password">
@@ -34,6 +35,7 @@
     <div *ngIf="formInvitado.controls.password.value !== formInvitado.controls.password_repeat.value && formInvitado.controls.password_repeat.dirty">La contraseña tiene que ser igual</div>
     <div *ngIf="formInvitado.controls.password_repeat.errors?.required && formInvitado.controls.password_repeat.touched">Campo obligatorio</div>
     <button class="btn btn-primary btn-block" type="submit" [disabled]="!formInvitado.valid">Regístrate</button>
+    <span href="#" class="forgot">{{error}}</span>
   </form>
   <!-- formulario de registro para chef -->
   <form [formGroup]="formChef" (ngSubmit)="handleSubmitChef(formChef.value)" *ngSwitchCase="'chef'">
@@ -48,7 +50,7 @@
     <div *ngIf="formInvitado.controls.surname.errors?.required && formInvitado.controls.surname.touched && formInvitado.controls.surname.dirty ">Campo obligatorio</div>
     <div *ngIf="formInvitado.controls.surname.errors?.minlength && formInvitado.controls.surname.touched && formInvitado.controls.surname.dirty ">Debe contener mínimo 3 caracteres</div>
     <input class="form-control" type="number" name="edad" placeholder="Edad" formControlName="age">
-    <div *ngIf="formChef.controls.age.errors && formChef.controls.age.touched && formChef.controls.age.dirty">La edad debe estar entre {{formInvitado.controls.edad.errors?.edadMinima}} y {{formInvitado.controls.edad.errors?.edadMaxima}}</div>
+    <div *ngIf="formChef.controls.age.errors && formChef.controls.age.touched && formChef.controls.age.dirty">La edad debe estar entre {{formInvitado.controls.age.errors?.edadMinima}} y {{formInvitado.controls.age.errors?.edadMaxima}}</div>
     <div *ngIf="formChef.controls.age.errors?.required && formChef.controls.age.touched && formChef.controls.age.dirty ">Campo obligatorio</div>
     <input class="form-control" type="email" name="email" placeholder="Email" formControlName="email">
     <div *ngIf="formChef.controls.email.errors?.pattern && formChef.controls.email.touched">Introduce un email válido</div>
@@ -60,6 +62,7 @@
     <div *ngIf="formChef.controls.password.value !== formChef.controls.password_repeat.value && formChef.controls.password_repeat.dirty">La contraseña tiene que ser igual</div>
     <div *ngIf="formChef.controls.password_repeat.errors?.required && formChef.controls.password_repeat.touched">Campo obligatorio</div>
     <button class="btn btn-primary btn-block" type="submit" [disabled]="!formChef.valid">Regístrate</button>
+    <span href="#" class="forgot">{{error}}</span>
   </form>
   <form *ngSwitchCase="'fin'">
     <button type="button" class="close" (click)="close()" class="close float-left">

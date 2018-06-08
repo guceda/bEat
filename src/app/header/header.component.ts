@@ -20,11 +20,11 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    if(localStorage.getItem('invitado')){
-      this.user = "invitado";
+    if(JSON.parse(localStorage.getItem('usr')).chf){
+      this.user = "chef";
       
-    }else if(localStorage.getItem('chef')){
-      this.user = 'chef'
+    }else if(JSON.parse(localStorage.getItem('usr')).inv){
+      this.user = 'invitado'
     }else{
       this.user = 'none'
     }

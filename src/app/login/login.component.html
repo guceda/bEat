@@ -9,7 +9,7 @@
         <button (click)="handleClickTipoUsuario('chef')" class="btn btn-primary btn-block">Entra como Chef</button>
     </form>
 
-    <form *ngSwitchCase="'invitado'" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    <form *ngSwitchCase="'invitado'" [formGroup]="form" (ngSubmit)="handleClickLoginInv(form.value)">
         <button type="button" class="close" (click)="close()" class="close float-left">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -23,12 +23,12 @@
         <div *ngIf="existeUsuario === false" class="text-center alert alert-danger" role="alert">
             El usuario no existe
         </div>
-        <button (click)="handleClickLoginInv()" class="btn btn-primary btn-block" type="submit" [disabled]="!form.valid">Log In</button>
+        <button class="btn btn-primary btn-block" type="submit" [disabled]="!form.valid">Log In</button>
         <button id="facebook" class="btn btn-primary btn-block" type="button">Inicia sesión con Facebook</button>
-        <a href="#" class="forgot">¿Has olvidado tu contraseña?</a>
+        <span href="#" class="forgot">{{error}}</span>
     </form>
 
-    <form *ngSwitchCase="'chef'" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    <form *ngSwitchCase="'chef'" [formGroup]="form" (ngSubmit)="handleClickLoginChef(form.value)">
         <button type="button" class="close" (click)="close()" class="close float-left">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -40,11 +40,11 @@
         <div *ngIf="form.controls.password.errors?.pattern ">Minimo 6 caracteres y al menos una mayúscula o un número</div>
         <div *ngIf="form.controls.password.errors?.required && form.controls.password.touched">Campo obligatorio</div>
         <div *ngIf="existeUsuario === false" class="text-center alert alert-danger" role="alert">
-            El usuario no existe
+            La contraseña es incorrecta
         </div>
-        <button (click)="handleClickLoginChef()" class="btn btn-primary btn-block" type="submit" [disabled]="!form.valid">Log In</button>
+        <button class="btn btn-primary btn-block" type="submit" [disabled]="!form.valid">Log In</button>
         <button id="facebook" class="btn btn-primary btn-block" type="button">Inicia sesión con Facebook</button>
-        <a href="#" class="forgot">¿Has olvidado tu contraseña?</a>
+        <span href="#" class="forgot">{{error}}</span>
     </form>
 
     <form *ngSwitchCase="'fin'">

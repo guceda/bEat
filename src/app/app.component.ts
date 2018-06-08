@@ -9,16 +9,19 @@ import { Router, NavigationEnd } from '@angular/router';
 export class AppComponent {
   title = 'app';
 
-  constructor(private router:Router){}
+  constructor(private router: Router) { }
 
-  ngOnInit(){
+  ngOnInit() {
     //hacer que las paginas suban arriba
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
-          return;
+        return;
       }
       window.scrollTo(0, 0)
-  });
+    });
+    // window.onunload = function () {
+    //     this.localStorage.clear()
+    // }
   }
- 
+
 }

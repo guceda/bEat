@@ -23,9 +23,12 @@ export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> im
   estadoRegistro: string
   formInvitado: FormGroup
   formChef: FormGroup
+  registro: any
+  error: String
   constructor(dialogService: DialogService, private invitadosService: InvitadosService, private chefsService: ChefsService) {
     super(dialogService);
     this.estadoRegistro = 'inicio'
+    this.error = ""
   }
 
   ngOnInit() {
@@ -67,28 +70,41 @@ export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> im
   }
 
   handleSubmitInvitado(pInvitado) {
-    //enviamos los datos a node
-    this.invitadosService.sendNewInvitado(pInvitado)
-
-    //alamacenamos los datos del formulario de invitados en localStorage
-    this.estadoRegistro = 'fin'
-    localStorage.setItem('invitado', JSON.stringify(pInvitado))
-    //refescamos la pagina
-    setTimeout(() => {
-      window.location.href = 'home';
-    }, 1000)
+    this.invitadosService.checkRegistro(this.formInvitado.value).then((res) => {
+      if (res.json().error) {
+        //enviamos los datos a node
+        this.invitadosService.sendNewInvitado(pInvitado).then((res) => {
+          //almacenamos los datos del formulario de invitados en local Storage
+          localStorage.setItem('usr', JSON.stringify({ inv: 'id' }))
+          this.estadoRegistro = 'fin'
+          //refescamos la pagina
+          setTimeout(() => {
+            window.location.href = 'home';
+          }, 1000)
+        })
+      } else {
+        this.error = 'El email ya existe'
+      }
+    })
   }
 
   handleSubmitChef(pChef) {
-    //enviamos los datos a node
-    this.chefsService.sendNewChef(pChef)
-    //almacenamos los datos del formulario de invitados en local Storage
-    localStorage.setItem('chef', JSON.stringify(pChef))
-    this.estadoRegistro = 'fin'
-    //refescamos la pagina
-    setTimeout(() => {
-      window.location.href = 'home';
-    }, 1000)
+    this.chefsService.checkRegistro(this.formChef.value).then((res) => {
+      if (res.json().error) {
+        //enviamos los datos a node
+        this.chefsService.sendNewChef(pChef).then((res) => {
+          //almacenamos los datos del formulario de invitados en local Storage
+          localStorage.setItem('usr', JSON.stringify({ chf: 'id' }))
+          this.estadoRegistro = 'fin'
+          //refescamos la pagina
+          setTimeout(() => {
+            window.location.href = 'home';
+          }, 1000)
+        })
+      } else {
+        this.error = 'El email ya existe'
+      }
+    })
   }
 
   //validator edad
@@ -106,11 +122,5 @@ export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> im
       }
     }
   }
-  //validator para comprobar si el correo ya existe en la bbdd
-  // validateEmailChefExists(control) {
-  //   this.chefsService.
-  // }
 
 }
-
-
