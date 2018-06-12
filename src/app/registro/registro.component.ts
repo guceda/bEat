@@ -70,39 +70,35 @@ export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> im
   }
 
   handleSubmitInvitado(pInvitado) {
-    this.invitadosService.checkRegistro(this.formInvitado.value).then((res) => {
-      if (res.json().error) {
-        //enviamos los datos a node
-        this.invitadosService.sendNewInvitado(pInvitado).then((res) => {
-          //almacenamos los datos del formulario de invitados en local Storage
-          localStorage.setItem('usr', JSON.stringify({ inv: 'id' }))
-          this.estadoRegistro = 'fin'
-          //refescamos la pagina
-          setTimeout(() => {
-            window.location.href = 'home';
-          }, 1000)
-        })
-      } else {
+    //enviamos los datos a node
+    this.invitadosService.sendNewInvitado(pInvitado).then((res) => {
+      if (JSON.parse(res["_body"]).ERROR_NODE) {
         this.error = 'El email ya existe'
+      } else {
+        //almacenamos los datos del formulario de invitados en local Storage
+        localStorage.setItem('usr', JSON.stringify({ inv: res["_body"] }))
+        this.estadoRegistro = 'fin'
+        //refescamos la pagina
+        setTimeout(() => {
+          window.location.href = 'home';
+        }, 1000)
       }
     })
   }
 
   handleSubmitChef(pChef) {
-    this.chefsService.checkRegistro(this.formChef.value).then((res) => {
-      if (res.json().error) {
-        //enviamos los datos a node
-        this.chefsService.sendNewChef(pChef).then((res) => {      
-          //almacenamos los datos del formulario de invitados en local Storage
-          localStorage.setItem('usr', JSON.stringify({ chf: 'id' }))
-          this.estadoRegistro = 'fin'
-          //refescamos la pagina
-          setTimeout(() => {
-            window.location.href = 'home';
-          }, 1000)
-        })
-      } else {
+    //enviamos los datos a node
+    this.chefsService.sendNewChef(pChef).then((res) => {
+      if (JSON.parse(res["_body"]).ERROR_NODE) {
         this.error = 'El email ya existe'
+      } else {
+        //almacenamos los datos del formulario de invitados en local Storage
+        localStorage.setItem('usr', JSON.stringify({ chf: res["_body"] }))
+        this.estadoRegistro = 'fin'
+        //refescamos la pagina
+        setTimeout(() => {
+          window.location.href = 'home';
+        }, 1000)
       }
     })
   }

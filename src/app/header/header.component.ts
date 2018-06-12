@@ -32,8 +32,9 @@ export class HeaderComponent implements OnInit {
   }
 
   handleClickSalir() {
-    this.user = "none"
+    window.location.href = "home"
     localStorage.clear()
+    
   }
 
   mostrarModal(pComponente) {

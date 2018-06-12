@@ -30,16 +30,6 @@ export class InvitadosService {
     }).toPromise()
   }
 
-  //COMPROBAMOS EL EMAIL A REGISTRAR
-  checkRegistro(pInvitado) {
-    return this.http.post('http://localhost:3000/api/invitados/email', {
-      name: pInvitado.name,
-      surname: pInvitado.surname,
-      age: pInvitado.age,
-      email: pInvitado.email,
-      password: pInvitado.password
-    }).toPromise()
-  }
 }
 
 

@@ -30,14 +30,4 @@ export class ChefsService {
     }).toPromise()
   }
 
-   //COMPROBAMOS EL EMAIL A REGISTRAR
-   checkRegistro(pChef) {
-    return this.http.post('http://localhost:3000/api/chefs/email', {
-      name: pChef.name,
-      surname: pChef.surname,
-      age: pChef.age,
-      email: pChef.email,
-      password: pChef.password
-    }).toPromise()
-  }
 }

@@ -9,7 +9,6 @@ import { Login } from './login.guard';
 
 
 export const appRoutes:Routes = [
-    // { path: '', redirectTo: 'home', pathMatch: 'full'  },
     { path:'', component: MainComponent },
     { path:'home', component: MainComponent },
     { path:'home/login', component: MainComponent }, 
