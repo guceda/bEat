@@ -92,7 +92,7 @@ export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> im
     this.chefsService.checkRegistro(this.formChef.value).then((res) => {
       if (res.json().error) {
         //enviamos los datos a node
-        this.chefsService.sendNewChef(pChef).then((res) => {
+        this.chefsService.sendNewChef(pChef).then((res) => {      
           //almacenamos los datos del formulario de invitados en local Storage
           localStorage.setItem('usr', JSON.stringify({ chf: 'id' }))
           this.estadoRegistro = 'fin'
@@ -124,3 +124,6 @@ export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> im
   }
 
 }
+
+
+//tengo que hacer todas las comprobaciones en node

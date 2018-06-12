@@ -20,7 +20,7 @@ export class CabeceraComponent implements OnInit {
   ngOnInit() {
      setTimeout(()=>{
       this.backgroundStyle = {
-        'background-image':`url(${this.experience.main_image})`
+        'background-image':`url(${this.experience.main_image})`,
       }
     },500)
    

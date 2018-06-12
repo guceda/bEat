@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class Login implements CanActivate {
 constructor(private router:Router){}
     canActivate() {
-        if (localStorage.getItem('invitado') || localStorage.getItem('chef')) {
+        if (localStorage.getItem('usr')) {
             return true
         } else {
             //this.modalService.showConfirm('login')

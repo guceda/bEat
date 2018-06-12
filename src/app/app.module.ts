@@ -32,6 +32,9 @@ import { MapaComponent } from './detalle-experiencia/mapa/mapa.component';
 import { OtrasExperienciasComponent } from './detalle-experiencia/otras-experiencias/otras-experiencias.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { Login } from './login.guard';
+import { NewExpComponent } from './new-exp/new-exp.component';
+
+
 
 
 
@@ -61,6 +64,9 @@ import { Login } from './login.guard';
     MapaGeoComponent,
     OtrasExperienciasComponent,
     RegistroComponent,
+    NewExpComponent,
+
+
 
   ],
   imports: [
@@ -69,7 +75,9 @@ import { Login } from './login.guard';
   ],
   entryComponents: [
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    NewExpComponent
+
   ],
   providers: [Login],
   bootstrap: [AppComponent]

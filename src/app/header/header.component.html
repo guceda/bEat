@@ -10,7 +10,7 @@
                 <div [ngSwitch] = "user" class="derecha ">
                         <div *ngSwitchCase="'chef'">
                                 <ul class="nav navbar-nav mr-auto">
-                                        <li class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Nueva experiencia</a></li>
+                                        <li (click) = "nuevaExp()" class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Nueva experiencia</a></li>
                                         <li class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Mis experiencias</a></li>
                                         <!-- <li class="dropdown text-center">
                                             <a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Ciudades</a>

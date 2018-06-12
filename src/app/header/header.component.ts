@@ -16,33 +16,40 @@ export class HeaderComponent implements OnInit {
   user: string
 
   constructor(private dialogService: DialogService, private modalService: ModalService) {
-   this.user = ''
+    this.user = ''
   }
 
   ngOnInit() {
-    if(JSON.parse(localStorage.getItem('usr')).chf){
-      this.user = "chef";
-      
-    }else if(JSON.parse(localStorage.getItem('usr')).inv){
-      this.user = 'invitado'
-    }else{
+    if (localStorage.getItem('usr')) {
+      if (JSON.parse(localStorage.getItem('usr')).chf) {
+        this.user = "chef";
+      } else if (JSON.parse(localStorage.getItem('usr')).inv) {
+        this.user = 'invitado'
+      }
+    } else {
       this.user = 'none'
     }
   }
+
   handleClickSalir() {
     this.user = "none"
+    localStorage.clear()
   }
 
   mostrarModal(pComponente) {
     this.modalService.showConfirm(pComponente)
   }
 
-  handleOnClickHome(){
+  handleOnClickHome() {
     window.location.href = "home"
   }
 
-  mostrarReg(){
+  mostrarReg() {
     this.modalService.showConfirm('registro')
+  }
+
+  nuevaExp(){
+    this.modalService.showConfirm('newExp')
   }
 
 }

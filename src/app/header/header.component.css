@@ -185,3 +185,8 @@
 .navbar-brand{
   cursor: pointer
 }
+
+
+.nav-item:hover{
+ opacity: 0.6;
+}

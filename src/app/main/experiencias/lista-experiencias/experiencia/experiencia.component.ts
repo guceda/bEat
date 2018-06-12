@@ -20,7 +20,9 @@ export class ExperienciaComponent implements OnInit {
 
   }
   handleClick() {
-    if (localStorage.getItem('invitado')){
+    console.log('hola');
+    
+    if (localStorage.getItem('usr')){
       this.router.navigate(['experiencia',this.experiencia.id_experiencia,])
     } else {
       this.modalService.showConfirm('login')
