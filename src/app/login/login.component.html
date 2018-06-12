@@ -1,0 +1,57 @@
+<div [ngSwitch]="estadoLogin" class="login-clean">
+
+    <form *ngSwitchCase="'inicio'" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+        <button type="button" class="close" (click)="close()" class="close float-left">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h2 class="tit">Inicia Sesión</h2>
+        <button (click)="handleClickTipoUsuario('invitado')" class="btn btn-primary btn-block inv">Entra como Invitado</button>
+        <button (click)="handleClickTipoUsuario('chef')" class="btn btn-primary btn-block">Entra como Chef</button>
+    </form>
+
+    <form *ngSwitchCase="'invitado'" [formGroup]="form" (ngSubmit)="handleClickLoginInv(form.value)">
+        <button type="button" class="close" (click)="close()" class="close float-left">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h2 class="tit">Log In Invitado</h2>
+        <input class="form-control" type="email" name="email" placeholder="Email" formControlName="email">
+        <div *ngIf="form.controls.email.errors?.pattern && form.controls.email.touched">Introduce un email válido</div>
+        <div *ngIf="form.controls.email.errors?.required && form.controls.email.touched">Campo obligatorio</div>
+        <input class="form-control" type="password" name="password" placeholder="Contraseña" formControlName="password">
+        <div *ngIf="form.controls.password.errors?.pattern ">Minimo 8 caracteres y al menos una mayúscula o un número</div>
+        <div *ngIf="form.controls.password.errors?.required && form.controls.password.touched">Campo obligatorio</div>
+        <div *ngIf="existeUsuario === false" class="text-center alert alert-danger" role="alert">
+            El usuario no existe
+        </div>
+        <button class="btn btn-primary btn-block" type="submit" [disabled]="!form.valid">Log In</button>
+        <button id="facebook" class="btn btn-primary btn-block" type="button">Inicia sesión con Facebook</button>
+        <span href="#" class="forgot">{{error}}</span>
+    </form>
+
+    <form *ngSwitchCase="'chef'" [formGroup]="form" (ngSubmit)="handleClickLoginChef(form.value)">
+        <button type="button" class="close" (click)="close()" class="close float-left">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h2 class="tit">Log In Chef</h2>
+        <input class="form-control" type="email" name="email" placeholder="Email" formControlName="email">
+        <div *ngIf="form.controls.email.errors?.pattern && form.controls.email.touched">Introduce un email válido</div>
+        <div *ngIf="form.controls.email.errors?.required && form.controls.email.touched">Campo obligatorio</div>
+        <input class="form-control" type="password" name="password" placeholder="Contraseña" formControlName="password">
+        <div *ngIf="form.controls.password.errors?.pattern ">Minimo 6 caracteres y al menos una mayúscula o un número</div>
+        <div *ngIf="form.controls.password.errors?.required && form.controls.password.touched">Campo obligatorio</div>
+        <div *ngIf="existeUsuario === false" class="text-center alert alert-danger" role="alert">
+            La contraseña es incorrecta
+        </div>
+        <button class="btn btn-primary btn-block" type="submit" [disabled]="!form.valid">Log In</button>
+        <button id="facebook" class="btn btn-primary btn-block" type="button">Inicia sesión con Facebook</button>
+        <span href="#" class="forgot">{{error}}</span>
+    </form>
+
+    <form *ngSwitchCase="'fin'">
+        <button type="button" class="close" (click)="close()" class="close float-left">
+            <!-- <span aria-hidden="true">&times;</span> -->
+        </button>
+        <h1 class="tit">¡Bienvenido!</h1>
+    </form>
+
+</div>

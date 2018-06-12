@@ -1,9 +1,127 @@
+
 <div>
-  <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
-      <div class="container"><a class="navbar-brand" href="#"><img src="assets/img/logo_rosa.png" style="width:50px;"></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-          <div
-              class="collapse navbar-collapse" id="navcol-1">
-              <ul class="nav navbar-nav mr-auto"></ul><span class="navbar-text actions"> <a href="#" class="login chef" style="margin-right:50px;">Conviértete en Chef</a><a href="#" class="login">Log In</a><a href="#" class="login">Regístrate</a></span></div>
+    <nav class="navbar navbar-light navbar-expand-md fixed-top navigation-clean-button">
+        <div class="container fluid " >
+            <a class="navbar-brand" (click)= "handleOnClickHome()"><img src="assets/img/logo-rosa.png" data-bs-hover-animate="tada" style="width:50px;"></a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse align-right"
+                id="navcol-1">
+                <div [ngSwitch] = "user" class="derecha ">
+                        <div *ngSwitchCase="'chef'">
+                                <ul class="nav navbar-nav mr-auto">
+                                        <li (click) = "nuevaExp()" class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Nueva experiencia</a></li>
+                                        <li class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Mis experiencias</a></li>
+                                        <!-- <li class="dropdown text-center">
+                                            <a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Ciudades</a>
+                                            <div class="dropdown-menu" role="menu">
+                                                <a class="dropdown-item text-center" role="presentation" href="#">Madrid</a>
+                                                <a class="dropdown-item text-center" role="presentation" href="#">Barcelona</a>
+                                                <a class="dropdown-item text-center" role="presentation" href="#">Valencia</a>
+                                            </div>
+                                        </li> -->
+                                        <!-- <li class="nav-item text-center" role="presentation"><a class="nav-link active" href="#">Conviértete en Chef</a></li>
+                                        <li class="nav-item text-center" role="presentation"><a class="nav-link active" href="#">Desconectarme</a></li> -->
+                                        <li class="dropdown text-center">
+                                                <a class="usuario dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"><img class="rounded-circle" width="40px" src="assets/img/2.jpg"></a>
+                                                <div class="dropdown-menu" role="menu">
+                                                    <a class="dropdown-item text-center" role="presentation" href="#"><strong>Gonzalo</strong></a>
+                                                    <a class="reg dropdown-item text-center" role="presentation" (click) = "handleClickSalir()">Desconectarme</a>
+                                                </div>
+                                            </li>
+                                    </ul> 
+                        </div>
+                        <div *ngSwitchCase="'invitado'">
+                                <ul class="nav navbar-nav mr-auto">
+                                        <li (click)="mostrarReg()" class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Conviértete en Chef</a></li>
+                                        <li class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Proximas Experiencias</a></li>
+                                        <!-- <li class="dropdown text-center">
+                                            <a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Ciudades</a>
+                                            <div class="dropdown-menu" role="menu">
+                                                <a class="dropdown-item text-center" role="presentation" href="#">Madrid</a>
+                                                <a class="dropdown-item text-center" role="presentation" href="#">Barcelona</a>
+                                                <a class="dropdown-item text-center" role="presentation" href="#">Valencia</a>
+                                            </div>
+                                        </li> -->
+                                        <!-- <li class="nav-item text-center" role="presentation"><a class="nav-link active" href="#">Conviértete en Chef</a></li>
+                                        <li class="nav-item text-center" role="presentation"><a class="nav-link active" href="#">Desconectarme</a></li> -->
+
+                                        <li class="dropdown text-center">
+                                                <a class="usuario dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"><img class="rounded-circle" width="40px" src="assets/img/2.jpg"></a>
+                                                <div class="dropdown-menu" role="menu">
+                                                    <a class="dropdown-item text-center" role="presentation" href="#"><strong>Gonzalo</strong></a>
+                                                    <a class="dropdown-item text-center" role="presentation" (click) = "handleClickSalir()">Desconectarme</a>
+                                                </div>
+                                            </li>
+                                    </ul>                          
+                        </div>
+                        <div *ngSwitchCase="'none'">
+                                <ul class="nav navbar-nav mr-auto">
+                                        <!-- <li class="nav-item text-center" role="presentation"><a class="nav-link active" href="#">First Item</a></li>
+                                        <li class="nav-item text-center" role="presentation"><a class="nav-link active" href="#">Second Item</a></li> -->
+                                        <!-- <li class="dropdown text-center">
+                                            <a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Ciudades </a>
+                                            <div class="dropdown-menu" role="menu">
+                                                <a class="dropdown-item text-center" role="presentation" href="#">Madrid</a>
+                                                <a class="dropdown-item text-center" role="presentation" href="#">Barcelona</a>
+                                                <a class="dropdown-item text-center" role="presentation" href="#">Valencia</a>
+                                            </div>
+                                        </li> -->
+                                        
+                                        <li (click)="mostrarModal('registro')" class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Regístrate</a></li>
+                                        <li (click)="mostrarModal('login')" class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Inicia Sesión</a></li>
+                                    </ul>
+                        </div>
+                        
+                </div>   
+            </div>
+        </div>
+    </nav>
 </div>
-</nav>
-</div>
+
+
+
+<!-- 
+<div class="table-fixed">
+    <nav class="navbar navbar-light navbar-expand-md  fixed-top navigation-clean-button">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logo_rosa.png" style="width:50px;">
+            </a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <div class="nav navbar-nav mr-auto "></div>
+
+                <div [ngSwitch] = "user">
+                    <div *ngSwitchCase="'chef'">
+                            <span class="navbar-text actions">
+                                    <a href="#" class="login exp" style="margin-right:50px;">Nueva Experiencia</a>
+                                    <a href="#" class="login">Mi cuenta</a>
+                                    <a (click) = "handleClickSalir()" href="#" class="login">Salir</a>
+                                </span>
+                    </div>
+                    <div *ngSwitchCase="'invitado'">
+                            <span class="navbar-text actions">
+                                    <a href="#" class="login chef" style="margin-right:50px;">Madrid</a>
+                                    <a href="#" class="login chef" style="margin-right:50px;">Barcelona</a>
+                                    <a href="#" class="login">Mi cuenta</a>
+                                    <a (click) = "handleClickSalir()" href="#" class="login">Salir</a>
+                                </span>
+                    </div>
+                    <div *ngSwitchCase="'none'">
+                            <span class="navbar-text actions">
+                                    <a href="#" class="login chef" style="margin-right:50px;">Conviértete en Chef</a>
+                                    <a href="#" class="login">Log In</a>
+                                    <a (click) = "handleClickSalir()" href="#" class="login">Regístrate</a>
+                                </span>
+                    </div>
+                    
+                </div>               
+            </div>
+        </div>
+    </nav>
+</div> -->
+

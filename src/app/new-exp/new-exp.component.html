@@ -1,0 +1,67 @@
+
+<div class="login-clean">
+
+  <form class="form-group" [formGroup]="form" (ngSubmit)="handleSubmit(form.value)" *ngIf="estado === 0">
+    <button type="button" class="close" (click)="close()" class="close float-left">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h2 class="tit">Nueva Experiencia</h2>
+
+    <label class="uno">Introduce el nombre del plato:</label>
+    <input class="form-control" type="text" name="title" placeholder="" formControlName="title">
+    <div class="errorForm" *ngIf="form.controls.title.errors?.required && form.controls.title.touched && form.controls.title.dirty ">Campo obligatorio</div>
+    <div class="errorForm" *ngIf="form.controls.title.errors?.minlength && form.controls.title.touched ">Debe contener mínimo 3 caracteres</div>
+    <label>Describe el plato a tus futuros invitados:</label>
+    <textarea class="form-control" type="text" name="description" placeholder="" formControlName="description"></textarea>
+    <div class="errorForm" *ngIf="form.controls.description.errors?.required && form.controls.description.touched && form.controls.description.dirty ">Campo obligatorio</div>
+    <div class="errorForm" *ngIf="form.controls.description.errors?.minlength && form.controls.description.touched ">Debe contener mínimo 60 caracteres</div>
+    <label>¿Quiéres poner un precio por comensal?</label>
+    <input class="form-control col-2" type="number" name="price" placeholder="" formControlName="price">
+    <small id="emailHelp" class="form-text text-muted">Si lo dejas vacío entenderemos que es gratuito.</small>
+    <div class="errorForm " *ngIf="form.controls.price.errors?.required && form.controls.price.touched && form.controls.price.dirty">Campo obligatorio</div>
+    <div class="errorForm" *ngIf="form.controls.price.errors?.pattern && form.controls.price.dirty">Deben ser sólo números</div>
+    <label>¿A cuántos invitados quieres acoger?</label>
+    <input class="form-control col-2 bis" type="number" name="number_invitados" placeholder="" formControlName="number_invitados">
+    <div class="errorForm" *ngIf="form.controls.number_invitados.errors?.required && form.controls.number_invitados.touched && form.controls.number_invitados.dirty ">Campo obligatorio</div>
+    <div class="errorForm" *ngIf="form.controls.number_invitados.errors?.pattern && form.controls.number_invitados.dirty">Deben ser sólo números</div>
+    <button (click) = "handleSiguiente()" type="button" class=" btn btn-link" >Siguiente</button>
+  </form>
+
+  <form *ngIf="estado === 1">
+      <button type="button" class="close" (click)="close()" class="close float-left">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <h2 class="tit">Nueva Experiencia</h2>
+
+      <label>¿Qué tipo de cocina es?</label>
+      <input class="form-control" type="text" name="nombre" placeholder="" >
+     
+  
+      <label>¿En qué ciudad te encuentras?</label>
+      <input class="form-control" type="text" name="nombre" placeholder="" >
+      
+      <label>¿Qué disponibilidad tienes?</label>
+      <input class="form-control" type="text" name="nombre" placeholder="fines de semana" >
+
+      <label>Añade unas fotografías del plato</label>
+      <input class="form-control-file" type="file" name="nombre" placeholder="" >
+      <button (click) = "handleSiguiente()" type="button" class="btn btn-link">Siguiente</button>
+    </form>
+
+    <form *ngIf="estado === 2">
+        <button type="button" class="close" (click)="close()" class="close float-left">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h2 class="tit">Nueva Experiencia</h2> 
+
+        <label>Añade la dirección exacta</label>
+        <input class="form-control" type="text" name="nombre" placeholder="" >
+    
+        <div class="mapa">
+            <agm-map [latitude]="latitud" [longitude]="longitud" [zoom]="zoom" [gestureHandling]="habilitarMap">
+              <agm-marker [latitude]="latitud" [longitude]="longitud"></agm-marker>
+            </agm-map>
+          </div>
+           
+      </form>
+</div>

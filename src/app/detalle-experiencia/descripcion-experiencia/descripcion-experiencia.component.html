@@ -1,0 +1,27 @@
+<p class="tipo">cocina {{experience?.food_type}} </p>
+<p id="title">{{experience?.title}}</p>
+<p>{{experience?.description}}</p>
+<p class="ingredientes">Ingredientes:
+    <span>&nbsp;{{experience?.ingredientes}}</span>
+</p>
+<div class="carousel slide" data-ride="carousel" id="carousel-1">
+    <div class="carousel-inner" role="listbox" style="height:300px;">
+        <div *ngFor="let imagen of experience?.imagenes; let first=first" class="carousel-item" [ngClass]="{active:first}" style="height:100%;">
+            <img class="img-fluid w-100 d-block d-none" [src]="imagen" alt="Slide Image" style="background-size:cover;">
+        </div>
+
+    </div>
+    <div>
+        <a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-1" role="button" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <ol class="carousel-indicators">
+        <li *ngFor="let imagen of experience?.imagenes; let i=index" data-target="#carousel-1" [attr.data-slide-to]="i"></li>
+    </ol>
+</div>

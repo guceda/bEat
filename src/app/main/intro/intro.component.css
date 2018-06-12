@@ -1,0 +1,121 @@
+.highlight-phone {
+    color:#313437;
+    /* background-color:#eef4f7; */
+    padding:50px 0 55px;
+    overflow:hidden;
+    /* background-image: url(../../assets/img/bakery-dessert-food-8279.jpg); */
+    /* background-size: cover;
+    background-position-y: -240px;
+    background-repeat: no-repeat;  */
+    margin-top:75px;
+  }
+
+  
+  @media (max-width:1300px) {
+    .highlight-phone {
+      text-align:left;
+      background-position: top;
+    }
+  }
+
+
+  .titulo {
+    /* text-shadow: 1px 1px 3px white; */
+    font-size:2rem;
+    color: rgba(0,0,0,0.7) !important;
+    font-weight:700 !important;
+    width: 450px !important;
+  }
+ 
+  .highlight-phone p {
+    color: rgba(0,0,0,0.7);
+    font-weight: 500;
+    width: 380px;
+  }
+  
+
+  .highlight-phone h2 {
+    font-weight:bold;
+    margin-bottom:35px;
+    line-height:1.5;
+    padding-top:0;
+    margin-top:0;
+    color:inherit;
+  }
+  
+  .highlight-phone .intro {
+    font-size:18px;
+    max-width:500px;
+    line-height:1.5;
+  }
+  
+  @media (max-width:767px) {
+    .highlight-phone .intro {
+      max-width:none;
+    }
+  }
+  
+  .highlight-phone .intro p {
+    margin-bottom:35px;
+  }
+  
+  .highlight-phone .intro .btn {
+    padding:16px 32px;
+    border:none;
+    background:none;
+    box-shadow:none;
+    text-shadow:none;
+    opacity:0.9;
+    text-transform:uppercase;
+    font-weight:bold;
+    font-size:13px;
+    letter-spacing:0.4px;
+    line-height:1;
+  }
+  
+  .highlight-phone .intro .btn:hover {
+    opacity:1;
+  }
+  
+  .highlight-phone .intro .btn:active {
+    transform:translateY(1px);
+  }
+  
+  .btn-primary {
+    background-color:#ec576b!important;
+    color:white !important;
+    border:1px solid white !important;
+    border-radius:30px;
+    font-style:normal;
+    width:300px;
+  }
+
+/* paralax */
+
+
+.imagen {
+  height:500px;
+
+  background-image:url(../../../assets/img/intro.jpg);
+  
+  background-position:center;
+  background-size:cover;
+  margin-top:75px;
+}
+
+@media (max-width: 575px) {
+  .imagen {
+    height:150px !important;
+
+  }
+}
+
+@media (max-width: 767px) {
+  .imagen {
+    height:300px;
+  }
+}
+
+
+  
+  

@@ -1,3 +1,5 @@
+
+
 .navigation-clean-button {
     background:#fff;
     padding-top:.75rem;
@@ -18,7 +20,14 @@
 
   .chef {
     color:grey !important;
+    margin-right: 40px;
   }
+
+  .exp {
+    color:#4ec5c1 !important;
+    margin-right: 40px;
+  }
+
   
   .navigation-clean-button .navbar-brand {
     font-weight:bold;
@@ -72,10 +81,21 @@
   }
   
   .navigation-clean-button .navbar-nav > li > .dropdown-menu {
-    margin-top:-5px;
+    margin-top:10px;
     box-shadow:0 4px 8px rgba(0,0,0,.1);
     background-color:#fff;
     border-radius:2px;
+    margin-left: -80px;
+  }
+
+  @media (max-width:768px){
+    .navigation-clean-button .navbar-nav > li > .dropdown-menu {
+      margin-top:10px;
+      box-shadow:0 4px 8px rgba(0,0,0,.1);
+      background-color:#fff;
+      border-radius:2px;
+      margin-left: 0px;
+    }
   }
   
   .navigation-clean-button .dropdown-menu .dropdown-item:focus, .navigation-clean-button .dropdown-menu .dropdown-item {
@@ -87,6 +107,7 @@
   .navigation-clean-button .dropdown-menu .dropdown-item:focus, .navigation-clean-button .dropdown-menu .dropdown-item:hover {
     background:#eee;
     color:inherit;
+    
   }
   
   .navigation-clean-button .actions .login {
@@ -113,3 +134,59 @@
   }
   
   
+  .navbar{
+    border-bottom: 1px solid lightgrey;
+  }
+
+
+  #marcador{
+
+    height: 45px;
+    position: absolute;
+    left:0;
+    top:0;
+    background-color: white;
+    opacity: 0.3;
+    border-bottom: 5px solid black;
+}
+
+.navbar-toggler{
+  border: 0px solid rgba(0,0,0,.0)!important;
+}
+
+.usuario{
+  padding: 0;
+}
+
+.separador{
+  padding-left: 5px;
+  border-left: 1px solid lightgrey;
+}
+
+
+.navbar-collapse{
+  flex-grow: 0;
+}
+
+
+.container{
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+  max-width: 2000px;
+}
+
+
+.reg{
+  cursor:pointer
+}
+
+.navbar-brand{
+  cursor: pointer
+}
+
+
+.nav-item:hover{
+ opacity: 0.6;
+}
