@@ -1,0 +1,185 @@
+
+.h2, h2 {
+    opacity:0.8;
+  }
+  
+  .form {
+    overflow:scroll;
+    margin-bottom:50px;
+    margin-top: 110px;
+  }
+  
+  .form-control {
+    height:50px;
+    margin-bottom:30px;
+  }
+  
+  .h2, h2 {
+    margin:50px 0;
+    font-weight: bold;
+  }
+  
+  .textarea {
+    height:100px;
+    resize:none;
+  }
+
+  .fondo {
+    background-color:rgba(211, 211, 211, 0.3);
+    width:45%;
+    height: 100% !important;
+    position:absolute;
+    right: 0px;
+    
+
+  }
+
+  agm-map {
+    opacity: 0.8 !important;
+    height: 100% !important;
+  }
+
+  
+  label{
+      opacity: 0.7;
+      font-size: 110%;
+
+  }
+
+  input:focus, textarea:focus{
+    outline: none;
+    box-shadow:none !important;
+    border:1px solid #4EC5C1 !important;
+  }
+
+  button, button:hover{
+      background-color: #ec576b;
+      border: none;
+      padding: 10px 17px;
+      border-radius: 50%;
+  }
+
+
+button:active{
+    background-color: #ec576b !important;
+    border: none;
+    padding: 10px 17px;
+    border-radius: 50%;
+    opacity: 0.6;
+   
+}
+
+.finalizar, .finalizar:hover, .finalizar:active{
+    border-radius: 30px;
+}
+
+.progress{
+    margin-top: 0px;
+}
+
+.progress-bar{
+    background-color: #ec576b;
+}
+
+
+.numero, .numero:hover, .numero:active {
+    margin-left: 10px;
+    width: 34px;
+    height: 34px;
+    background-color: white !important;
+    border: 1px solid #4EC5C1 !important;
+    color: #4EC5C1 !important;
+    padding: 4px 5px 5px 5px;
+
+}
+
+span{
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.cantidad{
+    display: inline;
+    margin-left: 8%;
+}
+
+.cantidad1, .cantidad2{
+    margin-bottom: 30px;
+}
+
+.cantidad2 > .cantidad {
+    margin-left: 6%;
+}
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    opacity: 0.4; /* Firefox */
+}
+
+
+.ingredientes{
+    height: 800px;
+}
+
+
+.ing{
+    width: 300px;
+    display: inline;
+    margin-right: 30px;
+    margin-top: 20px;
+}
+
+.listaIng{
+    height: 300px;
+    margin-top: 30px;
+}
+
+.listaIng div {
+    padding: 10px 15px;
+    display: inline-block;
+    text-align: center;
+}
+
+.adding, .adding:hover, .adding:active{
+    border-radius: 10px;
+}
+
+.confirm{
+    margin-bottom: 150px;
+}
+
+.imagen{
+    height: 100px;
+    width: 100px;
+    background-color: lightgrey;
+    display: inline-block;
+    margin: 10px;
+    font-size: 300%;
+    font-weight: bold;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 100px;
+}
+
+.row{
+    margin-bottom: 30px;
+}
+
+
+.diving{
+    margin: 10px;
+    cursor: pointer;
+}
+
+.diving:hover{
+    background-color: rgba(238, 119, 119, 0.897);
+    border: 1px solid rgba(238, 119, 119, 0.897);
+}
+
+
+.errMessage{
+     margin-top: -20px;
+    font-size: 13px;
+    color: red;
+    margin-bottom: 30px;
+}

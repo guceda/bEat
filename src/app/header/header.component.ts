@@ -3,6 +3,7 @@ import { LoginComponent } from '../login/login.component';
 import { DialogService } from "ng2-bootstrap-modal";
 import { RegistroComponent } from '../registro/registro.component'
 import { ModalService } from '../modal.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class HeaderComponent implements OnInit {
 
   user: string
 
-  constructor(private dialogService: DialogService, private modalService: ModalService) {
+  constructor(private dialogService: DialogService, private modalService: ModalService, private router:Router) {
     this.user = ''
   }
 
@@ -50,7 +51,8 @@ export class HeaderComponent implements OnInit {
   }
 
   nuevaExp(){
-    this.modalService.showConfirm('newExp')
+    //this.router.navigate(['nuevaExperiencia'])
+    window.location.href = "nuevaExperiencia"
   }
 
 }
