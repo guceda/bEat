@@ -32,8 +32,8 @@ import { MapaComponent } from './detalle-experiencia/mapa/mapa.component';
 import { OtrasExperienciasComponent } from './detalle-experiencia/otras-experiencias/otras-experiencias.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { Login } from './login.guard';
-
 import { NuevaExpComponent } from './nueva-exp/nueva-exp.component';
+import { ImageUploadModule } from "angular2-image-upload";
 
 
 
@@ -65,14 +65,18 @@ import { NuevaExpComponent } from './nueva-exp/nueva-exp.component';
     MapaGeoComponent,
     OtrasExperienciasComponent,
     RegistroComponent,
-  
     NuevaExpComponent,
-
-
-
+    
   ],
   imports: [
-    BrowserModule, HttpModule, RouterModule.forRoot(appRoutes), AgmCoreModule.forRoot({ apiKey: 'AIzaSyCJljbW6TMtwO4Q75_thCUTCl4bNAvBl5Y' }), BootstrapModalModule.forRoot({ container: document.body }), FormsModule, ReactiveFormsModule
+    BrowserModule,
+    HttpModule,
+    RouterModule.forRoot(appRoutes), 
+    AgmCoreModule.forRoot({ apiKey: 'AIzaSyCJljbW6TMtwO4Q75_thCUTCl4bNAvBl5Y' }), 
+    BootstrapModalModule.forRoot({ container: document.body }), 
+    FormsModule, 
+    ReactiveFormsModule,
+    ImageUploadModule.forRoot(),
 
   ],
   entryComponents: [

@@ -30,7 +30,7 @@
             <label>¿Qué tipo de cocina es?</label>
             <input class="form-control" type="text" formControlName="food_type" placeholder="española, peruana, tailandesa, china, japonesa, francesa, etc.">
             <div class="errMessage" *ngIf="form.controls.food_type.errors?.required && form.controls.food_type.touched && form.controls.food_type.dirty ">Campo obligatorio</div>
-          <div class="errMessage" *ngIf="form.controls.food_type.errors?.minlength && form.controls.food_type.touched && form.controls.food_type.dirty ">Debe contener mínimo 3 caracteres</div>
+            <div class="errMessage" *ngIf="form.controls.food_type.errors?.minlength && form.controls.food_type.touched && form.controls.food_type.dirty ">Debe contener mínimo 3 caracteres</div>
 
           </div>
           <div *ngIf="estadoExperiencia === 2">
@@ -78,11 +78,10 @@
             <input class="form-control" type="text">
           </div>
           <div class="row" *ngIf="estadoExperiencia === 5">
-            <div class="col-3 imagen">+</div>
-            <div class="col-3 imagen">+</div>
-            <div class="col-3 imagen">+</div>
+            <image-upload buttonCaption="+" dropBoxMessage="" [max]="4" [style]="customStyle">
+            </image-upload>
 
-            <!-- Imagen confeti derecha -->
+           <!-- Imagen confeti derecha -->
 
 
           </div>

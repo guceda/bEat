@@ -19,6 +19,7 @@ export class NuevaExpComponent implements OnInit {
   zoom: number
   form:FormGroup
   ingredientes: Array<string>
+  customStyle:any
 
   @ViewChild('ingrediente')ingredienteInput
 
@@ -38,6 +39,43 @@ export class NuevaExpComponent implements OnInit {
       city: new FormControl('', [Validators.required, Validators.minLength(3)]),
       availability: new FormControl('', [Validators.required, Validators.minLength(3)])
     })
+//estilos del input de imágenes
+    this.customStyle = {
+      selectButton: {
+        "background-color": "lightgrey",
+        "color": "white",
+        "width": "100px",
+        "height": "100px",
+        "line-height": "80px",
+        "text-align": "center",
+        "border-radius": "50%",
+        "font-size": "500%",
+        
+      },
+      clearButton: {
+        "background-color": "#FFF",
+        "border-radius": "25px",
+        "display": "none",
+        "margin-left": "10px"
+      },
+      layout: {
+        "background-color": "white",
+        "border": "0",
+        "color": "#FFF",
+        "font-size": "15px",
+        "margin": "10px",
+        "padding-top": "5px",
+        "width": "100%"
+      },
+      previewPanel: {
+        "background-color": "white",
+        "border": "0",
+        "margin-bottom": "30px"
+        // "position": "relative",
+        // "left": "128px",
+        // "top": "-120px"
+      }
+    }
    }
 
   ngOnInit() {
