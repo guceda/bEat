@@ -29,6 +29,21 @@ export class ExperienciasService {
     return this.http.get('http://localhost:3000/api/experiencias/ubicaciones').toPromise()
   }
 
+  setNewExperience(pExperiencia) {
+    console.log(pExperiencia)
+    return this.http.post('http://localhost:3000/api/experiencias/nuevaExperiencia', {
+        title: pExperiencia.title, 
+        description: pExperiencia.description, 
+        food_type: pExperiencia.food_type, 
+        ingredients: pExperiencia.ingredients, 
+        availability: pExperiencia.availability, 
+        city: pExperiencia.city, 
+        number_invitados: pExperiencia.number_invitados, 
+        price: pExperiencia.price,
+        chef_id: pExperiencia.chef_id
+    }).toPromise()
+  }
+
   
 
 }

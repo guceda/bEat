@@ -1,11 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ExperienciasService } from '../experiencias.service';
 
 @Component({
   selector: 'app-nueva-exp',
   templateUrl: './nueva-exp.component.html',
   styleUrls: ['./nueva-exp.component.css'],
+  providers: [ExperienciasService]
 })
 export class NuevaExpComponent implements OnInit {
 
@@ -20,10 +22,11 @@ export class NuevaExpComponent implements OnInit {
   form:FormGroup
   ingredientes: Array<string>
   customStyle:any
+  chefId:any
 
   @ViewChild('ingrediente')ingredienteInput
 
-  constructor(private router:Router) {
+  constructor(private router:Router, private experienciasService:ExperienciasService) {
     this.estadoExperiencia = 1
     this.barPercentage = 0
     this.precioInv = 0
@@ -32,12 +35,14 @@ export class NuevaExpComponent implements OnInit {
     this.longitud = -3.707398
     this.zoom = 15
     this.ingredientes = ['arroz']
+    this.chefId = JSON.parse(localStorage.getItem('usr')).chf
     this.form = new FormGroup ({
       title: new FormControl('', [Validators.required, Validators.minLength(3)]),
       description: new FormControl('', [Validators.required, Validators.minLength(60)]),
       food_type: new FormControl('', [Validators.required, Validators.minLength(3)]),
       city: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      availability: new FormControl('', [Validators.required, Validators.minLength(3)])
+      availability: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      chef_id: new FormControl(`${this.chefId}`)
     })
 //estilos del input de imágenes
     this.customStyle = {
@@ -71,9 +76,6 @@ export class NuevaExpComponent implements OnInit {
         "background-color": "white",
         "border": "0",
         "margin-bottom": "30px"
-        // "position": "relative",
-        // "left": "128px",
-        // "top": "-120px"
       }
     }
    }
@@ -126,6 +128,7 @@ export class NuevaExpComponent implements OnInit {
     this.form.value.ingredients = this.ingredientes
     this.form.value.price = this.precioInv
     this.form.value.number_invitados = this.numInv
+    this.experienciasService.setNewExperience(this.form.value).then((res)=>{console.log(res)})
   }
 
   handleAddIngredient(pIngrediente){
@@ -139,5 +142,9 @@ export class NuevaExpComponent implements OnInit {
     this.ingredientes.splice(pIndex, 1)
   }
 
+  onUploadStateChanged($event){
+    console.log('holi')
+    console.log($event)
+  }
  
 }

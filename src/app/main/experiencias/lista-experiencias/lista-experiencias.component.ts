@@ -20,6 +20,7 @@ export class ListaExperienciasComponent implements OnInit {
   ngOnInit() {
     this.experienciasService.getExperienciasByLocalizacion(this.ciudad.toLowerCase()).then((arrExperiencias)=>{   
       this.experiencias = arrExperiencias.json()
+      console.log(this.experiencias)
     }) 
   }
 }

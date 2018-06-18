@@ -32,6 +32,8 @@
             <div class="errMessage" *ngIf="form.controls.food_type.errors?.required && form.controls.food_type.touched && form.controls.food_type.dirty ">Campo obligatorio</div>
             <div class="errMessage" *ngIf="form.controls.food_type.errors?.minlength && form.controls.food_type.touched && form.controls.food_type.dirty ">Debe contener mínimo 3 caracteres</div>
 
+            <input class="form-control" type="hidden" formControlName="chef_id" formControlName="chef_id">
+
           </div>
           <div *ngIf="estadoExperiencia === 2">
             <label>Añade
@@ -78,10 +80,9 @@
             <input class="form-control" type="text">
           </div>
           <div class="row" *ngIf="estadoExperiencia === 5">
-            <image-upload buttonCaption="+" dropBoxMessage="" [max]="4" [style]="customStyle">
-            </image-upload>
+            <image-upload [url]="'http://localhost:3000/api/experiencias/nuevaExperiencia/imagenes'" buttonCaption="+" dropBoxMessage="" [max]="4" [style]="customStyle" (uploadStateChanged)="onUploadStateChanged($event)"></image-upload>
 
-           <!-- Imagen confeti derecha -->
+            <!-- Imagen confeti derecha -->
 
 
           </div>
@@ -93,10 +94,6 @@
                 style="float:right;">></button>
               <button *ngIf="estadoExperiencia === 5" class="btn btn-primary right finalizar" type="button" style="float:right" (click)="handleFinish()">Finalizar</button>
         </div>
-
-
-
-
       </div>
       <div class="col-md-6">
       </div>
