@@ -34,6 +34,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { Login } from './login.guard';
 import { NuevaExpComponent } from './nueva-exp/nueva-exp.component';
 import { ImageUploadModule } from "angular2-image-upload";
+import { MyExpsComponent } from './my-exps/my-exps.component';
+import { FavoritasComponent } from './favoritas/favoritas.component';
 
 
 
@@ -66,6 +68,8 @@ import { ImageUploadModule } from "angular2-image-upload";
     OtrasExperienciasComponent,
     RegistroComponent,
     NuevaExpComponent,
+    MyExpsComponent,
+    FavoritasComponent,
     
   ],
   imports: [

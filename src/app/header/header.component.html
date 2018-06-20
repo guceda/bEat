@@ -11,7 +11,7 @@
                         <div *ngSwitchCase="'chef'">
                                 <ul class="nav navbar-nav mr-auto">
                                         <li (click) = "nuevaExp()" class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Nueva experiencia</a></li>
-                                        <li class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Mis experiencias</a></li>
+                                        <li (click) = "myExps()" class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Mis experiencias</a></li>
                                         <!-- <li class="dropdown text-center">
                                             <a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Ciudades</a>
                                             <div class="dropdown-menu" role="menu">
@@ -33,7 +33,7 @@
                         </div>
                         <div *ngSwitchCase="'invitado'">
                                 <ul class="nav navbar-nav mr-auto">
-                                        <li (click)="mostrarReg()" class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Conviértete en Chef</a></li>
+                                        <li (click)= "favoritas()" class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Experiencias Favoritas</a></li>
                                         <li class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Proximas Experiencias</a></li>
                                         <!-- <li class="dropdown text-center">
                                             <a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Ciudades</a>

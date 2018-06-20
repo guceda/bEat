@@ -10,7 +10,7 @@ constructor(private router:Router){}
             return true
         } else {
             //this.modalService.showConfirm('login')
-            this.router.navigate(['home', 'login'])
+            this.router.navigate(['/'])
             return false
         }
 

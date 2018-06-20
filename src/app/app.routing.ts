@@ -6,6 +6,8 @@ import { ListaExperienciasComponent } from "./main/experiencias/lista-experienci
 import { MainComponent } from "./main/main.component";
 import { Login } from './login.guard';
 import { NuevaExpComponent } from "./nueva-exp/nueva-exp.component";
+import { MyExpsComponent } from "./my-exps/my-exps.component";
+import { FavoritasComponent } from "./favoritas/favoritas.component";
 
 
 
@@ -16,6 +18,8 @@ export const appRoutes:Routes = [
     { path:'experiencia', component: DetalleExperienciaComponent },
     { path:'experiencia/:id', component: DetalleExperienciaComponent, canActivate: [Login] },
     { path:'nuevaExperiencia', component: NuevaExpComponent, canActivate: [Login] },
+    { path:'misExperiencias', component:MyExpsComponent, canActivate: [Login]},
+    { path:'favoritas', component: FavoritasComponent, canActivate: [Login] },
     { path: '**', redirectTo:'main', pathMatch: 'full' },
 ]
 

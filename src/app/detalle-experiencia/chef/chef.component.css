@@ -56,3 +56,19 @@ span {
 .enun{
   font-weight: bold;
 }
+
+
+.fav:hover {
+  width:100%;
+  border-radius:30px;
+  background-color:#4ec5c1;
+  border:0px;
+}
+
+.fav {
+  margin-top: 10px;
+  width:100%;
+  border-radius:30px;
+  background-color:#4ec5c1;
+  border:0;
+}

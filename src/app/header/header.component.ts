@@ -46,13 +46,18 @@ export class HeaderComponent implements OnInit {
     window.location.href = "home"
   }
 
-  mostrarReg() {
-    this.modalService.showConfirm('registro')
-  }
 
   nuevaExp(){
     //this.router.navigate(['nuevaExperiencia'])
     window.location.href = "nuevaExperiencia"
+  }
+
+  myExps(){
+    window.location.href = "misExperiencias"
+  }
+
+  favoritas(){
+    window.location.href = "favoritas"
   }
 
 }

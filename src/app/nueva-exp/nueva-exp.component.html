@@ -1,5 +1,5 @@
 <div class="block">
-  <div *ngIf="estadoExperiencia < 4" class="fondo"></div>
+  <div *ngIf="estadoExperiencia < 4" class="fondo fondoimg"></div>
   <div *ngIf="estadoExperiencia > 3" class="mapa fondo">
     <agm-map [latitude]="latitud" [longitude]="longitud" [zoom]="zoom">
       <agm-marker [latitude]="latitud" [longitude]="longitud"></agm-marker>

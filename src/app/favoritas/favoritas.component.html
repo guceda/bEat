@@ -1,0 +1,48 @@
+<div class="block">
+  <!-- <div class="fondo"></div> -->
+  <div class="container">
+    <div class="row">
+      <h2 class="col-md-12">Mis experiencias favoritas</h2>
+      <div class="col-md-12" *ngIf="experiencias?.length === 0">
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4">Aún no tienes experiencias favoritas</h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 form">
+        <div class="row justify-content-left features">
+          <div *ngFor="let experiencia of experiencias, let i=index" class="col-sm-6 col-md-4 col-lg-4 item">
+            <div class="item">
+              <a class="imagen" (click)="handleClick()" routerLink='/experiencia/{{experiencia.id_experiencia}}'>
+                <img class="img-fluid img" src="{{experiencia.main_image}}">
+              </a>
+              <div id="texto">
+                <h3 class="cocina">Cocina {{experiencia.food_type}}
+                  <span class="num"> {{experiencia.number_invitados}}
+                    <i class="fa fa-user"></i>
+                  </span>
+                </h3>
+                <h3 class="name nombre">{{experiencia.title}}</h3>
+                <div class="name chef">
+                  <span href="#" class="chef">
+                    <i class="fas fa-utensils"></i>
+                    <span>{{experiencia.name}}</span>
+                  </span>
+                </div>
+                <h3 class="datos">{{experiencia.price}}€ por Invitado ·
+                  <span>{{experiencia.availability}}</span>
+                </h3>
+                <i (click)="setFav(i)" *ngIf="expFavorita === i" class="far fa-heart"></i>
+                <i (click)="unsetFav(i)" *ngIf="expFavorita !== i" class="fas fa-heart"></i>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+      </div>
+    </div>
+  </div>
+</div>

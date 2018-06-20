@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ExperienciasService } from '../experiencias.service';
+import { HttpHeaders } from '@angular/common/http'
 
 @Component({
   selector: 'app-nueva-exp',
@@ -89,6 +90,7 @@ export class NuevaExpComponent implements OnInit {
     if(this.form.controls.title.valid && this.form.controls.description.valid && this.form.controls.food_type.valid){
     this.estadoExperiencia += 1 
     this.barGrouth()
+    console.log(this.estadoExperiencia)
     }
   }
 
@@ -129,6 +131,7 @@ export class NuevaExpComponent implements OnInit {
     this.form.value.price = this.precioInv
     this.form.value.number_invitados = this.numInv
     this.experienciasService.setNewExperience(this.form.value).then((res)=>{console.log(res)})
+
   }
 
   handleAddIngredient(pIngrediente){

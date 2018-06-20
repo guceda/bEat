@@ -1,0 +1,29 @@
+
+ <div class="block">
+    <!-- <div class="fondo"></div> -->
+  <div class="container">
+    <div class="row">
+        <h2 class="col-md-12">Mis experiencias</h2> 
+      <div class="col-md-12 form">  
+        <div class="row justify-content-left features">
+          <div *ngFor="let experiencia of experiencias, let i=index" class="col-sm-6 col-md-4 col-lg-4 item">
+            <div class="item">
+              <a  class="imagen" (click) = "handleClick()" routerLink = '/experiencia/{{experiencia.id_experiencia}}'><img class="img-fluid img" src="{{experiencia.main_image}}"></a>
+                <h3 class="cocina">Cocina {{experiencia.food_type}}  <span class="num">  {{experiencia.number_invitados}} <i class="fa fa-user"></i></span></h3>
+                <h3 class="name nombre">{{experiencia.title}}</h3>
+                <div class="name chef">
+                      <span  href="#" class="chef"><i class="fas fa-utensils"></i> <span>{{experiencia.name}}</span></span>
+              </div>
+                  <h3 class="datos">{{experiencia.price}}€ por Invitado · <span>{{experiencia.availability}}</span></h3>
+                  <button *ngIf="check !== experiencia.id_experiencia " (click)='checkDelete(experiencia.id_experiencia)' type="button" class="btn btn-warning pull-left">Borrar</button>
+                  <button *ngIf="check === experiencia.id_experiencia" (click)='handleCancelar()' type="button" style="color: grey" class=" btn btn-light pull-left">Cancelar</button>
+                  <button *ngIf="check === experiencia.id_experiencia" (click)='handleDelete(experiencia.id_experiencia)' type="button" class="btn btn-danger pull-left">Borrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+      </div>
+    </div>
+  </div>
+</div>

@@ -25,14 +25,18 @@
   }
 
   .fondo {
-    background-color:rgba(211, 211, 211, 0.3);
+    /* background-color:rgba(211, 211, 211, 0.3); */
     width:45%;
     height: 100% !important;
     position:absolute;
     right: 0px;
-    
-
   }
+
+  .fondoimg{
+    background-image: url(../../assets/img/background-blur-bokeh-834894.jpg);
+    background-size: cover;
+  }
+  
 
   agm-map {
     opacity: 0.8 !important;
