@@ -1,0 +1,43 @@
+<div class="container" id="scrollChat">
+ 
+
+  <div class="texto">
+
+      <div class="item row">
+          <div class="col-6">
+            <h3 class="name nombre">{{experiencia?.title}}</h3>
+            <h3 class="cocina">Cocina {{experiencia?.food_type}}
+              <span class="num"> {{experiencia?.number_invitados}}
+                <i class="fa fa-user"></i>
+              </span>
+            </h3>
+          </div>
+          <div class="col-6">
+            <div class="name chef">
+              <span href="#" class="chef">
+                <i class="fas fa-utensils"></i>
+                <span>{{experiencia?.name}}</span>
+              </span>
+            </div>
+            <h3 class="datos">{{experiencia?.price}}€ por Invitado ·
+              <span>{{experiencia?.availability}}</span>
+            </h3>
+          </div>
+        </div>
+    <ul>
+      <li *ngFor="let mensaje of arrayMensajes">
+        <div class="mensaje" [ngClass]="{'text-right': mensaje.invitado_id === null}">
+          <img *ngIf=" mensaje.invitado_id !== null" class="rounded-circle" width="40px" src="assets/img/2.jpg">
+          <div [ngClass]="{'mesChef': mensaje.invitado_id === null, 'mesInv': mensaje.invitado_id !== null}">{{mensaje?.texto}}</div>
+          <img *ngIf=" mensaje.invitado_id === null" class="rounded-circle" width="40px" src="assets/img/2.jpg">
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" #mensaje aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+      <button id="submit" class="btn btn-outline-secondary" type="submit" (keydown.enter)="handleSend(mensaje)" (click)="handleSend(mensaje)">Enviar</button>
+    </div>
+  </div>
+</div>

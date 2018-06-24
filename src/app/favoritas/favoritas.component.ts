@@ -29,7 +29,7 @@ export class FavoritasComponent implements OnInit {
   unsetFav(num){
     this.expFavorita = num
     let idExp = this.experiencias[num].id_experiencia
-    this.experienciasService.removeFavorita(idExp, this.invId).then(()=>{
+    this.experienciasService.removeFavorita(idExp, this.invId).then((res)=>{
       location.reload()
    })
     

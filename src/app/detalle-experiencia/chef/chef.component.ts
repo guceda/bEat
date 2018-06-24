@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ExperienciasService } from '../../experiencias.service';
 import { Experiencia } from '../../models/experiencia.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-chef',
@@ -12,16 +13,18 @@ import { ActivatedRoute } from '@angular/router';
 export class ChefComponent implements OnInit {
 
   expFavorita:boolean
-  experiencia:Experiencia
+  experiencia:any
   idExperiencia:number
   invitado_id: any
+  chef_id: number
 
-  constructor(private experienciasService:ExperienciasService, private activatedRoute:ActivatedRoute) {
+  constructor(private experienciasService:ExperienciasService, private activatedRoute:ActivatedRoute, private router:Router) {
     this.activatedRoute.params.subscribe(((params)=>{
       this.idExperiencia = Number(params.id)
     }))
     this.expFavorita = false
     this.invitado_id = JSON.parse(localStorage.getItem('usr')).inv
+    
    }
 
   ngOnInit() {
@@ -47,6 +50,16 @@ export class ChefComponent implements OnInit {
     console.log(this.idExperiencia, this.invitado_id)
     this.experienciasService.removeFavorita(this.idExperiencia, this.invitado_id )
     this.expFavorita = false
+  }
+  handleContacta(){
+    this.chef_id = this.experiencia.id_chef
+    let chat = {
+      chef_id:this.chef_id,
+      invitado_id: this.invitado_id,
+      experiencia_id:this.idExperiencia 
+    }
+    localStorage.setItem('ct', JSON.stringify(chat) )
+    this.router.navigate(['chat'])
   }
   
 }

@@ -1,0 +1,180 @@
+.container{
+    margin-top: 150px;
+}
+
+.alert{
+   /* display: inline-block; */
+}
+
+li{
+    margin-top: 5px;
+    list-style: none;
+}
+
+.texto{
+    /* border: 1px solid grey; */
+    overflow: scroll ;
+    height: 500px;
+    background-color: rgba(211, 211, 211, 0.2);
+    border: 1px solid rgba(211, 211, 211, 0.2);
+    border-radius: 10px;
+    padding: 0px 40px 40px 0;
+    margin-bottom: 30px;
+
+}
+
+img{
+    margin-right: 10px;
+}
+
+.img-right{
+    margin-left: 20px;
+}
+
+.mensaje{
+    background-color: transparent;
+}
+
+
+.mesInv{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ec576c;
+    color: white;
+    border-radius: 30px;
+}
+
+.mesChef{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4ec5c1;
+    color: white;
+    border-radius: 30px;
+    margin-right: 20px;
+}
+
+
+.btn-outline-secondary{
+    border-radius: 30px !important;
+    border: 2px solid #ec576c;
+    color: #ec576c;
+    margin-left: 20px;
+}
+
+.btn-outline-secondary:hover, .btn-outline-secondary:active{
+    background-color: #ec576c !important;
+    border: 2px solid #ec576c !important;
+    color: white;
+}
+
+
+.form-control{
+    border-radius: 30px !important;
+    border: 1px solid lightgrey !important;
+}
+
+.form.control:focus{
+    outline: none;
+}
+
+
+
+
+
+
+.item {
+    padding:10px 0 10px 40px;
+    /* min-height:325px; */
+    text-align:center;
+    background-color: white;
+    margin-right: -40px;
+    margin-bottom: 30px;
+    /* -webkit-box-shadow: inset 0px 27px 17px -19px rgba(0,0,0,0.1);
+    -moz-box-shadow: inset 0px 27px 17px -19px rgba(0,0,0,0.1);
+    box-shadow: inset 0px 27px 17px -19px rgba(0,0,0,0.1); */
+  }
+  
+ .item .name {
+    font-weight:bold;
+    font-size:16px;
+    margin-top:0px;
+    color:inherit;
+  }
+  
+.item .description {
+    font-size:14px;
+    margin-top:15px;
+    margin-bottom:0;
+  }
+  
+.item .action {
+    font-size:24px;
+    width:24px;
+    margin:22px auto 0;
+    line-height:1;
+    display:block;
+    color:#4f86c3;
+    opacity:0.85;
+    transition:opacity 0.2s;
+    text-decoration:none;
+  }
+  
+.item .action:hover {
+    opacity:1;
+  }
+  
+  .item p {
+    color:#7d8285;
+  }
+
+
+.nombre {
+  text-transform: initial;
+  text-align: left;
+  margin-bottom: 0px;
+  /* font-size: 130% !important; */
+}
+
+.chef {
+  text-align: left;
+  text-transform: capitalize;
+  padding:0 0 10px 0;
+  color: grey;
+  font-size: 90%;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.datos{
+  font-size: 90%;
+  text-align: left;
+  margin-top: -10px;
+  text-align: right;
+  padding-right: 40px;
+}
+
+.cocina{
+  font-size: 75%;
+  text-align: left;
+  text-transform: uppercase;
+  color:#4ec5c1;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.chef i{
+  color: #ec576b
+}
+
+
+h3 span{
+  font-weight: normal;
+  text-transform: initial;
+  color: grey;
+}
+
+.num{
+  margin-left: 10px;
+}
+
+

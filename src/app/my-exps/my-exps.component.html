@@ -18,6 +18,7 @@
                   <button *ngIf="check !== experiencia.id_experiencia " (click)='checkDelete(experiencia.id_experiencia)' type="button" class="btn btn-warning pull-left">Borrar</button>
                   <button *ngIf="check === experiencia.id_experiencia" (click)='handleCancelar()' type="button" style="color: grey" class=" btn btn-light pull-left">Cancelar</button>
                   <button *ngIf="check === experiencia.id_experiencia" (click)='handleDelete(experiencia.id_experiencia)' type="button" class="btn btn-danger pull-left">Borrar</button>
+                  <button (click)='handleChat(experiencia.id_experiencia)' style="color: #4ec5c1" type="button" class="btn btn-info pull-left">Chat</button>
             </div>
           </div>
         </div>

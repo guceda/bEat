@@ -12,7 +12,11 @@ export class AppComponent {
   invId: any
 
   constructor(private router: Router, private experienciasService:ExperienciasService) {
-    this.invId = JSON.parse(localStorage.getItem("usr")).inv
+    if(JSON.parse(localStorage.getItem("usr"))) {
+       this.invId = JSON.parse(localStorage.getItem("usr")).inv
+    }else{
+    this.invId = 'noExiste'
+    }
    }
 
   ngOnInit() {
@@ -25,13 +29,17 @@ export class AppComponent {
     });
 
     //almacenamos el localstorage la info de la experiencias favoritas
-    if(this.invId) this.experienciasService.getAllFavoritas(this.invId).then((res)=>{
+    if(this.invId !== 'noExiste') this.experienciasService.getAllFavoritas(this.invId).then((res)=>{
       //console.log(res.json()[0].id_experiencia)
+      if(res.json().length > 0){
       let arrTemp = []
         res.json().forEach(exp => {
           arrTemp.push(exp.id_experiencia)
           localStorage.setItem('fvs', JSON.stringify(arrTemp))
         })
+      }else {
+        localStorage.setItem('fvs', 'empt')
+      }
       })
 
   }

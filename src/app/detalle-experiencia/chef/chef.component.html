@@ -12,7 +12,7 @@
 <p class="enun text-left">Disponibilidad:
   <span>{{experiencia?.availability}}</span>
 </p>
-<button class="btn btn-primary contacta" type="button">Contacta</button>
-<button *ngIf="expFavorita === false" (click)="marcarFavorita()" class="btn btn-primary fav" type="button">Márcala como favorita</button>
-<button *ngIf="expFavorita === true" (click)="eliminarFavorita()" class="btn btn-primary fav" type="button">Eliminar de favoritos</button>
+<button *ngIf="invitado_id" (click)= "handleContacta()" class="btn btn-primary contacta" type="button">Contacta</button>
+<button  *ngIf="invitado_id && expFavorita === false" (click)="marcarFavorita()" class="btn btn-primary fav" type="button">Márcala como favorita</button>
+<button  *ngIf="expFavorita === true" (click)="eliminarFavorita()" class="btn btn-primary fav" type="button">Eliminar de favoritos</button>
 <!-- <button class="btn btn-primary fav" type="button">Quítala de favoritos</button> -->

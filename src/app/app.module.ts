@@ -36,6 +36,7 @@ import { NuevaExpComponent } from './nueva-exp/nueva-exp.component';
 import { ImageUploadModule } from "angular2-image-upload";
 import { MyExpsComponent } from './my-exps/my-exps.component';
 import { FavoritasComponent } from './favoritas/favoritas.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 
@@ -70,6 +71,7 @@ import { FavoritasComponent } from './favoritas/favoritas.component';
     NuevaExpComponent,
     MyExpsComponent,
     FavoritasComponent,
+    ChatComponent,
     
   ],
   imports: [

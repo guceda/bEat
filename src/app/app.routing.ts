@@ -8,6 +8,7 @@ import { Login } from './login.guard';
 import { NuevaExpComponent } from "./nueva-exp/nueva-exp.component";
 import { MyExpsComponent } from "./my-exps/my-exps.component";
 import { FavoritasComponent } from "./favoritas/favoritas.component";
+import { ChatComponent } from "./chat/chat.component";
 
 
 
@@ -20,6 +21,7 @@ export const appRoutes:Routes = [
     { path:'nuevaExperiencia', component: NuevaExpComponent, canActivate: [Login] },
     { path:'misExperiencias', component:MyExpsComponent, canActivate: [Login]},
     { path:'favoritas', component: FavoritasComponent, canActivate: [Login] },
+    { path:'chat', component: ChatComponent, canActivate: [Login] },
     { path: '**', redirectTo:'main', pathMatch: 'full' },
 ]
 

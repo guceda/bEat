@@ -22,7 +22,7 @@ export class OtrasExperienciasComponent implements OnInit {
     setTimeout(()=>{
       this.experienciasService.getExperienciasByTipo(this.experience.food_type).then((res)=>{
         this.experiencias = res.json()
-        console.log(this.experiencias);
+        //console.log(this.experiencias);
         
       })
     }, 1000)

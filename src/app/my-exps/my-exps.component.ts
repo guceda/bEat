@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ExperienciasService } from '../experiencias.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ChatsService } from '../chats.service';
 
 @Component({
   selector: 'app-my-exps',
@@ -12,9 +13,9 @@ export class MyExpsComponent implements OnInit {
 
   chefId: Number
   experiencias: [object]
-  check:number
+  check: number
 
-  constructor(private experienciasService: ExperienciasService) {
+  constructor(private experienciasService: ExperienciasService, private router: Router) {
     this.chefId = JSON.parse(localStorage.getItem('usr')).chf
     this.check = 0
   }
@@ -24,8 +25,10 @@ export class MyExpsComponent implements OnInit {
       this.experiencias = res.json()
       console.log(this.experiencias)
     })
+
+    //llamar al chatService y ver que experiencias tienen chats abiertos
   }
-  checkDelete(id){
+  checkDelete(id) {
     this.check = id
   }
 
@@ -33,7 +36,15 @@ export class MyExpsComponent implements OnInit {
     this.experienciasService.destroyExperienciaById(pId)
     location.reload()
   }
-  handleCancelar(){
+  handleCancelar() {
     this.check = 0
+  }
+  handleChat(expId) {
+    let localData = {
+      chef_id: this.chefId,
+      experiencia_id: expId
+    }
+    localStorage.setItem('ct', JSON.stringify(localData))
+    this.router.navigate(['chat'])
   }
 }

@@ -19,9 +19,7 @@ export class ExperienciaComponent implements OnInit {
   ngOnInit() {
 
   }
-  handleClick() {
-    console.log('hola');
-    
+  handleClick() { 
     if (localStorage.getItem('usr')){
       this.router.navigate(['experiencia',this.experiencia.id_experiencia,])
     } else {
