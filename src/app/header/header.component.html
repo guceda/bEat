@@ -12,7 +12,7 @@
                                 <ul class="nav navbar-nav mr-auto">
                                         <li (click) = "nuevaExp()" class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Nueva experiencia</a></li>
                                         <li (click) = "myExps()" class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Mis experiencias</a></li>
-                                        <li class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Mis mensajes</a></li>
+                                        <li (click) = "myMessages()" class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Mis mensajes</a></li>
                                         <!-- <li class="dropdown text-center">
                                             <a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Ciudades</a>
                                             <div class="dropdown-menu" role="menu">
@@ -35,7 +35,7 @@
                         <div *ngSwitchCase="'invitado'">
                                 <ul class="nav navbar-nav mr-auto">
                                         <li (click)= "favoritas()" class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Experiencias Favoritas</a></li>
-                                        <li class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Mis mensajes</a></li>
+                                        <li (click) = "myMessages()" class="nav-item text-center reg" role="presentation"><a class="nav-link active" href="#">Mis mensajes</a></li>
                                         <!-- <li class="dropdown text-center">
                                             <a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Ciudades</a>
                                             <div class="dropdown-menu" role="menu">

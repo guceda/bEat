@@ -12,10 +12,17 @@ export class ChatsService {
   }
 
   sendMessage(pMessage){
-    console.log(pMessage)
+    console.log('puta')
     return this.http.post('http://localhost:3000/api/chats/newMessage', pMessage).toPromise()
   }
 
+  getAllConversChef(pChefId){
+    return this.http.get(`http://localhost:3000/api/chats/getConversChef/${pChefId}`).toPromise()
+  }
+
+  getAllConversInv(pInvId){
+    return this.http.get(`http://localhost:3000/api/chats/getConversInv/${pInvId}`).toPromise()
+  }
 
 
 

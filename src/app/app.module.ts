@@ -37,6 +37,7 @@ import { ImageUploadModule } from "angular2-image-upload";
 import { MyExpsComponent } from './my-exps/my-exps.component';
 import { FavoritasComponent } from './favoritas/favoritas.component';
 import { ChatComponent } from './chat/chat.component';
+import { MensajesComponent } from './mensajes/mensajes.component';
 
 
 
@@ -72,6 +73,7 @@ import { ChatComponent } from './chat/chat.component';
     MyExpsComponent,
     FavoritasComponent,
     ChatComponent,
+    MensajesComponent,
     
   ],
   imports: [

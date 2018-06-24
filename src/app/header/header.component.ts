@@ -16,11 +16,13 @@ export class HeaderComponent implements OnInit {
 
   user: string
 
-  constructor(private dialogService: DialogService, private modalService: ModalService, private router:Router) {
+  constructor(private router:Router, private dialogService: DialogService, private modalService: ModalService) {
     this.user = ''
   }
 
   ngOnInit() {
+
+
     if (localStorage.getItem('usr')) {
       if (JSON.parse(localStorage.getItem('usr')).chf) {
         this.user = "chef";
@@ -58,6 +60,10 @@ export class HeaderComponent implements OnInit {
 
   favoritas(){
     window.location.href = "favoritas"
+  }
+
+  myMessages(){
+    window.location.href = "mensajes"
   }
 
 }

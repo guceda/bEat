@@ -8,17 +8,20 @@
         <div class="row justify-content-left features">
           <div *ngFor="let experiencia of experiencias, let i=index" class="col-sm-6 col-md-4 col-lg-4 item">
             <div class="item">
-              <a  class="imagen" (click) = "handleClick()" routerLink = '/experiencia/{{experiencia.id_experiencia}}'><img class="img-fluid img" src="{{experiencia.main_image}}"></a>
+              <a  class="imagen" routerLink = '/experiencia/{{experiencia.id_experiencia}}'><img class="img-fluid img" src="{{experiencia.main_image}}"></a>
                 <h3 class="cocina">Cocina {{experiencia.food_type}}  <span class="num">  {{experiencia.number_invitados}} <i class="fa fa-user"></i></span></h3>
                 <h3 class="name nombre">{{experiencia.title}}</h3>
                 <div class="name chef">
                       <span  href="#" class="chef"><i class="fas fa-utensils"></i> <span>{{experiencia.name}}</span></span>
               </div>
                   <h3 class="datos">{{experiencia.price}}€ por Invitado · <span>{{experiencia.availability}}</span></h3>
-                  <button *ngIf="check !== experiencia.id_experiencia " (click)='checkDelete(experiencia.id_experiencia)' type="button" class="btn btn-warning pull-left">Borrar</button>
+                  <button *ngIf="check !== experiencia.id_experiencia " (click)='checkDelete(experiencia.id_experiencia)' type="button" class="btn btn-warning pull-left"><i class="but fas fa-trash-alt"></i></button>
                   <button *ngIf="check === experiencia.id_experiencia" (click)='handleCancelar()' type="button" style="color: grey" class=" btn btn-light pull-left">Cancelar</button>
                   <button *ngIf="check === experiencia.id_experiencia" (click)='handleDelete(experiencia.id_experiencia)' type="button" class="btn btn-danger pull-left">Borrar</button>
-                  <button (click)='handleChat(experiencia.id_experiencia)' style="color: #4ec5c1" type="button" class="btn btn-info pull-left">Chat</button>
+                  <!-- <div *ngFor= "let exp of expIdConver">
+                    <button *ngIf= "exp === experiencia.id_experiencia" (click)='handleChat(experiencia.id_experiencia)' style="color: #4ec5c1" type="button" class="btn btn-info pull-center"><i class="but fas fa-envelope"></i></button>
+                  </div> -->
+                  <!-- <button *ngIf= "exp !== experiencia.id_experiencia" style="color: grey" type="button" class="btn btn-info pull-right"><i class="but fas fa-envelope"></i></button> -->
             </div>
           </div>
         </div>
