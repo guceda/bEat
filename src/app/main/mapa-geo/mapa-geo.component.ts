@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ExperienciasService } from '../../experiencias.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-mapa-geo',
@@ -15,17 +16,18 @@ export class MapaGeoComponent implements OnInit {
   longitud: number
   zoom: number = 12;
   idExperiencia: number
-  ubicaciones:Array<any>
+  experienciasMapa: Array<object>
 
 
 
-  constructor(private experienciasService: ExperienciasService, private activatedRoute: ActivatedRoute) {
+  constructor(private experienciasService: ExperienciasService, private activatedRoute: ActivatedRoute, private router:Router) {
     this.habilitarMap = 'none'
     this.activatedRoute.params.subscribe(((params) => {
       this.idExperiencia = Number(params.id)
     }))
     this.latitud = 40.4530100
     this.longitud = -3.6882900
+    this.experienciasMapa = []
   }
 
   ngOnInit() {
@@ -40,19 +42,32 @@ export class MapaGeoComponent implements OnInit {
       })
 
     } else {
-      console.log('tu navegador no te puede localizar, bitch')
+      console.log('tu navegador no te puede localizar')
     }
-//recuperamos todas las ubicaciones de la base de datos para mostrarlas en el mapa
-    this.experienciasService.getAllUbicaciones().then((res)=>{
-      this.ubicaciones =  res.json() 
+
+    //recuperamos todas las ubicaciones de la base de datos para mostrarlas en el mapa
+    this.experienciasService.getAllExperiencias().then((exps) => {
+      this.experienciasMapa = exps.json()
+      console.log(this.experienciasMapa)
     })
+
+
   }
+
+  handleExp(pId) {
+    this.router.navigate(['/experiencia', pId])
+  }
+
+
+
   handleMouseOut() {
     this.habilitarMap = 'none'
   }
   handleClick() {
     this.habilitarMap = 'auto'
   }
+
+
 }
 
 

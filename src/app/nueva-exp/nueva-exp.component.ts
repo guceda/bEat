@@ -24,6 +24,8 @@ export class NuevaExpComponent implements OnInit {
   ingredientes: Array<string>
   customStyle:any
   chefId:any
+  address: any
+  coordenadas: any
 
   @ViewChild('ingrediente')ingredienteInput
 
@@ -35,15 +37,20 @@ export class NuevaExpComponent implements OnInit {
     this.latitud = 40.415363
     this.longitud = -3.707398
     this.zoom = 15
-    this.ingredientes = ['arroz']
+    this.ingredientes = []
     this.chefId = JSON.parse(localStorage.getItem('usr')).chf
     this.form = new FormGroup ({
       title: new FormControl('', [Validators.required, Validators.minLength(3)]),
       description: new FormControl('', [Validators.required, Validators.minLength(60)]),
       food_type: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      city: new FormControl('', [Validators.required, Validators.minLength(3)]),
       availability: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      chef_id: new FormControl(`${this.chefId}`)
+      chef_id: new FormControl(`${this.chefId}`), 
+
+      calle: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      city: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      pais: new FormControl('España', [Validators.required, Validators.minLength(3)]),
+      cp: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$'), Validators.minLength(5), Validators.maxLength(5)])
+
     })
 //estilos del input de imágenes
     this.customStyle = {
@@ -92,6 +99,9 @@ export class NuevaExpComponent implements OnInit {
     this.barGrouth()
     console.log(this.estadoExperiencia)
     }
+    if(this.estadoExperiencia === 5){
+
+    }
   }
 
   handleAtras(){
@@ -126,11 +136,13 @@ export class NuevaExpComponent implements OnInit {
   
   handleFinish(){
     //this.router.navigate(['home'])
-    console.log(this.form.value)
     this.form.value.ingredients = this.ingredientes
     this.form.value.price = this.precioInv
     this.form.value.number_invitados = this.numInv
-    this.experienciasService.setNewExperience(this.form.value).then((res)=>{console.log(res)})
+    this.form.value.address = `${this.form.value.calle} ${this.form.value.city} ${this.form.value.pais}`
+    console.log(this.form.value)
+    this.experienciasService.setNewExperience(this.form.value)
+    .then((res)=>{console.log(res)})
 
   }
 
@@ -148,6 +160,15 @@ export class NuevaExpComponent implements OnInit {
   onUploadStateChanged($event){
     console.log('holi')
     console.log($event)
+  }
+
+  cargarMapa(){
+    let address = `${this.form.value.calle} ${this.form.value.city} ${this.form.value.pais}`
+    console.log(address)
+    this.experienciasService.getcoords(address).then((coords)=>{
+      this.coordenadas = {latitud:Number(coords.json().latitud), longitud:Number(coords.json().longitud)}
+      console.log(this.coordenadas)
+    })
   }
  
 }

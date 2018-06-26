@@ -3,10 +3,25 @@
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
 <div class="container">
-  <agm-map (mouseout)="handleMouseOut()" (click)='handleClick()' [latitude]="latitud" [longitude]="longitud" [zoom]="zoom" [gestureHandling]="habilitarMap">
-    <agm-marker class="casa" [latitude]="latitud" [longitude]="longitud"></agm-marker>
-    <agm-marker *ngFor="let ubicacion of ubicaciones" [latitude]="ubicacion.latitude" [longitude]="ubicacion.longitude"></agm-marker> -->
-
+  <agm-map (mouseout)="handleMouseOut()" (click)='handleClick()' [latitude]="latitud" [longitude]="longitud" [zoom]="zoom"
+    [gestureHandling]="habilitarMap">
+    <!-- <agm-marker class="casa" [latitude]="latitud" [longitude]="longitud"></agm-marker> -->
+    <agm-marker *ngFor="let experiencia of experienciasMapa" [latitude]="experiencia.latitude" [longitude]="experiencia.longitude">
+      <agm-info-window>
+        <div class="item">
+            <!-- <a  class="imagen" routerLink = '/experiencia/{{experiencia.id_experiencia}}'><img class="img-fluid img" src="{{experiencia.main_image}}"></a> -->
+              <h3 class="cocina">Cocina {{experiencia?.food_type}}  <span class="num">  {{experiencia?.number_invitados}} <i class="fa fa-user"></i></span></h3>
+              <h3 class="name nombre">{{experiencia?.title}}</h3>
+              <div class="name chef">
+                    <span  href="#" class="chef"><i class="fas fa-utensils"></i> <span>{{experiencia?.name}}</span></span>
+            </div>
+                <h3 class="datos">{{experiencia?.price}}€ por Invitado · <span>{{experiencia?.availability}}</span></h3>
+ 
+                  <button (click)='handleExp(experiencia.id_experiencia)' type="button" class="btn btn-info pull-center"> Ir a la experiencia</button>
+          
+                <!-- <button *ngIf= "exp !== experiencia.id_experiencia" style="color: grey" type="button" class="btn btn-info pull-right"><i class="but fas fa-envelope"></i></button> -->
+          </div>
+      </agm-info-window>
+    </agm-marker>
   </agm-map>
 </div>
- 

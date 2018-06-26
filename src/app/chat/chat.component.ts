@@ -19,8 +19,8 @@ export class ChatComponent implements OnInit {
   arrayMensajes: any
   experiencia_id: any
   experiencia: any
-  interval:any
-  info:any
+  interval: any
+  info: any
 
   constructor(private chatsService: ChatsService, private experienciasService: ExperienciasService) {
     this.invId = JSON.parse(localStorage.getItem('usr')).inv
@@ -48,10 +48,13 @@ export class ChatComponent implements OnInit {
       this.arrayMensajes = mensajes.json()
       console.log(this.arrayMensajes)
       //guardamos el invitado
-     localStorage.setItem('i', this.arrayMensajes[0].invitado_id )
+      localStorage.setItem('i', this.arrayMensajes[0].invitado_id)
+      localStorage.setItem('c_id', this.arrayMensajes[0].conversacion_id)
     })
 
   }
+
+
 
   handleSend(pMessage) {
     let user = JSON.parse(localStorage.getItem('usr'))
@@ -85,7 +88,8 @@ export class ChatComponent implements OnInit {
 
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     clearInterval(this.interval)
   }
 }
+

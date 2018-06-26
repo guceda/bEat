@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   user: string
+  activeButton:number
 
   constructor(private router:Router, private dialogService: DialogService, private modalService: ModalService) {
     this.user = ''

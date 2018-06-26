@@ -1,29 +1,29 @@
 <div class="container" id="scrollChat">
- 
+  <div class="item row">
+    <div class="col-6">
+      <h3 class="name nombre">{{experiencia?.title}}</h3>
+      <h3 class="cocina">Cocina {{experiencia?.food_type}}
+        <span class="num"> {{experiencia?.number_invitados}}
+          <i class="fa fa-user"></i>
+        </span>
+      </h3>
+    </div>
+    <div class="col-6">
+      <div class="name chef">
+        <span href="#" class="chef">
+          <i class="fas fa-utensils"></i>
+          <span>{{experiencia?.name}}</span>
+        </span>
+      </div>
+      <h3 class="datos">{{experiencia?.price}}€ por Invitado ·
+        <span>{{experiencia?.availability}}</span>
+      </h3>
+    </div>
+  </div>
 
   <div class="texto">
 
-      <div class="item row">
-          <div class="col-6">
-            <h3 class="name nombre">{{experiencia?.title}}</h3>
-            <h3 class="cocina">Cocina {{experiencia?.food_type}}
-              <span class="num"> {{experiencia?.number_invitados}}
-                <i class="fa fa-user"></i>
-              </span>
-            </h3>
-          </div>
-          <div class="col-6">
-            <div class="name chef">
-              <span href="#" class="chef">
-                <i class="fas fa-utensils"></i>
-                <span>{{experiencia?.name}}</span>
-              </span>
-            </div>
-            <h3 class="datos">{{experiencia?.price}}€ por Invitado ·
-              <span>{{experiencia?.availability}}</span>
-            </h3>
-          </div>
-        </div>
+ 
     <ul>
       <li *ngFor="let mensaje of arrayMensajes">
         <div class="mensaje" [ngClass]="{'text-right': mensaje.invitado_id === null}">

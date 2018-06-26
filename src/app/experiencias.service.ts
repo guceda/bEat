@@ -30,7 +30,6 @@ export class ExperienciasService {
   }
 
   setNewExperience(pExperiencia) {
-    console.log(pExperiencia)
     return this.http.post('http://localhost:3000/api/experiencias/nuevaExperiencia', {
       title: pExperiencia.title,
       description: pExperiencia.description,
@@ -40,13 +39,14 @@ export class ExperienciasService {
       city: pExperiencia.city,
       number_invitados: pExperiencia.number_invitados,
       price: pExperiencia.price,
-      chef_id: pExperiencia.chef_id
+      chef_id: pExperiencia.chef_id,
+      address: pExperiencia.address
     }).toPromise()
   }
 
-  sendImages(headers) {
-    return this.http.post('http://localhost:3000/api/experiencias/nuevaExperiencia/imagenes', headers ).toPromise()
-  }
+  // sendImages(headers) {
+  //   return this.http.post('http://localhost:3000/api/experiencias/nuevaExperiencia/imagenes', headers ).toPromise()
+  // }
 
   getExperienciasbyChef(pId){
     return this.http.get(`http://localhost:3000/api/experiencias/chef/${pId}`).toPromise()
@@ -70,6 +70,12 @@ export class ExperienciasService {
 
   removeFavorita(pIdExp, pIdInv){
     return this.http.delete(`http://localhost:3000/api/experiencias/removeFavorita/${pIdExp}/${pIdInv}`).toPromise()
+  }
+
+  getcoords(pAddress){
+    return this.http.post('http://localhost:3000/api/experiencias/getcoords', {
+      Address: pAddress
+    }).toPromise()
   }
 
 }

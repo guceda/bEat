@@ -17,7 +17,7 @@ li{
     height: 500px;
     background-color: rgba(211, 211, 211, 0.2);
     border: 1px solid rgba(211, 211, 211, 0.2);
-    border-radius: 10px;
+    border-radius: 0px 0px 10px 10px;
     padding: 0px 40px 40px 0;
     margin-bottom: 30px;
 
@@ -78,17 +78,17 @@ img{
 }
 
 
-
-
-
-
 .item {
-    padding:10px 0 10px 40px;
+    padding:10px 40px 10px 40px;
     /* min-height:325px; */
     text-align:center;
     background-color: white;
-    margin-right: -40px;
-    margin-bottom: 30px;
+    margin: 0px;
+    border: 1px solid rgba(211, 211, 211, 0.4);
+    border-bottom: 0px;
+    border-radius: 10px 10px 0 0;
+    
+    /* margin-bottom: 30px; */
     /* -webkit-box-shadow: inset 0px 27px 17px -19px rgba(0,0,0,0.1);
     -moz-box-shadow: inset 0px 27px 17px -19px rgba(0,0,0,0.1);
     box-shadow: inset 0px 27px 17px -19px rgba(0,0,0,0.1); */
@@ -177,4 +177,7 @@ h3 span{
   margin-left: 10px;
 }
 
+ul{
+    margin-top:20px;
+}
 

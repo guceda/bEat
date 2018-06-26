@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { ExperienciasService } from './experiencias.service';
+import { ChatsService } from './chats.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [ExperienciasService]
+  providers: [ExperienciasService, ChatsService]
 })
 export class AppComponent {
   invId: any
 
-  constructor(private router: Router, private experienciasService:ExperienciasService) {
+
+  constructor(private router: Router, private experienciasService:ExperienciasService, private chatsService:ChatsService) {
     if(JSON.parse(localStorage.getItem("usr"))) {
        this.invId = JSON.parse(localStorage.getItem("usr")).inv
     }else{
@@ -42,6 +44,21 @@ export class AppComponent {
       }
       })
 
+      // this.checkNewMessages({chef: JSON.parse(localStorage.getItem('usr')).chf,inv: this.invId})
   }
+
+
+  // checkNewMessages(pIds){
+  //  if(pIds.inv === undefined) {
+  //    this.chatsService.getAllConversChef(pIds.chef).then((res)=>{
+  //     console.log(res.json())
+  //    })
+  //  } else if (pIds.chef === undefined){
+  //    this.chatsService.getAllConversInv(pIds.inv).then((res)=>{
+  //     console.log(res.json())
+  //    })
+  //  }
+
+  // }
 
 }

@@ -49,13 +49,14 @@ export class MensajesComponent implements OnInit {
     }else if( this.invId !== undefined){
       this.chatsService.getAllConversInv(this.invId).then((res)=>{
         this.idArrExpInv = res.json()
-        console.log(this.idArrExpChef)
+        console.log(this.idArrExpInv)
         this.idArrExpInv.forEach((experiencia)=>{
           this.experienciasService.getExperienciaById(experiencia.experiencia_id).then((res)=>{
             this.experiencias.push(res.json())
-            console.log(this.experiencias)
+            //console.log(this.experiencias)
           })
         })
+        console.log(this.experiencias)
       })
     }
 

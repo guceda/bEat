@@ -1,8 +1,8 @@
 <div class="block">
   <div *ngIf="estadoExperiencia < 4" class="fondo fondoimg"></div>
   <div *ngIf="estadoExperiencia > 3" class="mapa fondo">
-    <agm-map [latitude]="latitud" [longitude]="longitud" [zoom]="zoom">
-      <agm-marker [latitude]="latitud" [longitude]="longitud"></agm-marker>
+    <agm-map [latitude]="coordenadas?.latitud " [longitude]="coordenadas?.longitud" [zoom]="zoom">
+      <agm-marker [latitude]="coordenadas?.latitud" [longitude]="coordenadas?.longitud"></agm-marker>
     </agm-map>
   </div>
   <div class="container">
@@ -14,8 +14,8 @@
         <h2 *ngIf="estadoExperiencia === 1">Crea una nueva experiencia</h2>
         <h2 *ngIf="estadoExperiencia === 2">Añade los ingredientes del plato</h2>
         <h2 *ngIf="estadoExperiencia === 3">Acerca de los invitados</h2>
-        <h2 *ngIf="estadoExperiencia === 4">Dirección</h2>
-        <h2 *ngIf="estadoExperiencia === 5">¡Añade las imágenes, confirma y listo!</h2>
+        <h2 *ngIf="estadoExperiencia === 4 || estadoExperiencia === 5">Dirección</h2>
+        <h2 *ngIf="estadoExperiencia === 6">¡Añade las imágenes, confirma y listo!</h2>
 
         <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
           <div *ngIf="estadoExperiencia === 1">
@@ -68,18 +68,31 @@
             </div>
             <label>¿Qué disponibilidad tienes?</label>
             <input class="form-control" type="text" formControlName="availability" placeholder="tardes, fines de semana, sábados por la noche, etc.">
+            <div class="errMessage" *ngIf="form.controls.availability.errors?.required && form.controls.availability.touched && form.controls.availability.dirty ">Campo obligatorio</div>
+            <div class="errMessage" *ngIf="form.controls.availability.errors?.minlength && form.controls.availability.touched && form.controls.availability.dirty ">Debe contener mínimo 3 caracteres</div>
           </div>
-          <div *ngIf="estadoExperiencia === 4">
-            <label>Calle y piso</label>
-            <input class="form-control" type="text">
-            <label>código postal</label>
-            <input class="form-control" type="text">
+          <div *ngIf="estadoExperiencia === 4 || estadoExperiencia === 5 ">
+            <label>Calle y número</label>
+            <input class="form-control" formControlName="calle" placeholder="Gran Vía 13"  type="text">
+            <div class="errMessage" *ngIf="form.controls.calle.errors?.required && form.controls.calle.touched && form.controls.calle.dirty ">Campo obligatorio</div>
+            <div class="errMessage" *ngIf="form.controls.calle.errors?.minlength && form.controls.calle.touched && form.controls.calle.dirty ">Debe contener mínimo 3 caracteres</div>
+            <label>Código postal</label>
+            <input class="form-control" formControlName="cp"  placeholder="28020" type="text">
+            <div class="errMessage" *ngIf="form.controls.cp.errors?.required && form.controls.cp.touched && form.controls.cp.dirty ">Campo obligatorio</div>
+            <div class="errMessage" *ngIf="form.controls.cp.errors?.minlength && form.controls.cp.touched && form.controls.cp.dirty ">El código postal debe contener 5 números</div>
             <label>Ciudad</label>
-            <input class="form-control" formControlName="city" type="text">
+            <input class="form-control" formControlName="city" placeholder="Madrid" type="text">
+            <div class="errMessage" *ngIf="form.controls.city.errors?.required && form.controls.city.touched && form.controls.city.dirty ">Campo obligatorio</div>
+            <div class="errMessage" *ngIf="form.controls.city.errors?.minlength && form.controls.city.touched && form.controls.city.dirty ">Debe contener mínimo 3 caracteres</div>
             <label>País</label>
-            <input class="form-control" type="text">
+            <input class="form-control" formControlName="pais"  placeholder="España" type="text">
+            <div class="errMessage" *ngIf="form.controls.pais.errors?.required && form.controls.pais.touched && form.controls.pais.dirty ">Campo obligatorio</div>
+            <div class="errMessage" *ngIf="form.controls.pais.errors?.minlength && form.controls.pais.touched && form.controls.pais.dirty ">Debe contener mínimo 3 caracteres</div>
+            <div (click)= "cargarMapa()" *ngIf="estadoExperiencia === 5" class="mb-5 text-center btn btn-primary ver" role="button">
+              Ver en el mapa 
+            </div>
           </div>
-          <div class="row" *ngIf="estadoExperiencia === 5">
+          <div class="row" *ngIf="estadoExperiencia === 6">
             <image-upload [url]="'http://localhost:3000/api/experiencias/nuevaExperiencia/imagenes'" buttonCaption="+" dropBoxMessage="" [max]="4" [style]="customStyle" (uploadStateChanged)="onUploadStateChanged($event)"></image-upload>
 
             <!-- Imagen confeti derecha -->
@@ -90,9 +103,9 @@
         <div class="botones">
           <button *ngIf="estadoExperiencia > 1" (click)='handleAtras()' class="btn btn-primary" type="button">
             <</button>
-              <button *ngIf="estadoExperiencia > 0 && estadoExperiencia < 5" (click)='handleSig()' class="btn btn-primary right" type="button"
+              <button *ngIf="estadoExperiencia > 0 && estadoExperiencia < 6" (click)='handleSig()' class="btn btn-primary right" type="button"
                 style="float:right;">></button>
-              <button *ngIf="estadoExperiencia === 5" class="btn btn-primary right finalizar" type="button" style="float:right" (click)="handleFinish()">Finalizar</button>
+              <button *ngIf="estadoExperiencia === 6" class="btn btn-primary right finalizar" type="button" style="float:right" (click)="handleFinish()">Finalizar</button>
         </div>
       </div>
       <div class="col-md-6">
