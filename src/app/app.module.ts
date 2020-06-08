@@ -21,7 +21,7 @@ import { HttpModule } from '@angular/http';
 import { ListaEquipoComponent } from './main/equipo/lista-equipo/lista-equipo.component';
 import { MiembroEquipoComponent } from './main/equipo/lista-equipo/miembro-equipo/miembro-equipo.component';
 import { LoginComponent } from './login/login.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, ActivatedRouteSnapshot } from '@angular/router';
 import { appRoutes } from './app.routing';
 import { QuienesSomosComponent } from './main/quienes-somos/quienes-somos.component';
 import { MainComponent } from './main/main.component';
@@ -38,6 +38,9 @@ import { MyExpsComponent } from './my-exps/my-exps.component';
 import { FavoritasComponent } from './favoritas/favoritas.component';
 import { ChatComponent } from './chat/chat.component';
 import { MensajesComponent } from './mensajes/mensajes.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UserPageComponent } from './user-page/user-page.component';
+import { ImageChangeService } from './image-change.service';
 
 
 
@@ -74,6 +77,8 @@ import { MensajesComponent } from './mensajes/mensajes.component';
     FavoritasComponent,
     ChatComponent,
     MensajesComponent,
+    UserPageComponent,
+
     
   ],
   imports: [
@@ -85,6 +90,8 @@ import { MensajesComponent } from './mensajes/mensajes.component';
     FormsModule, 
     ReactiveFormsModule,
     ImageUploadModule.forRoot(),
+    HttpClientModule
+
 
   ],
   entryComponents: [
@@ -93,7 +100,7 @@ import { MensajesComponent } from './mensajes/mensajes.component';
 
 
   ],
-  providers: [Login],
+  providers: [Login, ImageChangeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

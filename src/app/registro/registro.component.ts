@@ -76,11 +76,12 @@ export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> im
         this.error = 'El email ya existe'
       } else {
         //almacenamos los datos del formulario de invitados en local Storage
-        localStorage.setItem('usr', JSON.stringify({ inv: res["_body"] }))
+        console.log(JSON.parse(res["_body"]).id)
+        localStorage.setItem('usr', JSON.stringify({ inv: JSON.parse(res["_body"]).id, name: JSON.parse(res["_body"]).name, img: 'http://localhost:3000/images/placeholder.jpg' }))
         this.estadoRegistro = 'fin'
         //refescamos la pagina
         setTimeout(() => {
-          window.location.href = 'home';
+        window.location.href = 'home';
         }, 1000)
       }
     })
@@ -93,7 +94,7 @@ export class RegistroComponent extends DialogComponent<ConfirmModel, boolean> im
         this.error = 'El email ya existe'
       } else {
         //almacenamos los datos del formulario de invitados en local Storage
-        localStorage.setItem('usr', JSON.stringify({ chf: res["_body"] }))
+        localStorage.setItem('usr', JSON.stringify({ chf: JSON.parse(res["_body"]).id, name: JSON.parse(res["_body"]).name, img: 'http://localhost:3000/images/placeholder.jpg' }))
         this.estadoRegistro = 'fin'
         //refescamos la pagina
         setTimeout(() => {

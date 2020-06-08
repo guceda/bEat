@@ -10,6 +10,7 @@ import { MyExpsComponent } from "./my-exps/my-exps.component";
 import { FavoritasComponent } from "./favoritas/favoritas.component";
 import { ChatComponent } from "./chat/chat.component";
 import { MensajesComponent } from "./mensajes/mensajes.component";
+import { UserPageComponent } from "./user-page/user-page.component";
 
 
 
@@ -24,6 +25,7 @@ export const appRoutes:Routes = [
     { path:'favoritas', component: FavoritasComponent, canActivate: [Login] },
     { path:'chat', component: ChatComponent, canActivate: [Login] },
     { path:'mensajes', component: MensajesComponent, canActivate: [Login] },
+    { path:'usuario/:name', component: UserPageComponent, canActivate: [Login] },
 
     { path: '**', redirectTo:'main', pathMatch: 'full' },
 ]

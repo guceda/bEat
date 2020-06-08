@@ -78,18 +78,18 @@ export class ChatComponent implements OnInit {
     }
 
     //REFRESCO AUTOMÁTICO cada dos segundos, solo se actualiza si hay mensajes nuevos
-    this.interval = setInterval(() => {
-      //recuperamos los mensajes y comprobamos si hay alguno nuevo
-      this.chatsService.getChat(this.converData).then((mensajes) => {
-        this.arrayMensajes.length === mensajes.json().length ? this.arrayMensajes : this.arrayMensajes = mensajes.json()
-      })
-    }, 2000)
+    // this.interval = setInterval(() => {
+    //   //recuperamos los mensajes y comprobamos si hay alguno nuevo
+    //   this.chatsService.getChat(this.converData).then((mensajes) => {
+    //     this.arrayMensajes.length === mensajes.json().length ? this.arrayMensajes : this.arrayMensajes = mensajes.json()
+    //   })
+    // }, 2000)
 
 
   }
 
   ngOnDestroy() {
-    clearInterval(this.interval)
+    // clearInterval(this.interval)
   }
 }
 

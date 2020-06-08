@@ -14,7 +14,7 @@
         <div class="row justify-content-left features">
           <div *ngFor="let experiencia of experiencias, let i=index" class="col-sm-6 col-md-4 col-lg-4 item">
             <div class="item">
-              <a class="imagen" (click)="handleClick()" routerLink='/experiencia/{{experiencia.id_experiencia}}'>
+              <a class="imagen" routerLink='/experiencia/{{experiencia.id_experiencia}}'>
                 <img class="img-fluid img" src="{{experiencia.main_image}}">
               </a>
               <div id="texto">

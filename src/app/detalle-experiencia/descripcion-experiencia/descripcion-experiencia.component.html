@@ -6,6 +6,7 @@
 </p>
 <div class="carousel slide" data-ride="carousel" id="carousel-1">
     <div class="carousel-inner" role="listbox" style="height:300px;">
+        
         <div *ngFor="let imagen of experience?.imagenes; let first=first" class="carousel-item" [ngClass]="{active:first}" style="height:100%;">
             <img class="img-fluid w-100 d-block d-none" [src]="imagen" alt="Slide Image" style="background-size:cover;">
         </div>

@@ -34,6 +34,7 @@ export class LoginComponent extends DialogComponent<ConfirmModel, boolean> imple
     this.close();
   }
   ngOnInit() {
+    console.log('hola')
     this.form = new FormGroup({
       email: new FormControl('', [Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/), Validators.required]),
       password: new FormControl('', [Validators.pattern(/^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{8,})/), Validators.required])
@@ -48,11 +49,12 @@ export class LoginComponent extends DialogComponent<ConfirmModel, boolean> imple
   handleClickLoginInv(pInvitado) {
    //recuperamos el usuario de node
    this.invitadosService.loginInvitado(this.form.value).then((res) => {
+     console.log(res.json())
     let usuario = res.json()
     if (usuario.error) {
       this.error = usuario.error     
     } else if (usuario.password) {
-      localStorage.setItem('usr', JSON.stringify({inv:usuario.id_invitado}))
+      localStorage.setItem('usr', JSON.stringify({inv:usuario.id_invitado, img: usuario.image, name: usuario.name}))
       this.estadoLogin = 'fin'
       //refescamos la pagina
       setTimeout(() => {
@@ -70,7 +72,7 @@ export class LoginComponent extends DialogComponent<ConfirmModel, boolean> imple
       if (usuario.error) {
         this.error = usuario.error     
       } else if (usuario.password) {
-        localStorage.setItem('usr', JSON.stringify({chf:usuario.id_chef}))
+        localStorage.setItem('usr', JSON.stringify({chf:usuario.id_chef, img: usuario.image, name: usuario.name}))
         this.estadoLogin = 'fin'
         //refescamos la pagina
         setTimeout(() => {

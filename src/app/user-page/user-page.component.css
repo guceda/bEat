@@ -1,4 +1,5 @@
 
+  
 .h2, h2 {
     opacity:0.8;
   }
@@ -33,15 +34,10 @@
   }
 
   .fondoimg{
-    background-image: url(../../assets/img/background-blur-bokeh-834894.jpg);
+    background-color: rgba(211, 211, 211, 0.4);
     background-size: cover;
   }
   
-
-  agm-map {
-    opacity: 0.8 !important;
-    height: 100% !important;
-  }
 
   
   label{
@@ -88,13 +84,7 @@ button:active{
     opacity: 0.7;
 }
 
-.progress{
-    margin-top: 0px;
-}
 
-.progress-bar{
-    background-color: #ec576b;
-}
 
 
 .numero, .numero:hover, .numero:active {
@@ -113,51 +103,13 @@ span{
     font-weight: bold;
 }
 
-.cantidad{
-    display: inline;
-    margin-left: 8%;
-}
-
-.cantidad1, .cantidad2{
-    margin-bottom: 30px;
-}
-
-.cantidad2 > .cantidad {
-    margin-left: 6%;
-}
-
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     opacity: 0.4; /* Firefox */
 }
 
 
-.ingredientes{
-    height: 800px;
-}
 
-
-.ing{
-    width: 300px;
-    display: inline;
-    margin-right: 30px;
-    margin-top: 20px;
-}
-
-.listaIng{
-    height: 300px;
-    margin-top: 30px;
-}
-
-.listaIng div {
-    padding: 10px 15px;
-    display: inline-block;
-    text-align: center;
-}
-
-.adding, .adding:hover, .adding:active{
-    border-radius: 10px;
-}
 
 .confirm{
     margin-bottom: 150px;
@@ -206,3 +158,67 @@ span{
     width: 500px;
 }
 
+
+.imagen{
+    margin-top: 200px;
+    width: 50%;
+    height: auto;
+    margin-left: 22%;
+    background: transparent;
+}
+
+.hidden{
+    display: none;
+}
+
+.imgInput{
+    /* margin-top: -286px;
+    margin-left: -12%;
+    width: 400px;
+    height: 350px; */
+    opacity: 0;
+    cursor: copy;
+    position: absolute;
+    width: 80%;
+
+}
+
+.boton, .boton:hover, .boton:active{
+    border-radius: 40px;
+    padding: 10px;
+    color: white;
+    background-color: #ec576b !important;
+    border: 0;
+}
+
+.boton:hover{
+    opacity: 0;
+}
+
+.botonCaja, .botonCaja:active, .botonCaja:hover{
+    position: absolute;
+    border-radius: 40px;
+    width: 80%;
+    padding: 10px;
+    color: #ec576b !important;
+    background-color: transparent !important;
+    border: 2px solid #ec576b !important;
+
+}
+
+
+.caja{
+    margin-top: 50px;
+    width: 80%;
+    padding: 10%
+}
+
+.submit, .submit:hover, .submit:active{
+    background-color: #ec576b !important;
+    border: none;
+}
+
+.cancel{
+    background-color: #4EC5C1 !important;
+    border: none;
+}

@@ -1,0 +1,58 @@
+<div class="block">
+  <div class="fondo fondoimg">
+      <form [formGroup]="formImg" (ngSubmit)="onImageSubmit(formImg.value)">
+    <div class="imagen">
+      <div [ngStyle]="imgStyles" class="rounded-circle" ></div>
+      <!-- <img [ngStyle]="imgStyles" class=" rounded-circle" src="{{imagen}}"> -->
+    </div>
+    <div class="caja">
+        <button class="botonCaja btn btn-primary">Cambia la foto</button>
+        <input class=" imgInput form-control" (change)= "handleFileChange($event)" name="image" formControlName="image" type="file">
+        
+    </div>
+  
+    </form>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class=" imgFile col-md-6 form">
+        <!-- <div class="progress" style="height: 2px;">
+          <div class="progress-bar" role="progressbar" [ngStyle]="bar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div> -->
+        <h2 >Mi perfil</h2>
+        
+
+        <form [formGroup]="form" (submit)="onSubmit(form.value)">
+          <div>
+            <label>Nombre</label>
+            <input class=" form-control" formControlName="name" autofocus type="text" >
+            <div class="errMessage" *ngIf="form.controls.name.errors?.required && form.controls.name.touched && form.controls.name.dirty ">Campo obligatorio</div>
+            <div class="errMessage" *ngIf="form.controls.name.errors?.minlength && form.controls.name.touched && form.controls.name.dirty ">Debe contener mínimo 3 caracteres</div>
+            <label>Apellido</label>
+            <input  class="form-control" formControlName="surname" >
+            <div class="errMessage" *ngIf="form.controls.surname.errors?.required && form.controls.surname.touched && form.controls.surname.dirty ">Campo obligatorio</div>
+            <div class="errMessage" *ngIf="form.controls.surname.errors?.minlength && form.controls.surname.dirty ">Debe contener mínimo 3 caracteres</div>
+            <label>Edad</label>
+            <input class="form-control" type="number" formControlName="age" >
+            <div class="errMessage" *ngIf="form.controls.age.errors && form.controls.age.touched && form.controls.age.dirty">La edad debe estar entre {{form.controls.age.errors?.edadMinima}} y {{form.controls.age.errors?.edadMaxima}}</div>
+            <div class="errMessage" *ngIf="form.controls.age.errors?.required && form.controls.age.touched && form.controls.age.dirty ">Campo obligatorio</div>
+
+            <!-- <label>Nueva Contraseña</label>
+            <input  class="form-control" type="password" formControlName="newPassword" >
+            <div class="errMessage" *ngIf="form.controls.newPassword.errors?.required && form.controls.newPassword.touched && form.controls.newPassword.dirty ">Campo obligatorio</div>
+            <div class="errMessage" *ngIf="form.controls.newPassword.errors?.minlength && form.controls.newPassword.touched && form.controls.newPassword.dirty ">Debe contener mínimo 3 caracteres</div> -->
+            
+            <input hidden class="form-control" type="number" formControlName="userId">
+
+            <input *ngIf = "modificar === false" type="button" name="" id="" (click)= "handleDisable()" value="Modifica tu perfil" class=" submit btn btn-primary">
+            <input *ngIf = "modificar === true" type="button" value="Cancelar" (click)= "handleCancelar()" class=" cancel btn btn-primary">
+            <input *ngIf = "modificar === true" type="submit" value="Actualizar" [disabled]="!form.valid" class=" submit btn btn-primary">
+        
+        </div>
+        </form>
+      </div>
+      <div class="hidden col-md-6">
+      </div>
+    </div>
+  </div>
+</div>

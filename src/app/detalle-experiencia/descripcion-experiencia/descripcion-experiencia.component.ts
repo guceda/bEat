@@ -24,6 +24,7 @@ export class DescripcionExperienciaComponent implements OnInit {
   ngOnInit() {
     this.experienciasService.getExperienciaById(this.idExperiencia).then((res) => {
       this.experience = res.json()
+      console.log(this.experience)
     })
   }
 

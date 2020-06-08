@@ -7,7 +7,6 @@
     <h2 class="tit">Registro</h2>
     <button (click)="handleClickInv()" class="btn btn-primary btn-block inv">Regístrate como Invitado</button>
     <button (click)="handleClickChef()" class="btn btn-primary btn-block">Regístrate como Chef</button>
-    <button id="facebook" class="btn btn-primary btn-block" type="button">Inicia sesión con Facebook</button>
   </form>
   <!-- formulario de registro para invitados -->
   <form   novalidate  [formGroup]="formInvitado" (ngSubmit)="handleSubmitInvitado(formInvitado.value)" *ngSwitchCase="'invitado'">

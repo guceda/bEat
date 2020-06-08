@@ -93,10 +93,11 @@
             </div>
           </div>
           <div class="row" *ngIf="estadoExperiencia === 6">
-            <image-upload [url]="'http://localhost:3000/api/experiencias/nuevaExperiencia/imagenes'" buttonCaption="+" dropBoxMessage="" [max]="4" [style]="customStyle" (uploadStateChanged)="onUploadStateChanged($event)"></image-upload>
 
-            <!-- Imagen confeti derecha -->
-
+            <!-- Imagen a subir -->
+            <input type="file" (change)="handleFileChange($event)" name="imagen" formControlName="imagen">
+        
+              <!-- Imagen a subir -->
 
           </div>
         </form>

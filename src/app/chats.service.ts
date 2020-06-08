@@ -12,7 +12,6 @@ export class ChatsService {
   }
 
   sendMessage(pMessage){
-    console.log('puta')
     return this.http.post('http://localhost:3000/api/chats/newMessage', pMessage).toPromise()
   }
 

@@ -30,4 +30,23 @@ export class ChefsService {
     }).toPromise()
   }
 
+    //RECUPERAMOS CHef POR ID 
+    getById(idChef) {
+      return this.http.get(`http://localhost:3000/api/chefs/${idChef}`).toPromise()
+    }
+
+
+    //MODIFICAMOS LOS DATOS DEL CHEF
+    modifyChef(pValue){
+      console.log(pValue)
+      return this.http.post('http://localhost:3000/api/chefs/change', {
+        id_chef:pValue.userId, 
+        name:pValue.name, 
+        surname:pValue.surname,
+        age:pValue.age,
+      }).toPromise()
+
+    }
+  
 }
+
